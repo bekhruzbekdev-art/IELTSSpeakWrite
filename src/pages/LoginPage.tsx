@@ -1,6 +1,8 @@
 import { useState, type FormEvent } from 'react';
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from '../auth/AuthContext';
+import { ROLE_DEFINITIONS, SELECTABLE_ROLES } from '../lib/permissions';
+import type { Role } from '../types/rbac';
 import { BrandMark } from '../components/ui/BrandMark';
 import { ThemeToggle } from '../components/ui/ThemeToggle';
 import './LoginPage.css';
@@ -14,9 +16,10 @@ export function LoginPage() {
   const location = useLocation();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [role, setRole] = useState<Role>('student');
   const [error, setError] = useState<string | null>(null);
 
-  const from = (location.state as LocationState | null)?.from ?? '/sprint';
+  const from = (location.state as LocationState | null)?.from ?? ROLE_DEFINITIONS[role].homePath;
 
   if (isAuthenticated) {
     return <Navigate to={from} replace />;
@@ -24,7 +27,7 @@ export function LoginPage() {
 
   const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    setError(signIn(username, password));
+    setError(signIn(username, password, role));
   };
 
   return (
@@ -63,6 +66,29 @@ export function LoginPage() {
             />
           </label>
 
+          <fieldset className="login__roles">
+            <legend className="login__label">Sign in as</legend>
+            <div className="login__role-grid">
+              {SELECTABLE_ROLES.map((id) => (
+                <label
+                  key={id}
+                  className={`login__role${role === id ? ' login__role--selected' : ''}`}
+                >
+                  <input
+                    type="radio"
+                    name="role"
+                    value={id}
+                    checked={role === id}
+                    onChange={() => setRole(id)}
+                    className="visually-hidden"
+                  />
+                  {ROLE_DEFINITIONS[id].label}
+                </label>
+              ))}
+            </div>
+            <p className="login__role-summary">{ROLE_DEFINITIONS[role].summary}</p>
+          </fieldset>
+
           {error && (
             <p className="login__error" role="alert">
               {error}
@@ -75,8 +101,9 @@ export function LoginPage() {
         </form>
 
         <p className="login__note">
-          Preview build — no accounts exist yet. Any username and password opens the
-          interface so the design can be reviewed.
+          Preview build — no accounts exist yet. Any username and password opens
+          the interface. The role picker is a development control: it selects
+          which surfaces render and is <strong>not</strong> a security boundary.
         </p>
       </div>
     </div>

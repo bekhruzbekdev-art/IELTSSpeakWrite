@@ -4,8 +4,10 @@ import { AvatarGlyph } from '../components/profile/AvatarGlyph';
 import { AvatarPicker } from '../components/profile/AvatarPicker';
 import { SprintStatusWidget } from '../components/profile/SprintStatusWidget';
 import { PageHeader, SectionHeading, Surface } from '../components/ui/Surface';
-import { demoAccount, demoProgress } from '../data/demo';
+import { demoAccount } from '../data/demo';
+import { attendanceRateFor } from '../lib/attendance';
 import { summarise } from '../lib/sprintProgress';
+import { useAppData } from '../state/AppDataContext';
 import type { AvatarPreset } from '../types/account';
 import './ProfilePage.css';
 
@@ -23,8 +25,13 @@ function ReadOnlyField({ label, value }: { label: string; value: string }) {
 }
 
 export function ProfilePage() {
+  const { progress, attendance } = useAppData();
   const [avatar, setAvatar] = useState<AvatarPreset>(demoAccount.avatar);
-  const summary = useMemo(() => summarise(demoProgress), []);
+  const summary = useMemo(() => summarise(progress), [progress]);
+  const rate = useMemo(
+    () => attendanceRateFor('student-0417', attendance),
+    [attendance],
+  );
 
   return (
     <div className="profile-page">
@@ -61,6 +68,39 @@ export function ProfilePage() {
       <Surface padding="lg">
         <SectionHeading title="Sprint status" />
         <SprintStatusWidget startedOn={demoAccount.startedOn} summary={summary} />
+      </Surface>
+
+      <Surface padding="lg">
+        <SectionHeading
+          title="Live lesson attendance"
+          description="Recorded by your teacher. Excused absences are not counted against you."
+        />
+        <div className="profile-page__attendance">
+          <div className="profile-page__attendance-figure">
+            <span className="profile-page__attendance-value">{rate.percentage}%</span>
+            <span className="profile-page__attendance-caption">
+              across {rate.recorded} recorded {rate.recorded === 1 ? 'lesson' : 'lessons'}
+            </span>
+          </div>
+          <dl className="profile-page__attendance-breakdown">
+            <div>
+              <dt>Present</dt>
+              <dd>{rate.present}</dd>
+            </div>
+            <div>
+              <dt>Late</dt>
+              <dd>{rate.late}</dd>
+            </div>
+            <div>
+              <dt>Absent</dt>
+              <dd>{rate.absent}</dd>
+            </div>
+            <div>
+              <dt>Excused</dt>
+              <dd>{rate.excused}</dd>
+            </div>
+          </dl>
+        </div>
       </Surface>
     </div>
   );

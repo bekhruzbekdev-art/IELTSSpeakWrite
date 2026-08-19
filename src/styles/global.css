@@ -78,3 +78,107 @@ ol {
     scroll-behavior: auto !important;
   }
 }
+
+/* ---------------------------------------------------------------------------
+ * Buttons — shared across forms, modals and admin actions.
+ * ------------------------------------------------------------------------ */
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  white-space: nowrap;
+  transition: background-color var(--transition-fast), border-color var(--transition-fast),
+    color var(--transition-fast);
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.button--primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-contrast);
+}
+
+.button--primary:hover:not(:disabled) {
+  background-color: var(--color-primary-hover);
+}
+
+.button--ghost {
+  border-color: var(--color-border);
+  background-color: transparent;
+  color: var(--color-text-secondary);
+}
+
+.button--ghost:hover:not(:disabled) {
+  border-color: var(--color-border-strong);
+  color: var(--color-text);
+}
+
+.button--approve {
+  border-color: var(--color-success);
+  background-color: var(--color-success-soft);
+  color: var(--color-success-text);
+}
+
+.button--approve:hover:not(:disabled) {
+  background-color: var(--color-success);
+  color: #ffffff;
+}
+
+.button--reject {
+  border-color: var(--color-error);
+  background-color: var(--color-error-soft);
+  color: var(--color-error-text);
+}
+
+.button--reject:hover:not(:disabled) {
+  background-color: var(--color-error);
+  color: #ffffff;
+}
+
+/* ---------------------------------------------------------------------------
+ * Tabs
+ * ------------------------------------------------------------------------ */
+
+.tabs {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-1);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  background-color: var(--color-surface-muted);
+}
+
+.tabs__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  border: none;
+  border-radius: var(--radius-sm);
+  background-color: transparent;
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+}
+
+.tabs__tab:hover {
+  color: var(--color-text);
+}
+
+.tabs__tab[aria-selected='true'],
+.tabs__tab[aria-selected='true']:hover {
+  background-color: var(--color-surface);
+  color: var(--color-primary-text);
+  box-shadow: var(--shadow-xs);
+}

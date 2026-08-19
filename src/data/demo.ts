@@ -18,6 +18,9 @@
  */
 
 import type { Account } from '../types/account';
+import type { AttendanceMark, CohortStudent } from '../types/attendance';
+import type { ActiveSession } from '../types/settings';
+import type { SupportMessage, SupportThread, UnlockRequest } from '../types/support';
 import type { LearningProfile } from '../types/analytics';
 import type { Cohort } from '../types/leaderboard';
 import type { DayRecord, SprintProgressState } from '../types/sprint';
@@ -75,6 +78,7 @@ export const demoProgress: SprintProgressState = {
   startingTest: { completedAt: daysAgo(COMPLETED_DAYS + 1).toISOString(), points: 0 },
   days: buildDays(),
   endingTest: { completedAt: null, points: 0 },
+  staffUnlockedDays: [],
 };
 
 export const demoAccount: Account = {
@@ -187,3 +191,207 @@ export const demoLearningProfile: LearningProfile = {
     },
   },
 };
+
+
+/* ---------------------------------------------------------------------------
+ * Cohort roster — used by attendance and the admin queues.
+ * ------------------------------------------------------------------------ */
+
+export const demoCohortStudents: CohortStudent[] = [
+  { id: 'student-0417', displayName: 'B. M.', cohortId: 'cohort-b' },
+  { id: 'student-0102', displayName: 'A. R.', cohortId: 'cohort-b' },
+  { id: 'student-0118', displayName: 'M. T.', cohortId: 'cohort-b' },
+  { id: 'student-0124', displayName: 'S. K.', cohortId: 'cohort-b' },
+  { id: 'student-0131', displayName: 'D. N.', cohortId: 'cohort-b' },
+  { id: 'student-0145', displayName: 'L. B.', cohortId: 'cohort-b' },
+  { id: 'student-0152', displayName: 'J. H.', cohortId: 'cohort-b' },
+  { id: 'student-0166', displayName: 'R. V.', cohortId: 'cohort-b' },
+  { id: 'student-0203', displayName: 'E. P.', cohortId: 'cohort-a' },
+  { id: 'student-0211', displayName: 'T. G.', cohortId: 'cohort-a' },
+  { id: 'student-0219', displayName: 'K. M.', cohortId: 'cohort-a' },
+  { id: 'student-0227', displayName: 'O. S.', cohortId: 'cohort-a' },
+];
+
+export const demoCohorts = [
+  { id: 'cohort-b', name: 'Cohort B — August Sprint' },
+  { id: 'cohort-a', name: 'Cohort A — July Sprint' },
+];
+
+/** `YYYY-MM-DD` in local time. */
+export function isoDate(date: Date): string {
+  const pad = (n: number) => String(n).padStart(2, '0');
+  return `${date.getFullYear()}-${pad(date.getMonth() + 1)}-${pad(date.getDate())}`;
+}
+
+/*
+ * An 11-long pattern sampled with a stride, so different students land on
+ * genuinely different attendance rates. A short cycle read in fixed-width
+ * windows gives every student the same tally, which makes the percentage
+ * look broken.
+ */
+const ATTENDANCE_PATTERN: AttendanceMark['status'][] = [
+  'present',
+  'present',
+  'late',
+  'present',
+  'absent',
+  'present',
+  'present',
+  'excused',
+  'present',
+  'absent',
+  'late',
+];
+
+/** Six lesson days of history so the percentages on profiles are non-trivial. */
+function buildAttendance(): AttendanceMark[] {
+  const marks: AttendanceMark[] = [];
+
+  for (let back = 6; back >= 1; back -= 1) {
+    const date = isoDate(daysAgo(back));
+
+    demoCohortStudents.forEach((student, index) => {
+      const status =
+        ATTENDANCE_PATTERN[(index * 3 + back) % ATTENDANCE_PATTERN.length];
+      if (!status) return;
+      marks.push({ studentId: student.id, cohortId: student.cohortId, date, status });
+    });
+  }
+
+  return marks;
+}
+
+export const demoAttendance: AttendanceMark[] = buildAttendance();
+
+/* ---------------------------------------------------------------------------
+ * Support desk
+ * ------------------------------------------------------------------------ */
+
+export const demoUnlockRequests: UnlockRequest[] = [
+  {
+    id: 'req-1001',
+    studentId: 'student-0118',
+    studentName: 'M. T.',
+    cohortId: 'cohort-b',
+    day: 9,
+    reason: 'I was in hospital for two days and could not submit my tasks.',
+    status: 'pending',
+    createdAt: daysAgo(1).toISOString(),
+  },
+  {
+    id: 'req-1002',
+    studentId: 'student-0145',
+    studentName: 'L. B.',
+    cohortId: 'cohort-b',
+    day: 12,
+    reason: 'Travelling for a family event this week, would like to catch up early.',
+    status: 'pending',
+    createdAt: daysAgo(2).toISOString(),
+  },
+  {
+    id: 'req-1003',
+    studentId: 'student-0124',
+    studentName: 'S. K.',
+    cohortId: 'cohort-b',
+    day: 6,
+    reason: 'Internet outage on my submission day.',
+    status: 'approved',
+    createdAt: daysAgo(5).toISOString(),
+    decidedAt: daysAgo(4).toISOString(),
+    decidedBy: 'Support Teacher',
+  },
+];
+
+export const demoSupportThreads: SupportThread[] = [
+  {
+    id: 'thread-you',
+    studentId: 'student-0417',
+    studentName: 'B. M.',
+    cohortId: 'cohort-b',
+    subject: 'Question about my Sprint',
+    lastActivityAt: daysAgo(1).toISOString(),
+    resolved: false,
+  },
+  {
+    id: 'thread-0131',
+    studentId: 'student-0131',
+    studentName: 'D. N.',
+    cohortId: 'cohort-b',
+    subject: 'Cannot open the recorder on my phone',
+    lastActivityAt: daysAgo(1).toISOString(),
+    resolved: false,
+  },
+  {
+    id: 'thread-0152',
+    studentId: 'student-0152',
+    studentName: 'J. H.',
+    cohortId: 'cohort-b',
+    subject: 'Lesson time change',
+    lastActivityAt: daysAgo(3).toISOString(),
+    resolved: true,
+  },
+];
+
+export const demoSupportMessages: SupportMessage[] = [
+  {
+    id: 'msg-1',
+    threadId: 'thread-you',
+    author: 'student',
+    authorName: 'B. M.',
+    body: 'Hello, when does my next day become available?',
+    sentAt: daysAgo(1).toISOString(),
+  },
+  {
+    id: 'msg-2',
+    threadId: 'thread-you',
+    author: 'staff',
+    authorName: 'Support Teacher',
+    body: 'Your next day opens at midnight once both of today\'s tasks are submitted.',
+    sentAt: daysAgo(1).toISOString(),
+  },
+  {
+    id: 'msg-3',
+    threadId: 'thread-0131',
+    author: 'student',
+    authorName: 'D. N.',
+    body: 'The microphone button does nothing on my phone browser.',
+    sentAt: daysAgo(1).toISOString(),
+  },
+  {
+    id: 'msg-4',
+    threadId: 'thread-0152',
+    author: 'student',
+    authorName: 'J. H.',
+    body: 'Is the Thursday lesson moving to 18:00?',
+    sentAt: daysAgo(3).toISOString(),
+  },
+  {
+    id: 'msg-5',
+    threadId: 'thread-0152',
+    author: 'staff',
+    authorName: 'Support Teacher',
+    body: 'Yes — Thursday lessons now start at 18:00 for the rest of the Sprint.',
+    sentAt: daysAgo(3).toISOString(),
+  },
+];
+
+/* ---------------------------------------------------------------------------
+ * Settings
+ * ------------------------------------------------------------------------ */
+
+export const demoSessions: ActiveSession[] = [
+  {
+    id: 'session-current',
+    device: 'Chrome on Windows',
+    location: 'Tashkent, UZ',
+    lastSeenAt: new Date().toISOString(),
+    isCurrent: true,
+  },
+  {
+    id: 'session-phone',
+    device: 'Safari on iPhone',
+    location: 'Tashkent, UZ',
+    lastSeenAt: daysAgo(1).toISOString(),
+    isCurrent: false,
+  },
+];

@@ -4,7 +4,7 @@ import { useAuth } from '../../auth/AuthContext';
 import { demoAccount } from '../../data/demo';
 import { AvatarGlyph } from '../profile/AvatarGlyph';
 import { BrandMark } from '../ui/BrandMark';
-import { navItems } from './navigation';
+import { navigationFor } from './navigation';
 import './Sidebar.css';
 
 interface SidebarProps {
@@ -14,6 +14,7 @@ interface SidebarProps {
 
 export function Sidebar({ isOpen, onClose }: SidebarProps) {
   const { user, signOut } = useAuth();
+  const sections = user ? navigationFor(user.role) : [];
 
   return (
     <aside
@@ -33,41 +34,28 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
       </div>
 
       <nav className="sidebar__nav">
-        <p className="sidebar__section-label">Menu</p>
-        <ul>
-          {navItems.map(({ id, label, path, icon: Icon, enabled, tooltip, exact }) => (
-            <li key={id}>
-              {enabled ? (
-                <NavLink
-                  to={path}
-                  end={exact ?? false}
-                  className={({ isActive }) =>
-                    `sidebar__item${isActive ? ' sidebar__item--active' : ''}`
-                  }
-                  onClick={onClose}
-                >
-                  <Icon size={18} aria-hidden="true" />
-                  <span>{label}</span>
-                </NavLink>
-              ) : (
-                <span className="sidebar__tooltip-anchor">
-                  <button
-                    type="button"
-                    className="sidebar__item"
-                    disabled
-                    aria-describedby={`${id}-tooltip`}
+        {sections.map((section) => (
+          <div key={section.id} className="sidebar__section">
+            <p className="sidebar__section-label">{section.label}</p>
+            <ul>
+              {section.items.map(({ id, label, path, icon: Icon, exact }) => (
+                <li key={id}>
+                  <NavLink
+                    to={path}
+                    end={exact ?? false}
+                    className={({ isActive }) =>
+                      `sidebar__item${isActive ? ' sidebar__item--active' : ''}`
+                    }
+                    onClick={onClose}
                   >
                     <Icon size={18} aria-hidden="true" />
                     <span>{label}</span>
-                  </button>
-                  <span role="tooltip" id={`${id}-tooltip`} className="sidebar__tooltip">
-                    {tooltip ?? 'Coming soon'}
-                  </span>
-                </span>
-              )}
-            </li>
-          ))}
-        </ul>
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </nav>
 
       <div className="sidebar__footer">
@@ -76,7 +64,7 @@ export function Sidebar({ isOpen, onClose }: SidebarProps) {
             <AvatarGlyph preset={demoAccount.avatar} size={34} />
             <span className="sidebar__user-meta">
               <span className="sidebar__user-name">{user.username}</span>
-              <span className="sidebar__user-role">{demoAccount.cohortName}</span>
+              <span className="sidebar__user-role">{user.displayName}</span>
             </span>
           </NavLink>
         )}

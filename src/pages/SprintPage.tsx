@@ -1,14 +1,17 @@
 import { useMemo } from 'react';
 import { SprintGrid } from '../components/sprint/SprintGrid';
 import { PageHeader } from '../components/ui/Surface';
-import { demoProgress } from '../data/demo';
 import { buildJourney, summarise } from '../lib/sprintProgress';
+import { useAppData } from '../state/AppDataContext';
 import './SprintPage.css';
 
 export function SprintPage() {
+  const { progress } = useAppData();
+
   // Statuses are derived from stored progress on every render, never stored.
-  const cards = useMemo(() => buildJourney(demoProgress), []);
-  const summary = useMemo(() => summarise(demoProgress), []);
+  const cards = useMemo(() => buildJourney(progress), [progress]);
+  const summary = useMemo(() => summarise(progress), [progress]);
+  const granted = cards.filter((card) => card.unlockedBy === 'staff-grant');
 
   return (
     <div className="sprint-page">
@@ -44,6 +47,14 @@ export function SprintPage() {
         once both are submitted, and the next day opens at midnight. Task content
         will be added later.
       </p>
+
+      {granted.length > 0 && (
+        <p className="sprint-page__granted" role="status">
+          A Support Teacher opened{' '}
+          {granted.map((card) => card.title).join(', ')} for you. These stay open
+          and do not follow the usual order.
+        </p>
+      )}
 
       <SprintGrid cards={cards} />
     </div>

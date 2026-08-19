@@ -54,6 +54,8 @@ function tasksFor(record: DayRecord): JourneyCard['tasks'] {
  *  - Throttle: at most one day may open per calendar day, so a day whose
  *    predecessor was completed today stays locked until local midnight.
  *  - Missing a day costs nothing — the active card simply stays where it is.
+ *  - A day in `staffUnlockedDays` (an approved unlock request) opens
+ *    regardless of sequence or throttle, and stays open.
  *  - The Ending Point Test opens only after Day 30 is completed.
  */
 export function buildJourney(
@@ -91,13 +93,19 @@ export function buildJourney(
       record.speakingSubmitted || record.writingSubmitted || record.completedAt !== null;
 
     const derived = dayStatusFor(record);
+    const staffUnlocked = state.staffUnlockedDays.includes(day);
 
     let status: JourneyCard['status'];
     let lockReason: JourneyCard['lockReason'];
     let unlocksAt: string | undefined;
+    let unlockedBy: JourneyCard['unlockedBy'];
 
     if (derived === 'COMPLETED') {
       status = 'COMPLETED';
+    } else if (staffUnlocked) {
+      // An approved unlock request overrides both gates, permanently.
+      status = derived;
+      unlockedBy = 'staff-grant';
     } else if (!previousCompletedAt) {
       status = 'LOCKED';
       lockReason = day === 1 ? 'sprint-not-started' : 'previous-incomplete';
@@ -110,9 +118,14 @@ export function buildJourney(
       lockReason = 'previous-incomplete';
     } else {
       status = derived;
+      unlockedBy = 'sequence';
     }
 
-    if (status === 'CURRENT' || status === 'IN_PROGRESS') activeClaimed = true;
+    // Only the day reached through the normal sequence is the "active" card;
+    // a staff grant opens an extra door without moving the student.
+    if (unlockedBy === 'sequence' && (status === 'CURRENT' || status === 'IN_PROGRESS')) {
+      activeClaimed = true;
+    }
 
     cards.push({
       id: `day-${day}`,
@@ -124,10 +137,12 @@ export function buildJourney(
       status,
       points: record.points,
       maxPoints: POINTS_PER_DAY,
-      isActive: status === 'CURRENT' || status === 'IN_PROGRESS',
+      isActive:
+        unlockedBy === 'sequence' && (status === 'CURRENT' || status === 'IN_PROGRESS'),
       tasks: tasksFor(record),
       ...(lockReason ? { lockReason } : {}),
       ...(unlocksAt ? { unlocksAt } : {}),
+      ...(unlockedBy ? { unlockedBy } : {}),
     });
   }
 

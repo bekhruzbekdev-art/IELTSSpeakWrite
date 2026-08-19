@@ -28,16 +28,64 @@ Only the typed display name is kept (in `sessionStorage`); the password is
 discarded. `src/auth/AuthContext.tsx` is replaced wholesale when teacher-
 provisioned auth is built.
 
+## Roles
+
+Four roles, defined in `src/lib/permissions.ts`.
+
+| Role | Responsible for | Lands on |
+| --- | --- | --- |
+| Founder | Everything: analytics, audit logs, user management | `/admin` |
+| Support Teacher | Support chats, unlock request review, cohort progress | `/admin` |
+| Teacher | Live lesson attendance, AI score overrides, assigned students | `/admin/attendance` |
+| Student | The 30-day Sprint | `/sprint` |
+
+> **The role is not a security boundary.** With no server, it lives in the
+> browser and a determined user can change it. `permissions.ts` exists so the
+> UI has one place that decides who sees what, and so the future API can mirror
+> the same table. Nothing sensitive may rely on it until the API enforces it.
+
+The login form carries a role picker — a development control, and the only way
+to preview each surface without a backend.
+
 ## Routes
 
-| Route | Page |
-| --- | --- |
-| `/login` | Development preview login |
-| `/sprint` | 32-card journey (default after login) |
-| `/leaderboard` | Cohort podium and standings |
-| `/profile/learning` | Learning Profile analytics |
-| `/profile` | Account and Sprint statistics |
-| `/support`, `/settings` | "Coming soon" — sidebar entries disabled with a tooltip |
+| Route | Page | Requires |
+| --- | --- | --- |
+| `/login` | Development preview login | — |
+| `/sprint` | 32-card journey | `sprint.view` |
+| `/leaderboard` | Cohort podium and standings | `leaderboard.view` |
+| `/profile/learning` | Learning Profile analytics | `learning-profile.view` |
+| `/profile` | Account, Sprint stats, attendance rate | `profile.view` |
+| `/settings` | Theme, notifications, mic tester, sessions | `settings.view` |
+| `/support` | Student desk **or** staff review queue, by role | `support.ask` / `support.respond` / `unlock-request.review` |
+| `/admin` | Admin panel | `cohort.monitor` and friends |
+| `/admin/attendance` | Cohort attendance register | `attendance.manage` |
+
+Reaching a route the role lacks redirects to that role's home.
+
+## Support & day unlock requests
+
+Students get two tabs: **Ask a Question** (a message thread to Support) and
+**Day Unlock Request** (a modal listing only the days that are actually locked,
+with a required reason).
+
+Support Teachers and the Founder see the review queue instead. **Approving is
+what opens the day** — it writes to `staffUnlockedDays`, which
+`buildJourney()` treats as bypassing both the sequential rule and the midnight
+throttle, permanently. A granted day is an extra open door: it does not move
+the student's active card, and it is labelled "Opened by staff" on the grid.
+
+The mock store holds one student's progress, so every approval lands on it. A
+real implementation applies the unlock to `request.studentId`.
+
+## Attendance
+
+`/admin/attendance` — pick a cohort and date, then mark each student
+`Present` / `Late` / `Absent` / `Excused`. History feeds the attendance
+percentage shown on the student profile.
+
+Rate = `(present + late) / (present + late + absent)`. Excused absences are
+removed from the denominator rather than counted against the student.
 
 ## Unlock rules
 
@@ -114,6 +162,17 @@ npx vercel --prod
 
 Or import the repository at [vercel.com/new](https://vercel.com/new) — no CLI or
 token needed, and every push redeploys.
+
+## State
+
+`src/state/AppDataContext.tsx` is the stand-in for the API: progress, unlock
+requests, support threads, attendance and notification preferences. It is
+**in-memory only** — a page reload resets it, which is deliberate, so the mock
+never drifts into a half-real state. Every mutator maps to one future endpoint.
+
+Because it sits above the router, signing out and back in as another role keeps
+the data — which is how the request → approve → unlocked flow can be walked in
+one session.
 
 ## Known data inconsistencies
 

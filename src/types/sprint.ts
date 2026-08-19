@@ -10,6 +10,9 @@ export type TaskKind = 'speaking' | 'writing';
 /** Why a card is locked — drives the message the student sees. */
 export type LockReason = 'previous-incomplete' | 'daily-throttle' | 'sprint-not-started';
 
+/** How a card came to be open. */
+export type UnlockSource = 'sequence' | 'staff-grant';
+
 export interface DayRecord {
   /** 1–30. */
   day: number;
@@ -32,6 +35,11 @@ export interface SprintProgressState {
   startingTest: MilestoneRecord;
   days: DayRecord[];
   endingTest: MilestoneRecord;
+  /**
+   * Days opened by an approved unlock request. These bypass both the
+   * sequential rule and the midnight throttle, and are permanent.
+   */
+  staffUnlockedDays: number[];
 }
 
 /** A card as the UI renders it — fully derived, never stored. */
@@ -50,6 +58,8 @@ export interface JourneyCard {
   /** True for the single card the student is currently on. */
   isActive: boolean;
   lockReason?: LockReason;
+  /** How this card became enterable. */
+  unlockedBy?: UnlockSource;
   /** ISO timestamp a throttled card opens at. */
   unlocksAt?: string;
   tasks: { kind: TaskKind; submitted: boolean }[];

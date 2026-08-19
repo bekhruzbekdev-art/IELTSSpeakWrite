@@ -47,6 +47,10 @@ export function SprintCard({ card, onSelect, hint }: SprintCardProps) {
 
       <span className="sprint-card__title">{card.title}</span>
 
+      {card.unlockedBy === 'staff-grant' && (
+        <span className="sprint-card__granted">Opened by staff</span>
+      )}
+
       <span className="sprint-card__meta">
         {isCompleted ? (
           <span className="sprint-card__points">

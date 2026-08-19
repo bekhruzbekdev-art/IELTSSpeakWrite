@@ -32,6 +32,10 @@
   overflow-y: auto;
 }
 
+.sidebar__section + .sidebar__section {
+  margin-top: var(--space-5);
+}
+
 .sidebar__section-label {
   padding: 0 var(--space-3) var(--space-2);
   font-size: var(--text-xs);

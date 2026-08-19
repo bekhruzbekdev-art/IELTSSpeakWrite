@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { App } from './App';
 import { AuthProvider } from './auth/AuthContext';
+import { AppDataProvider } from './state/AppDataContext';
 import { ThemeProvider } from './theme/ThemeContext';
 import './styles/global.css';
 
@@ -16,9 +17,11 @@ createRoot(container).render(
   <StrictMode>
     <ThemeProvider>
       <AuthProvider>
-        <BrowserRouter>
-          <App />
-        </BrowserRouter>
+        <AppDataProvider>
+          <BrowserRouter>
+            <App />
+          </BrowserRouter>
+        </AppDataProvider>
       </AuthProvider>
     </ThemeProvider>
   </StrictMode>,
