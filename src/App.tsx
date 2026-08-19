@@ -1,7 +1,10 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
 import { AppLayout } from './components/layout/AppLayout';
 import { ComingSoonPage } from './pages/ComingSoonPage';
+import { LeaderboardPage } from './pages/LeaderboardPage';
+import { LearningProfilePage } from './pages/LearningProfilePage';
 import { LoginPage } from './pages/LoginPage';
+import { ProfilePage } from './pages/ProfilePage';
 import { SprintPage } from './pages/SprintPage';
 import { RequireAuth } from './routes/RequireAuth';
 
@@ -13,15 +16,12 @@ export function App() {
       <Route element={<RequireAuth />}>
         <Route element={<AppLayout />}>
           <Route path="/sprint" element={<SprintPage />} />
+          <Route path="/leaderboard" element={<LeaderboardPage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+          <Route path="/profile/learning" element={<LearningProfilePage />} />
 
-          {/* Placeholder destinations — the sidebar entries stay disabled. */}
-          <Route path="/leaderboard" element={<ComingSoonPage title="Leaderboard" />} />
-          <Route
-            path="/learning-profile"
-            element={<ComingSoonPage title="Learning Profile" />}
-          />
+          {/* Not built yet — the sidebar entries stay disabled. */}
           <Route path="/support" element={<ComingSoonPage title="Support" />} />
-          <Route path="/profile" element={<ComingSoonPage title="Profile" />} />
           <Route path="/settings" element={<ComingSoonPage title="Settings" />} />
         </Route>
       </Route>

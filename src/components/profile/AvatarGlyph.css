@@ -1,0 +1,12 @@
+.avatar-glyph {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-primary-soft);
+  overflow: hidden;
+}
+
+.avatar-glyph svg {
+  fill: var(--color-primary-text);
+}

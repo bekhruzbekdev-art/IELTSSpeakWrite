@@ -9,7 +9,7 @@ export function BrandMark({ variant = 'inline' }: BrandMarkProps) {
   return (
     <div className={`brand brand--${variant}`}>
       <span className="brand__badge" aria-hidden="true">
-        SW
+        ✦
       </span>
       <span className="brand__words">
         <span className="brand__line brand__line--top">IELTS</span>

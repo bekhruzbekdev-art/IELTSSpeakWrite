@@ -1,24 +1,18 @@
 import { useEffect, useRef, useState } from 'react';
-import {
-  LOCKED_CARD_MESSAGE,
-  PLACEHOLDER_CONTENT_MESSAGE,
-} from '../../data/sprintCards';
-import type { SprintCard as SprintCardModel } from '../../types/sprint';
+import { LOCK_MESSAGES } from '../../lib/sprintProgress';
+import type { JourneyCard } from '../../types/sprint';
 import { LockedCard } from './LockedCard';
 import { MilestoneCard } from './MilestoneCard';
 import { SprintCard } from './SprintCard';
 import './SprintGrid.css';
 
 interface SprintGridProps {
-  cards: SprintCardModel[];
+  cards: JourneyCard[];
 }
 
-const HINT_DURATION_MS = 2400;
+const HINT_DURATION_MS = 2600;
+const OPEN_CARD_MESSAGE = 'Content will be added later.';
 
-/**
- * Lays out the 32-card journey and owns the transient click hint.
- * There is no unlock logic here — a card's status comes from static config.
- */
 export function SprintGrid({ cards }: SprintGridProps) {
   const [hint, setHint] = useState<{ cardId: string; message: string } | null>(null);
   const timeoutRef = useRef<number | null>(null);
@@ -30,9 +24,11 @@ export function SprintGrid({ cards }: SprintGridProps) {
     [],
   );
 
-  const showHint = (card: SprintCardModel) => {
+  const showHint = (card: JourneyCard) => {
     const message =
-      card.status === 'locked' ? LOCKED_CARD_MESSAGE : PLACEHOLDER_CONTENT_MESSAGE;
+      card.status === 'LOCKED'
+        ? LOCK_MESSAGES[card.lockReason ?? 'previous-incomplete']
+        : OPEN_CARD_MESSAGE;
 
     setHint({ cardId: card.id, message });
 
@@ -49,7 +45,7 @@ export function SprintGrid({ cards }: SprintGridProps) {
 
           return (
             <li key={card.id} className="sprint-grid__cell">
-              {card.status === 'locked' ? (
+              {card.status === 'LOCKED' ? (
                 <LockedCard card={card} onSelect={showHint} hint={cardHint} />
               ) : isMilestone ? (
                 <MilestoneCard card={card} onSelect={showHint} hint={cardHint} />

@@ -1,21 +1,21 @@
-import { Flag, Lock, Trophy } from 'lucide-react';
-import type { SprintCard as SprintCardModel } from '../../types/sprint';
+import { Flag, Trophy } from 'lucide-react';
+import type { JourneyCard } from '../../types/sprint';
+import { StatusBadge } from '../ui/StatusBadge';
 import './SprintCard.css';
 
 interface LockedCardProps {
-  card: SprintCardModel;
-  /** Fired on click. Locked cards are never enterable. */
-  onSelect: (card: SprintCardModel) => void;
+  card: JourneyCard;
+  onSelect: (card: JourneyCard) => void;
   hint?: string | undefined;
 }
 
-function milestoneIcon(card: SprintCardModel) {
+function milestoneIcon(card: JourneyCard) {
   if (card.type === 'starting-test') return Flag;
   if (card.type === 'ending-test') return Trophy;
   return null;
 }
 
-/** Any card the student cannot enter yet — days or milestones alike. */
+/** Any card the student cannot enter yet. Never navigable. */
 export function LockedCard({ card, onSelect, hint }: LockedCardProps) {
   const Icon = milestoneIcon(card);
   const isMilestone = Icon !== null;
@@ -24,7 +24,9 @@ export function LockedCard({ card, onSelect, hint }: LockedCardProps) {
     <button
       type="button"
       className={`sprint-card sprint-card--locked${
-        isMilestone ? ' sprint-card--milestone' : ''
+        isMilestone ? ` sprint-card--milestone sprint-card--${
+          card.type === 'starting-test' ? 'start' : 'finish'
+        }` : ''
       }`}
       aria-disabled="true"
       aria-label={`${card.title} — locked`}
@@ -34,23 +36,19 @@ export function LockedCard({ card, onSelect, hint }: LockedCardProps) {
 
       <span className="sprint-card__head">
         <span className="sprint-card__index">
-          {Icon ? <Icon size={15} aria-hidden="true" /> : (card.day ?? card.index)}
+          {Icon ? <Icon size={15} aria-hidden="true" /> : card.day}
         </span>
-        {isMilestone && (
-          <span className="sprint-card__milestone-tag">
-            {card.type === 'starting-test' ? 'Start' : 'Finish'}
-          </span>
-        )}
       </span>
 
       <span className="sprint-card__title">{card.title}</span>
-      {/* Milestones keep their descriptive label; a locked day is described
-          by the "Locked" footer alone. */}
-      {isMilestone && <span className="sprint-card__subtitle">{card.subtitle}</span>}
+      {isMilestone && (
+        <span className="sprint-card__subtitle">
+          {card.type === 'ending-test' ? 'Opens after Day 30' : card.subtitle}
+        </span>
+      )}
 
       <span className="sprint-card__footer">
-        <Lock size={13} aria-hidden="true" />
-        Locked
+        <StatusBadge status="LOCKED" />
       </span>
     </button>
   );

@@ -1,31 +1,65 @@
-/**
- * Types for the Sprint journey.
- *
- * This is a UI-only shape for the current stage. The real persistence
- * schema is intentionally not designed yet.
- */
+/** Types for the 32-card Sprint journey. */
 
-/** A card is either one of the two milestone tests or one of the 30 days. */
 export type SprintCardType = 'starting-test' | 'day' | 'ending-test';
 
-/**
- * Visual state only — there is no unlock business logic at this stage.
- * `available` is the single card a student could enter, `complete` exists
- * for the visual system and is not used by the current static config.
- */
-export type SprintCardStatus = 'available' | 'locked' | 'complete';
+export type SprintCardStatus = 'LOCKED' | 'CURRENT' | 'IN_PROGRESS' | 'COMPLETED';
 
-export interface SprintCard {
-  /** Stable identifier, e.g. `starting-test`, `day-7`, `ending-test`. */
+/** Every day carries exactly two tasks. */
+export type TaskKind = 'speaking' | 'writing';
+
+/** Why a card is locked — drives the message the student sees. */
+export type LockReason = 'previous-incomplete' | 'daily-throttle' | 'sprint-not-started';
+
+export interface DayRecord {
+  /** 1–30. */
+  day: number;
+  speakingSubmitted: boolean;
+  writingSubmitted: boolean;
+  /** Set once both tasks are in. */
+  completedAt: string | null;
+  /** 0–10. */
+  points: number;
+}
+
+export interface MilestoneRecord {
+  completedAt: string | null;
+  points: number;
+}
+
+/** The raw stored progress. Card status is always derived from this. */
+export interface SprintProgressState {
+  startedOn: string;
+  startingTest: MilestoneRecord;
+  days: DayRecord[];
+  endingTest: MilestoneRecord;
+}
+
+/** A card as the UI renders it — fully derived, never stored. */
+export interface JourneyCard {
   id: string;
   /** Position in the journey, 1–32. */
   index: number;
   type: SprintCardType;
-  /** Card heading, e.g. `Starting Point Test` or `Day 1`. */
   title: string;
-  /** Short supporting label, e.g. `Baseline assessment`. */
   subtitle: string;
-  /** 1–30 for day cards; absent on the two milestone tests. */
-  day?: number;
   status: SprintCardStatus;
+  /** Present on day cards only. */
+  day?: number;
+  points: number;
+  maxPoints: number;
+  /** True for the single card the student is currently on. */
+  isActive: boolean;
+  lockReason?: LockReason;
+  /** ISO timestamp a throttled card opens at. */
+  unlocksAt?: string;
+  tasks: { kind: TaskKind; submitted: boolean }[];
+}
+
+export interface SprintSummary {
+  currentDay: number;
+  completedDays: number;
+  totalDays: number;
+  points: number;
+  maxPoints: number;
+  streak: number;
 }

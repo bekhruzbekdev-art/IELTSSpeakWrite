@@ -30,7 +30,32 @@
   --color-gold: #f59e0b;
 
   --color-success-soft: rgba(16, 185, 129, 0.12);
+  --color-warning-soft: rgba(245, 158, 11, 0.12);
+  --color-error-soft: rgba(239, 68, 68, 0.1);
   --color-gold-soft: rgba(245, 158, 11, 0.12);
+
+  /*
+   * Text-safe status inks. The fill colours above sit below 3:1 on the light
+   * surface (validated: #10B981 2.54:1, #F59E0B 2.15:1), so they are used for
+   * marks with an icon + label only — never for small text. These are the
+   * WCAG-AA-passing inks for status text.
+   */
+  --color-success-text: #047857;
+  --color-warning-text: #b45309;
+  --color-error-text: #b91c1c;
+  --color-gold-text: #b45309;
+  --color-primary-text: #4f46e5;
+
+  /* Podium */
+  --color-podium-gold: #f59e0b;
+  --color-podium-silver: #94a3b8;
+  --color-podium-bronze: #a97142;
+
+  /* Charts: one categorical hue; magnitude is carried by mark length. */
+  --chart-mark: #4f46e5;
+  --chart-mark-muted: #cbd5e1;
+  --chart-track: #eef2f7;
+  --chart-grid: #e2e8f0;
 
   --color-locked-bg: #f1f5f9;
   --color-locked-border: #e2e8f0;
@@ -119,8 +144,28 @@
   --color-error: #ef4444;
   --color-gold: #f59e0b;
 
+  --color-gold: #fbbf24;
+
   --color-success-soft: rgba(16, 185, 129, 0.16);
-  --color-gold-soft: rgba(245, 158, 11, 0.16);
+  --color-warning-soft: rgba(245, 158, 11, 0.16);
+  --color-error-soft: rgba(239, 68, 68, 0.16);
+  --color-gold-soft: rgba(251, 191, 36, 0.16);
+
+  --color-success-text: #34d399;
+  --color-warning-text: #fbbf24;
+  --color-error-text: #f87171;
+  --color-gold-text: #fbbf24;
+  /* #6366F1 is 3.97:1 on #111827 — large text only. This step is 5.95:1. */
+  --color-primary-text: #818cf8;
+
+  --color-podium-gold: #fbbf24;
+  --color-podium-silver: #cbd5e1;
+  --color-podium-bronze: #d4a373;
+
+  --chart-mark: #6366f1;
+  --chart-mark-muted: #64748b;
+  --chart-track: #172033;
+  --chart-grid: #1f2a3d;
 
   --color-locked-bg: #131c2e;
   --color-locked-border: #1f2a3d;

@@ -1,0 +1,124 @@
+.podium {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: end;
+  gap: var(--space-4);
+  max-width: 640px;
+  margin: 0 auto;
+  padding-top: var(--space-6);
+  /* The pillars are open-bottomed; this is the floor they stand on. */
+  border-bottom: 2px solid var(--color-border-strong);
+}
+
+.podium__column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.podium__person {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+}
+
+.podium__crown {
+  color: var(--color-podium-gold);
+}
+
+.podium__avatar {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-border);
+  background-color: var(--color-surface-muted);
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  font-weight: var(--weight-bold);
+}
+
+.podium__column--gold .podium__avatar {
+  width: 58px;
+  height: 58px;
+  border-color: var(--color-podium-gold);
+  background-color: var(--color-gold-soft);
+  color: var(--color-gold-text);
+  font-size: var(--text-md);
+}
+
+.podium__column--silver .podium__avatar {
+  border-color: var(--color-podium-silver);
+}
+
+.podium__column--bronze .podium__avatar {
+  border-color: var(--color-podium-bronze);
+}
+
+.podium__name {
+  font-size: var(--text-base);
+  font-weight: var(--weight-semibold);
+  color: var(--color-text);
+}
+
+.podium__points {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-secondary);
+}
+
+.podium__pillar {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+  background-color: var(--color-surface-muted);
+  border: 1px solid var(--color-border);
+  border-bottom: none;
+}
+
+.podium__column--gold .podium__pillar {
+  height: 116px;
+  background-color: var(--color-gold-soft);
+  border-color: var(--color-podium-gold);
+}
+
+.podium__column--silver .podium__pillar {
+  height: 86px;
+}
+
+.podium__column--bronze .podium__pillar {
+  height: 64px;
+}
+
+.podium__rank {
+  font-size: var(--text-2xl);
+  font-weight: var(--weight-bold);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-secondary);
+}
+
+.podium__column--gold .podium__rank {
+  color: var(--color-gold-text);
+}
+
+@media (max-width: 560px) {
+  .podium {
+    gap: var(--space-2);
+  }
+
+  .podium__column--gold .podium__avatar {
+    width: 48px;
+    height: 48px;
+    font-size: var(--text-sm);
+  }
+
+  .podium__name {
+    font-size: var(--text-sm);
+  }
+}

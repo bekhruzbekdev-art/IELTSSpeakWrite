@@ -1,28 +1,51 @@
+import { useMemo } from 'react';
 import { SprintGrid } from '../components/sprint/SprintGrid';
-import { sprintCards } from '../data/sprintCards';
+import { PageHeader } from '../components/ui/Surface';
+import { demoProgress } from '../data/demo';
+import { buildJourney, summarise } from '../lib/sprintProgress';
 import './SprintPage.css';
 
 export function SprintPage() {
+  // Statuses are derived from stored progress on every render, never stored.
+  const cards = useMemo(() => buildJourney(demoProgress), []);
+  const summary = useMemo(() => summarise(demoProgress), []);
+
   return (
     <div className="sprint-page">
-      <header className="sprint-page__header">
-        <div>
-          <h1 className="sprint-page__title">IELTS SpeakWrite Sprint</h1>
-          <p className="sprint-page__subtitle">
-            30 Days of Speaking + Writing Practice
-          </p>
-        </div>
+      <PageHeader
+        title="IELTS SpeakWrite Sprint"
+        subtitle="30 Days of Speaking + Writing Practice"
+        action={
+          <dl className="sprint-page__stats">
+            <div>
+              <dt>Day</dt>
+              <dd>
+                {summary.currentDay}
+                <span> / {summary.totalDays}</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Points</dt>
+              <dd>
+                {summary.points}
+                <span> / {summary.maxPoints}</span>
+              </dd>
+            </div>
+            <div>
+              <dt>Streak</dt>
+              <dd>{summary.streak}</dd>
+            </div>
+          </dl>
+        }
+      />
 
-        <ol className="sprint-page__journey" aria-label="Journey overview">
-          <li className="sprint-page__journey-step">Start</li>
-          <li className="sprint-page__journey-step">30 Days</li>
-          <li className="sprint-page__journey-step">End</li>
-        </ol>
-      </header>
+      <p className="sprint-page__notice">
+        Each day holds a Speaking and a Writing task. A day counts as complete
+        once both are submitted, and the next day opens at midnight. Task content
+        will be added later.
+      </p>
 
-      <p className="sprint-page__notice">Content will be added later.</p>
-
-      <SprintGrid cards={sprintCards} />
+      <SprintGrid cards={cards} />
     </div>
   );
 }

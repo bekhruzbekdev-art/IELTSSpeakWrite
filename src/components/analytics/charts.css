@@ -1,0 +1,247 @@
+/*
+ * Chart primitives.
+ *
+ * Colour rules in force here:
+ *  - one categorical hue (--chart-mark); magnitude is carried by mark length
+ *  - recessive track and grid
+ *  - every mark is directly labelled, which is the relief channel required
+ *    where a fill sits below 3:1 on its surface
+ *  - text always wears text tokens, never the series colour
+ */
+
+.chart {
+  margin: 0;
+}
+
+.chart__title {
+  font-size: var(--text-md);
+  font-weight: var(--weight-bold);
+  letter-spacing: -0.01em;
+  color: var(--color-text);
+}
+
+.chart__description {
+  margin-top: var(--space-1);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.chart__scale {
+  margin-top: var(--space-3);
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+.chart__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+  margin: var(--space-3) 0 var(--space-4);
+}
+
+.chart__legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+/* Shape distinguishes the two readings, not colour alone. */
+.chart__dot {
+  display: inline-block;
+  width: 11px;
+  height: 11px;
+  border-radius: var(--radius-pill);
+  flex-shrink: 0;
+}
+
+.chart__dot--start {
+  border: 2px solid var(--chart-mark-muted);
+  background-color: var(--color-surface);
+}
+
+.chart__dot--current {
+  background-color: var(--chart-mark);
+  box-shadow: 0 0 0 2px var(--color-surface);
+}
+
+/* ---------- Dumbbell ---------- */
+.dumbbell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.dumbbell__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 168px minmax(0, 1fr) 168px;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.dumbbell__row:hover {
+  background-color: var(--color-surface-muted);
+}
+
+.dumbbell__label {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+
+.dumbbell__track {
+  position: relative;
+  height: 14px;
+  border-radius: var(--radius-pill);
+  background-color: var(--chart-track);
+}
+
+.dumbbell__connector {
+  position: absolute;
+  top: 50%;
+  height: 4px;
+  border-radius: var(--radius-pill);
+  background-color: var(--chart-mark);
+  opacity: 0.35;
+  transform: translateY(-50%);
+}
+
+.dumbbell__marker {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dumbbell__values {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-secondary);
+}
+
+.dumbbell__to {
+  font-weight: var(--weight-bold);
+  color: var(--color-text);
+}
+
+.dumbbell__arrow {
+  color: var(--color-border-strong);
+}
+
+.dumbbell__delta {
+  min-width: 42px;
+  padding: 1px var(--space-2);
+  border-radius: var(--radius-pill);
+  background-color: var(--color-surface-muted);
+  color: var(--color-text-secondary);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-semibold);
+  text-align: center;
+}
+
+.dumbbell__delta--up {
+  background-color: var(--color-success-soft);
+  color: var(--color-success-text);
+}
+
+/* ---------- Bars ---------- */
+.bars {
+  display: flex;
+  flex-direction: column;
+  /* 2px surface gap between adjacent bars */
+  gap: var(--space-2);
+  margin-top: var(--space-4);
+}
+
+.bars__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr) 48px;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.bars__row:hover {
+  background-color: var(--color-surface-muted);
+}
+
+.bars__label {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+}
+
+.bars__track {
+  height: 14px;
+  border-radius: var(--radius-pill);
+  background-color: var(--chart-track);
+  overflow: hidden;
+}
+
+.bars__fill {
+  display: block;
+  height: 100%;
+  /* 4px rounded data-end, anchored flat to the baseline */
+  border-radius: 0 4px 4px 0;
+  background-color: var(--chart-mark);
+}
+
+.bars__value {
+  font-size: var(--text-sm);
+  font-weight: var(--weight-semibold);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  color: var(--color-text);
+}
+
+/* ---------- Shared hover tooltip ---------- */
+.dumbbell__row[data-tooltip]::after,
+.bars__row[data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: var(--space-4);
+  bottom: calc(100% - var(--space-1));
+  z-index: var(--z-tooltip);
+  width: max-content;
+  max-width: 260px;
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-sm);
+  background-color: var(--color-text);
+  color: var(--color-text-inverse);
+  font-size: var(--text-xs);
+  font-weight: var(--weight-medium);
+  box-shadow: var(--shadow-md);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-fast);
+}
+
+.dumbbell__row:hover::after,
+.bars__row:hover::after {
+  opacity: 1;
+}
+
+@media (max-width: 720px) {
+  .dumbbell__row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-2);
+  }
+
+  .dumbbell__values {
+    justify-content: flex-start;
+  }
+
+  .bars__row {
+    grid-template-columns: 72px minmax(0, 1fr) 40px;
+    gap: var(--space-2);
+  }
+}

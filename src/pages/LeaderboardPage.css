@@ -1,0 +1,18 @@
+.leaderboard-page {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.leaderboard-page__privacy {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.leaderboard-page__privacy svg {
+  flex-shrink: 0;
+  margin-top: 3px;
+}
