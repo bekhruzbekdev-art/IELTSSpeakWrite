@@ -1,12 +1,14 @@
 import { useMemo } from 'react';
 import { SprintGrid } from '../components/sprint/SprintGrid';
 import { PageHeader } from '../components/ui/Surface';
+import { focusesFor } from '../lib/adaptiveSprint';
 import { buildJourney, summarise } from '../lib/sprintProgress';
 import { useAppData } from '../state/AppDataContext';
 import './SprintPage.css';
 
 export function SprintPage() {
-  const { progress } = useAppData();
+  const { progress, learningProfileNote } = useAppData();
+  const focuses = focusesFor(learningProfileNote);
 
   // Statuses are derived from stored progress on every render, never stored.
   const cards = useMemo(() => buildJourney(progress), [progress]);
@@ -47,6 +49,21 @@ export function SprintPage() {
         once both are submitted, and the next day opens at midnight. Task content
         will be added later.
       </p>
+
+      {focuses.length > 0 && (
+        <section className="sprint-page__adaptive">
+          <p className="sprint-page__adaptive-title">
+            Your Starting Point Test set these priorities for the first days
+          </p>
+          <ul className="sprint-page__adaptive-tags">
+            {focuses.map((focus) => (
+              <li key={focus.id} title={focus.because}>
+                {focus.label}
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {granted.length > 0 && (
         <p className="sprint-page__granted" role="status">

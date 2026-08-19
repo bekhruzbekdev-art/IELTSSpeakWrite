@@ -1,6 +1,7 @@
 import { Menu } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Navigate, Outlet, useLocation } from 'react-router-dom';
+import { useAppData } from '../../state/AppDataContext';
 import { BrandMark } from '../ui/BrandMark';
 import { ThemeToggle } from '../ui/ThemeToggle';
 import { Sidebar } from './Sidebar';
@@ -9,6 +10,7 @@ import './AppLayout.css';
 export function AppLayout() {
   const [isDrawerOpen, setDrawerOpen] = useState(false);
   const location = useLocation();
+  const { examMode, startingPoint } = useAppData();
 
   const closeDrawer = useCallback(() => setDrawerOpen(false), []);
 
@@ -27,6 +29,23 @@ export function AppLayout() {
     window.addEventListener('keydown', onKeyDown);
     return () => window.removeEventListener('keydown', onKeyDown);
   }, [isDrawerOpen]);
+
+  /*
+   * EXAM MODE: the sidebar and top bar are removed outright, and any route
+   * outside the paper is bounced straight back to it — hiding the chrome
+   * alone would still leave a typed URL as a way out.
+   */
+  if (examMode) {
+    const onExamRoute = location.pathname.startsWith('/sprint/starting-point/');
+
+    if (!onExamRoute) {
+      const activeMock =
+        startingPoint.speaking.status === 'in-progress' ? 'speaking' : 'writing';
+      return <Navigate to={`/sprint/starting-point/${activeMock}`} replace />;
+    }
+
+    return <Outlet />;
+  }
 
   return (
     <div className="app-layout">

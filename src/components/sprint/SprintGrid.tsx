@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { LOCK_MESSAGES } from '../../lib/sprintProgress';
 import type { JourneyCard } from '../../types/sprint';
 import { LockedCard } from './LockedCard';
@@ -16,6 +17,7 @@ const OPEN_CARD_MESSAGE = 'Content will be added later.';
 export function SprintGrid({ cards }: SprintGridProps) {
   const [hint, setHint] = useState<{ cardId: string; message: string } | null>(null);
   const timeoutRef = useRef<number | null>(null);
+  const navigate = useNavigate();
 
   useEffect(
     () => () => {
@@ -25,6 +27,12 @@ export function SprintGrid({ cards }: SprintGridProps) {
   );
 
   const showHint = (card: JourneyCard) => {
+    // The Starting Point Test is the one card with somewhere to go.
+    if (card.type === 'starting-test') {
+      navigate('/sprint/starting-point');
+      return;
+    }
+
     const message =
       card.status === 'LOCKED'
         ? LOCK_MESSAGES[card.lockReason ?? 'previous-incomplete']

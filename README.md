@@ -163,6 +163,58 @@ npx vercel --prod
 Or import the repository at [vercel.com/new](https://vercel.com/new) — no CLI or
 token needed, and every push redeploys.
 
+## Starting Point Test
+
+The diagnostic lives at `/sprint/starting-point` — two mocks, either order.
+Completing both makes the test read-only and sets the baseline.
+
+**Exam mode.** Starting either mock removes the sidebar and top bar, and any
+route outside the paper is bounced back to it — hiding the chrome alone would
+leave a typed URL as a way out. There is deliberately no coaching inside the
+shell: no hints, no vocabulary help, no running feedback.
+
+**Auto-save.** Progress goes to `localStorage` (`isws.starting-point.v1`),
+debounced on keystrokes. Submissions are written **synchronously**, because a
+submit is immediately followed by a navigation and a debounced write would be
+lost; `pagehide`/`beforeunload` flush anything still pending.
+
+**Speaking** (`~15 min`) runs a strict sequence with no manual Next button:
+Play examiner → mic opens by itself → `Stop answer` → next prompt. The
+examiner speaks through the browser's speech synthesiser (no audio files
+ship), falling back to a timed read where that is unavailable. Part 2 gives a
+60-second preparation window with the mic disabled, starts recording on its
+own, and stops itself at 2:00. Missing microphone permission does not halt the
+test — answers are still timed, and the result says so.
+
+**Writing** (`60:00`) is a CBT-style two-pane layout with Task 1 / Task 2 tabs,
+per-task word counters, a `✓ Saved` indicator, and automatic submission at
+`00:00`. Task 1's chart is drawn as inline SVG so it stays legible in both
+themes.
+
+### Scoring — read this before trusting a band
+
+`src/lib/analysis.ts` is a **heuristic, not a model**. No scoring API is wired
+up, so rather than invent bands it derives an indicative range from what the
+client can actually measure: speaking duration per part and prompts answered;
+word counts against the minimums, paragraphing, sentence length, and a small
+set of literal pattern checks for the error review. Criteria that genuinely
+need a transcript — lexical resource, pronunciation — report that they were not
+assessed instead of guessing, and every result shows a `confidence` figure.
+
+The examiner contract is already fixed: `src/lib/examinerPrompts.ts` holds both
+system prompts, and the TypeScript types in `src/types/exam.ts` mirror their
+JSON exactly. Swapping in the real examiner means implementing one function
+that returns `SpeakingAnalysis` / `WritingAnalysis`; nothing downstream changes.
+
+### Adaptive engine
+
+On submission the two analyses are folded into the **AI Learning Profile
+Note** (`buildLearningProfileNote`): weakest sub-skills, recurring error tags
+and priorities. It is surfaced at `/profile/learning`, and
+`src/lib/adaptiveSprint.ts` maps those weaknesses onto focus tags shown on the
+Sprint page, so the early days lead with whatever the diagnostic found weakest.
+It picks emphasis — it does not invent lesson content.
+
 ## State
 
 `src/state/AppDataContext.tsx` is the stand-in for the API: progress, unlock

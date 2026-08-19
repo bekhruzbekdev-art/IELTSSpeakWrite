@@ -8,6 +8,9 @@ import { LoginPage } from './pages/LoginPage';
 import { ProfilePage } from './pages/ProfilePage';
 import { SettingsPage } from './pages/SettingsPage';
 import { SprintPage } from './pages/SprintPage';
+import { SpeakingMockPage } from './pages/exam/SpeakingMockPage';
+import { StartingPointPage } from './pages/exam/StartingPointPage';
+import { WritingMockPage } from './pages/exam/WritingMockPage';
 import { SupportPage } from './pages/SupportPage';
 import { AdminHomePage } from './pages/admin/AdminHomePage';
 import { AttendancePage } from './pages/admin/AttendancePage';
@@ -31,6 +34,15 @@ export function App() {
           {/* Student surfaces */}
           <Route element={<RequirePermission anyOf={['sprint.view']} />}>
             <Route path="/sprint" element={<SprintPage />} />
+            <Route path="/sprint/starting-point" element={<StartingPointPage />} />
+            <Route
+              path="/sprint/starting-point/speaking"
+              element={<SpeakingMockPage />}
+            />
+            <Route
+              path="/sprint/starting-point/writing"
+              element={<WritingMockPage />}
+            />
           </Route>
           <Route element={<RequirePermission anyOf={['leaderboard.view']} />}>
             <Route path="/leaderboard" element={<LeaderboardPage />} />

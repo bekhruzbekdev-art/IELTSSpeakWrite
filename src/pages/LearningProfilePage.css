@@ -27,3 +27,13 @@
     grid-template-columns: minmax(0, 1fr);
   }
 }
+
+.learning-page__empty {
+  padding: var(--space-5);
+  border: 1px dashed var(--color-border-strong);
+  border-radius: var(--radius-md);
+  font-size: var(--text-sm);
+  line-height: 1.6;
+  color: var(--color-text-secondary);
+  text-align: center;
+}

@@ -2,14 +2,20 @@ import { BandDumbbell } from '../components/analytics/BandDumbbell';
 import { BarChart, type BarDatum } from '../components/analytics/BarChart';
 import { ComparisonPanel } from '../components/analytics/ComparisonPanel';
 import { InsightCard } from '../components/analytics/InsightCard';
+import { DiagnosticNote } from '../components/analytics/DiagnosticNote';
 import { ProgressBanner } from '../components/analytics/ProgressBanner';
 import { AiPreviewNote } from '../components/ui/AiScoreBadge';
 import { formatBand } from '../lib/format';
 import { PageHeader, SectionHeading, Surface } from '../components/ui/Surface';
 import { demoLearningProfile as profile } from '../data/demo';
+import { focusesFor } from '../lib/adaptiveSprint';
+import { useAppData } from '../state/AppDataContext';
 import './LearningProfilePage.css';
 
 export function LearningProfilePage() {
+  const { learningProfileNote } = useAppData();
+  const focuses = focusesFor(learningProfileNote);
+
   const errorData: BarDatum[] = profile.errorTrend.map((point) => ({
     id: `error-${point.day}`,
     label: point.label,
@@ -33,6 +39,27 @@ export function LearningProfilePage() {
       />
 
       <AiPreviewNote />
+
+      {learningProfileNote ? (
+        <Surface padding="lg">
+          <SectionHeading
+            title="AI Learning Profile Note"
+            description="Generated from your Starting Point Test. This is what the Sprint adapts to."
+          />
+          <DiagnosticNote note={learningProfileNote} focuses={focuses} />
+        </Surface>
+      ) : (
+        <Surface padding="lg">
+          <SectionHeading
+            title="AI Learning Profile Note"
+            description="Not generated yet."
+          />
+          <p className="learning-page__empty">
+            Complete the Starting Point Test to generate your diagnostic note and
+            let the early Sprint days adapt to your weakest areas.
+          </p>
+        </Surface>
+      )}
 
       <ProgressBanner
         startingBand={profile.startingBand}
