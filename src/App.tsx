@@ -11,6 +11,7 @@ import { SprintPage } from './pages/SprintPage';
 import { SpeakingMockPage } from './pages/exam/SpeakingMockPage';
 import { StartingPointPage } from './pages/exam/StartingPointPage';
 import { WritingMockPage } from './pages/exam/WritingMockPage';
+import { WritingTask1Page } from './pages/writing/WritingTask1Page';
 import { SupportPage } from './pages/SupportPage';
 import { AdminHomePage } from './pages/admin/AdminHomePage';
 import { AttendancePage } from './pages/admin/AttendancePage';
@@ -30,6 +31,15 @@ export function App() {
       <Route path="/login" element={<LoginPage />} />
 
       <Route element={<RequireAuth />}>
+        {/*
+          Academic Writing Task 1 module. Sits outside AppLayout on purpose:
+          it is a full-viewport exam surface, and leaving the sidebar mounted
+          behind it would keep the app chrome in the tab order.
+        */}
+        <Route element={<RequirePermission anyOf={['sprint.view']} />}>
+          <Route path="/writing/task-1" element={<WritingTask1Page />} />
+        </Route>
+
         <Route element={<AppLayout />}>
           {/* Student surfaces */}
           <Route element={<RequirePermission anyOf={['sprint.view']} />}>

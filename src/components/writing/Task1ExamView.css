@@ -1,0 +1,374 @@
+/*
+ * Computer-delivered IELTS Writing — visual language.
+ *
+ * The real test is a flat, high-contrast, system-font interface with square
+ * corners and hard borders. It deliberately does not look like the rest of
+ * this app, so these rules define their own local palette instead of leaning
+ * on the product tokens; only spacing and font-stack tokens are reused.
+ */
+
+.cd {
+  --cd-bg: #ffffff;
+  --cd-ink: #000000;
+  --cd-ink-muted: #444444;
+  --cd-line: #9a9a9a;
+  --cd-line-soft: #d4d4d4;
+  --cd-bar: #f0f0f0;
+  --cd-accent: #0b5fa5;
+  --cd-accent-ink: #ffffff;
+  --cd-danger: #b00020;
+  --cd-field: #ffffff;
+
+  --cd-text: 15px;
+
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-drawer);
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  background: var(--cd-bg);
+  color: var(--cd-ink);
+  font-family: var(--font-sans);
+  font-size: var(--cd-text);
+}
+
+.cd[data-font='sm'] { --cd-text: 13px; }
+.cd[data-font='md'] { --cd-text: 15px; }
+.cd[data-font='lg'] { --cd-text: 18px; }
+
+/* Candidates with low vision get a true black-on-white inversion, which is
+   what the on-screen "high contrast" control does in the real test. */
+.cd[data-contrast='high'] {
+  --cd-bg: #000000;
+  --cd-ink: #ffffff;
+  --cd-ink-muted: #dddddd;
+  --cd-line: #ffffff;
+  --cd-line-soft: #777777;
+  --cd-bar: #000000;
+  --cd-accent: #ffff00;
+  --cd-accent-ink: #000000;
+  --cd-danger: #ff6b6b;
+  --cd-field: #000000;
+}
+
+/* ------------------------------------------------------------------ *
+ * Status bar
+ * ------------------------------------------------------------------ */
+
+.cd__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  background: var(--cd-bar);
+  border-bottom: 1px solid var(--cd-line);
+}
+
+.cd__bar-left,
+.cd__bar-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.cd__clock {
+  font-size: 1.5rem;
+  font-weight: var(--weight-bold);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.02em;
+}
+
+.cd__clock--low {
+  color: var(--cd-danger);
+}
+
+.cd__clock-note {
+  font-size: 0.75rem;
+  color: var(--cd-ink-muted);
+}
+
+.cd__candidate {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  line-height: 1.25;
+}
+
+.cd__candidate-name {
+  font-weight: var(--weight-semibold);
+  font-size: 0.8125rem;
+}
+
+.cd__candidate-id {
+  font-size: 0.75rem;
+  color: var(--cd-ink-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.cd__controls,
+.cd__zoom {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.cd__control {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background: var(--cd-field);
+  color: var(--cd-ink);
+  border: 1px solid var(--cd-line);
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.cd__control:hover:not(:disabled) {
+  background: var(--cd-accent);
+  color: var(--cd-accent-ink);
+  border-color: var(--cd-accent);
+}
+
+.cd__control:disabled {
+  opacity: 0.4;
+  cursor: default;
+}
+
+.cd__control--on {
+  background: var(--cd-accent);
+  color: var(--cd-accent-ink);
+  border-color: var(--cd-accent);
+}
+
+.cd__control-label {
+  padding: 0 2px;
+  font-size: 0.8125rem;
+  font-weight: var(--weight-semibold);
+}
+
+/* ------------------------------------------------------------------ *
+ * 50/50 split
+ * ------------------------------------------------------------------ */
+
+.cd__split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 0;
+}
+
+.cd__pane {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  min-width: 0;
+  padding: var(--space-4);
+  overflow-y: auto;
+}
+
+.cd__pane--question {
+  border-right: 1px solid var(--cd-line);
+}
+
+.cd__task-heading {
+  margin: 0 0 var(--space-3);
+  font-size: 1.05rem;
+  font-weight: var(--weight-bold);
+}
+
+.cd__prompt {
+  margin: 0 0 var(--space-4);
+  /* The rubric is authored with real newlines; keep them. */
+  white-space: pre-line;
+  line-height: 1.55;
+}
+
+.cd__figure {
+  margin: 0;
+  border: 1px solid var(--cd-line-soft);
+  min-height: 0;
+}
+
+.cd__figure-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  border-bottom: 1px solid var(--cd-line-soft);
+  background: var(--cd-bar);
+}
+
+.cd__figure-caption {
+  font-size: 0.8125rem;
+  font-weight: var(--weight-semibold);
+}
+
+.cd__zoom-level {
+  min-width: 3.25rem;
+  text-align: center;
+  font-size: 0.75rem;
+  font-variant-numeric: tabular-nums;
+  color: var(--cd-ink-muted);
+}
+
+/* Zooming widens the image past the pane; this is the element that scrolls.
+   Capped so the rubric above it never gets pushed off the top of the pane. */
+.cd__figure-scroll {
+  overflow: auto;
+  max-height: 58vh;
+  padding: var(--space-3);
+  background: #ffffff;
+}
+
+.cd__figure-image {
+  display: block;
+  height: auto;
+}
+
+/* ------------------------------------------------------------------ *
+ * Answer pane
+ * ------------------------------------------------------------------ */
+
+.cd__pane--answer {
+  padding: 0;
+  overflow: hidden;
+}
+
+.cd__editor {
+  flex: 1;
+  min-height: 0;
+  width: 100%;
+  padding: var(--space-4);
+  background: var(--cd-field);
+  color: var(--cd-ink);
+  border: none;
+  border-radius: 0;
+  outline-offset: -3px;
+  font-family: var(--font-sans);
+  font-size: inherit;
+  line-height: 1.7;
+  resize: none;
+}
+
+.cd__editor:disabled {
+  opacity: 0.75;
+}
+
+.cd__editor-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-4);
+  border-top: 1px solid var(--cd-line);
+  background: var(--cd-bar);
+}
+
+.cd__wordcount {
+  font-size: 0.8125rem;
+  font-weight: var(--weight-semibold);
+  font-variant-numeric: tabular-nums;
+}
+
+.cd__wordcount--under {
+  color: var(--cd-danger);
+}
+
+.cd__wordcount-min {
+  font-size: 0.75rem;
+  color: var(--cd-ink-muted);
+}
+
+/* ------------------------------------------------------------------ *
+ * Footer navigation
+ * ------------------------------------------------------------------ */
+
+.cd__foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-2) var(--space-4);
+  border-top: 1px solid var(--cd-line);
+  background: var(--cd-bar);
+}
+
+.cd__tabs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  overflow-x: auto;
+}
+
+.cd__tab {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-2) var(--space-4);
+  background: var(--cd-field);
+  color: var(--cd-ink);
+  border: 1px solid var(--cd-line);
+  border-radius: 2px;
+  font-size: 0.8125rem;
+  font-weight: var(--weight-semibold);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.cd__tab:hover:not(.cd__tab--active) {
+  border-color: var(--cd-accent);
+}
+
+.cd__tab--active {
+  background: var(--cd-accent);
+  color: var(--cd-accent-ink);
+  border-color: var(--cd-accent);
+}
+
+.cd__tab-count {
+  min-width: 1.75rem;
+  padding: 1px 4px;
+  border: 1px solid currentColor;
+  border-radius: 2px;
+  font-size: 0.6875rem;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.cd__submit {
+  padding: var(--space-2) var(--space-6);
+  background: var(--cd-accent);
+  color: var(--cd-accent-ink);
+  border: 1px solid var(--cd-accent);
+  border-radius: 2px;
+  font-size: 0.875rem;
+  font-weight: var(--weight-semibold);
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.cd__submit:disabled {
+  opacity: 0.55;
+  cursor: default;
+}
+
+/* ------------------------------------------------------------------ *
+ * Narrow screens — the real test is desktop-only, but the split has to
+ * stack rather than crush both panes to nothing.
+ * ------------------------------------------------------------------ */
+
+@media (max-width: 860px) {
+  .cd__split {
+    grid-template-columns: 1fr;
+    grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+  }
+
+  .cd__pane--question {
+    border-right: none;
+    border-bottom: 1px solid var(--cd-line);
+  }
+}
