@@ -96,7 +96,7 @@ export const WRITING_TASK_1_QUESTIONS: WritingTask1Question[] = [
   {
     id: 'WT1_004',
     label: 'Task 4',
-    title: 'Medical care in three European countries between 1980 and 2000. Summarise the information by selecting and reporting the main features, and make comparisons where relevant',
+    title: 'Medical care in three European countries, 1980–2000',
     category: 'table',
     stimulus: 'The table below shows the information about medical care in three European countries between 1980 and 2000. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
     prompt: 'You should spend about 20 minutes on this task.\n\nThe table below shows the information about medical care in three European countries between 1980 and 2000. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.\n\nWrite at least 150 words.',
