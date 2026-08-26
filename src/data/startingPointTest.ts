@@ -1,4 +1,8 @@
 import type { CueCard, SpeakingQuestion, WritingTask } from '../types/exam';
+import { findTask1Question, task1PromptParagraph } from './writingTask1Data';
+
+/** The Starting Point Test's Task 1 is sample task 1A from the official paper. */
+const TASK_1A = findTask1Question('task-1a');
 
 /**
  * Starting Point Test content.
@@ -57,34 +61,10 @@ export const WRITING_TASKS: WritingTask[] = [
     minWords: 150,
     instructions:
       'You should spend about 20 minutes on this task. Write at least 150 words.',
-    prompt:
-      'The chart below shows the number of men and women in further education in Britain in three periods and whether they were studying full-time or part-time. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.',
-    chart: {
-      title:
-        'Men and women in further education in Britain, by study mode',
-      yAxisLabel: 'Men and women in further education',
-      unitNote: 'thousands',
-      periods: ['1970/71', '1980/81', '1990/91'],
-      max: 1200,
-      groups: [
-        {
-          id: 'male',
-          label: 'Male',
-          series: [
-            { id: 'full-time', label: 'Full-time education', values: [100, 150, 200] },
-            { id: 'part-time', label: 'Part-time education', values: [1000, 870, 900] },
-          ],
-        },
-        {
-          id: 'female',
-          label: 'Female',
-          series: [
-            { id: 'full-time', label: 'Full-time education', values: [50, 230, 260] },
-            { id: 'part-time', label: 'Part-time education', values: [750, 820, 1100] },
-          ],
-        },
-      ],
-    },
+    // Sourced from the official question bank so the wording and the figure
+    // cannot drift apart.
+    prompt: TASK_1A ? task1PromptParagraph(TASK_1A) : '',
+    stimulusQuestionId: 'task-1a',
   },
   {
     id: 'task-2',

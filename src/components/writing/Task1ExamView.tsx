@@ -81,17 +81,19 @@ export function Task1ExamView({
   useEffect(() => {
     if (submitted) return undefined;
 
-    const id = window.setInterval(() => {
-      setRemaining((left) => {
-        const next = Math.max(0, left - 1000);
-        onTick(next);
-        if (next === 0) expiredRef.current = true;
-        return next;
-      });
-    }, 1000);
-
+    const id = window.setInterval(
+      () => setRemaining((left) => Math.max(0, left - 1000)),
+      1000,
+    );
     return () => window.clearInterval(id);
-  }, [submitted, onTick]);
+  }, [submitted]);
+
+  // Reporting the clock upward is a side effect, so it stays out of the
+  // updater above — an updater must be pure, and StrictMode double-invokes it.
+  useEffect(() => {
+    onTick(remaining);
+    if (remaining === 0) expiredRef.current = true;
+  }, [remaining, onTick]);
 
   // Reset the zoom when the candidate moves to a different visual, otherwise a
   // 3x zoom set on the bar chart carries over onto the process diagram.

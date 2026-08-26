@@ -25,18 +25,27 @@ export function WritingTask1Page() {
 
   const [state, setState] = useState<Task1ModuleState>(loadTask1State);
 
-  // Every state change is a save. `submittedAt` is the one transition that
-  // cannot afford the debounce, because it is followed by a navigation.
+  // `update` is the only writer, so this ref is always the authoritative
+  // current value — including between a change and the re-render that follows.
+  const stateRef = useRef(state);
+
+  /**
+   * Every state change is a save.
+   *
+   * The next value is computed and written here rather than inside a setState
+   * updater. An updater must be pure, and React is free not to run one at all:
+   * submitting navigates away in the same handler, and a save that rode along
+   * inside the updater was dropped with the unmounting component.
+   */
   const update = useCallback(
     (
       change: (current: Task1ModuleState) => Task1ModuleState,
       { immediate = false }: { immediate?: boolean } = {},
     ) => {
-      setState((current) => {
-        const next = change(current);
-        saveTask1State(next, { immediate });
-        return next;
-      });
+      const next = change(stateRef.current);
+      stateRef.current = next;
+      saveTask1State(next, { immediate });
+      setState(next);
     },
     [],
   );

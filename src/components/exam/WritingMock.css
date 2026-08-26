@@ -134,3 +134,38 @@
     min-height: 320px;
   }
 }
+
+/* ------------------------------------------------------------------ *
+ * Task 1 figure
+ *
+ * The original bitmap from the source paper. It is never scaled past its
+ * own resolution — these are low-resolution scans, and blowing them up
+ * only softens the axis labels the candidate has to read.
+ * ------------------------------------------------------------------ */
+
+.writing__figure {
+  margin: var(--space-5) 0 0;
+  padding: var(--space-3);
+  /* The figures are black on white; keep that ground in either theme. */
+  background: #ffffff;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.writing__figure-image {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+}
+
+.writing__figure-caption {
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+  color: #334155;
+  font-size: var(--text-sm);
+  font-weight: var(--weight-medium);
+  text-align: center;
+}

@@ -1,10 +1,10 @@
 import { Check, Loader2 } from 'lucide-react';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { WRITING_TASKS } from '../../data/startingPointTest';
+import { findTask1Question } from '../../data/writingTask1Data';
 import { countWords } from '../../lib/analysis';
 import type { WritingResponse, WritingTask } from '../../types/exam';
 import { ExamShell } from './ExamShell';
-import { TaskChart } from './TaskChart';
 import './WritingMock.css';
 
 interface WritingMockProps {
@@ -47,23 +47,31 @@ export function WritingMock({
   const text = drafts[activeTaskId] ?? '';
   const words = countWords(text);
 
-  // The 60:00 clock. Auto-submits exactly once at zero.
+  // Task 1 shows the original figure from the official paper; Task 2 has none.
+  const stimulus = task?.stimulusQuestionId
+    ? findTask1Question(task.stimulusQuestionId)
+    : undefined;
+
+  // The 60:00 clock.
   useEffect(() => {
-    const id = window.setInterval(() => {
-      setRemaining((left) => {
-        const next = Math.max(0, left - 1000);
-        onRemaining(next);
-
-        if (next === 0 && !submittedRef.current) {
-          submittedRef.current = true;
-          onSubmit(true);
-        }
-        return next;
-      });
-    }, 1000);
-
+    const id = window.setInterval(
+      () => setRemaining((left) => Math.max(0, left - 1000)),
+      1000,
+    );
     return () => window.clearInterval(id);
-  }, [onRemaining, onSubmit]);
+  }, []);
+
+  // Reporting the clock upward and auto-submitting are side effects, so they
+  // live here rather than inside the updater above. An updater must be pure:
+  // StrictMode double-invokes it, which fired both of these twice a second.
+  useEffect(() => {
+    onRemaining(remaining);
+
+    if (remaining === 0 && !submittedRef.current) {
+      submittedRef.current = true;
+      onSubmit(true);
+    }
+  }, [remaining, onRemaining, onSubmit]);
 
   useEffect(
     () => () => {
@@ -156,7 +164,20 @@ export function WritingMock({
           <section className="writing__prompt-pane">
             <p className="writing__instructions">{task.instructions}</p>
             <p className="writing__prompt">{task.prompt}</p>
-            {task.chart && <TaskChart chart={task.chart} />}
+            {stimulus && (
+              <figure className="writing__figure">
+                <img
+                  className="writing__figure-image"
+                  src={stimulus.imagePath}
+                  alt={stimulus.imageAlt}
+                  width={stimulus.imageWidth}
+                  height={stimulus.imageHeight}
+                />
+                <figcaption className="writing__figure-caption">
+                  {stimulus.title}
+                </figcaption>
+              </figure>
+            )}
           </section>
 
           <section className="writing__editor-pane">

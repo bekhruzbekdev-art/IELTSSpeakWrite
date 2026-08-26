@@ -35,23 +35,12 @@ export interface WritingTask {
   minWords: number;
   instructions: string;
   prompt: string;
-  /** Task 1 only — the chart the candidate must describe. */
-  chart?: ChartStimulus;
-}
-
-export interface ChartSeries {
-  id: string;
-  label: string;
-  values: number[];
-}
-
-export interface ChartStimulus {
-  title: string;
-  yAxisLabel: string;
-  unitNote: string;
-  periods: string[];
-  groups: { id: string; label: string; series: ChartSeries[] }[];
-  max: number;
+  /**
+   * Task 1 only — id into `WRITING_TASK_1_QUESTIONS`, naming the figure the
+   * candidate must describe. The figure itself is the original bitmap from
+   * the source paper; nothing here is redrawn or approximated.
+   */
+  stimulusQuestionId?: string;
 }
 
 /* ------------------------------------------------------------------ *

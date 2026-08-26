@@ -1,439 +1,354 @@
 # IELTS SpeakWrite Sprint — Technical Handoff
 
+> Every path, count and claim below was read off the working tree, not recalled.
+> Where something is a stub or a fake, it says so.
+
+---
+
 ## 1. Project Overview
 
-**IELTS SpeakWrite Sprint** is a 30-day adaptive IELTS Speaking + Writing preparation platform with a frontend-only architecture. The application provides:
+A 30-day IELTS Speaking + Writing preparation platform, built as a **frontend-only
+prototype**. Four roles (`founder`, `support-teacher`, `teacher`, `student`) share one
+SPA; students work a 30-day sprint, staff review unlock requests and attendance.
 
-- **Shell & Layout**: Responsive sidebar navigation, theme toggle (light/dark), role-based sidebar labels (student/staff/admin)
-- **Sprint Dashboard**: 30 sequential cards (Days 1–30), each with locked/unlocked status, showing content categories, completion %, and unlock rules
-- **Learning Profile**: Analytics dashboard showing band progress (Speaking: 0–9 scale, Writing: 0–9 scale) across five sub-skills per task; adaptive focus recommendations based on weakest sub-skills
-- **Admin Controls**: Staff unlock overrides, student unlock-request approval workflow, attendance tracking (11-day rolling window), Settings panel for theme & name
-- **Starting Point Test**: Exam-mode speaking/writing mock with 18 speaking questions (plus cue card), 2 writing tasks, heuristic auto-scoring, and localStorage persistence
+Surfaces that exist today:
 
-**Critical limitation:** This is a **frontend-only proof-of-concept**. There is **no backend, no database, and no external APIs**. All data is mock or in-memory; authentication is a UI stub. RBAC is a client-side policy, not a security boundary. This is not production-ready and should not be deployed with real user data.
+- **Sprint** — a 32-card journey (Starting Point → Days 1–30 → final milestone) with
+  sequential unlock, a midnight throttle, and staff overrides
+- **Starting Point Test** — a diagnostic Speaking + Writing mock in a locked exam shell
+- **Academic Writing Task 1** — a separate computer-delivered exam surface (newest module)
+- **Learning Profile** — band analytics derived from the diagnostic
+- **Leaderboard**, **Support / unlock requests**, **Attendance**, **Profile**, **Settings**
+
+### The three things to internalise first
+
+1. **There is no backend.** No server, no database, no external API. Verified by probe:
+   no `fetch(`, `axios`, `import.meta.env` or `process.env` anywhere in `src/`.
+2. **There is no AI.** "AI scoring" is a hand-written heuristic in `src/lib/analysis.ts`.
+   Verified by probe: no `anthropic`, `openai`, `gemini`, `claude` or `gpt-` reference in `src/`.
+3. **Auth and RBAC are UI-layer only.** Any username/password signs you in as any role.
+   `src/lib/permissions.ts` carries its own header warning: policy, not a security boundary.
 
 ---
 
 ## 2. Tech Stack & Dependencies
 
-### Runtime (4 dependencies)
-- **react** `^18.3.1` — UI framework
-- **react-dom** `^18.3.1` — DOM renderer
-- **react-router-dom** `^6.28.0` — nested routing with guards
-- **lucide-react** `^0.462.0` — icon library (24px SVG icons)
+**Runtime (4):** `react` ^18.3.1 · `react-dom` ^18.3.1 · `react-router-dom` ^6.28.0 ·
+`lucide-react` ^0.462.0
 
-### Build & Dev (5 dependencies)
-- **vite** `^5.4.11` — bundler (TypeScript 5.6 via Vite preset)
-- **typescript** `^5.6.3` — strict mode with `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes`, `verbatimModuleSyntax`
-- **@vitejs/plugin-react** — JSX support
-- **@types/react**, **@types/react-dom** — type definitions
+**Dev (5):** `vite` ^5.4.11 · `typescript` ^5.6.3 · `@vitejs/plugin-react` ^4.3.4 ·
+`@types/react` ^18.3.12 · `@types/react-dom` ^18.3.1
 
-### Scripts
-```bash
-npm run dev          # Vite dev server (port 5173)
-npm run build        # tsc --noEmit && vite build
-npm run preview      # Preview built app
-npm run typecheck    # Type check only
+```
+npm run dev        vite (port 5173, host: true)
+npm run build      tsc --noEmit && vite build
+npm run preview    vite preview
+npm run typecheck  tsc --noEmit
 ```
 
-### Browser APIs (no polyfills)
-- **Web Speech API** (`speechSynthesis`) — examiner voice playback
-- **MediaRecorder + getUserMedia** — microphone recording during Speaking exam
-- **AnalyserNode** — audio frequency visualization
-- **localStorage** — persistent exam progress (key: `isws.starting-point.v1`)
+TypeScript runs strict with `noUncheckedIndexedAccess`, `exactOptionalPropertyTypes` and
+`verbatimModuleSyntax` — indexing an array yields `T | undefined`, so guards that look
+redundant usually are not.
 
-### Environment
-- **Vite** + **React 18** with Fast Refresh
-- **vercel.json** configured for SPA fallback rewrite
-- Strict TypeScript; zero untyped deps
-- **No external APIs, no environment variables, no .env file in source**
+**No CSS framework.** Design tokens are CSS custom properties in `src/styles/tokens.css`;
+dark mode re-declares them under `:root[data-theme='dark']`. Each component owns a sibling
+`.css` file (41 of them). One deliberate exception: `Task1ExamView.css` defines a local
+`--cd-*` palette instead of using product tokens, because the exam surface must *not* look
+like the app.
+
+**Browser APIs, no polyfills:** `speechSynthesis` (examiner voice), `MediaRecorder` +
+`getUserMedia` + `AnalyserNode` (mic), `localStorage` / `sessionStorage`.
+
+**Scale:** 7,956 lines of TS/TSX, 41 CSS files, 15 route entries.
 
 ---
 
 ## 3. Directory Structure
 
 ```
+public/
+└── tasks/writing/           task-1a.png, task-1b.png, task-1c.png
+                             Original figures extracted from the official
+                             sample paper. Not redrawn.
 src/
-├── components/
-│   ├── layout/
-│   │   ├── AppLayout.tsx           # Main router guard (exam-mode lock)
-│   │   ├── Sidebar.tsx              # Navigation + role labels + theme toggle
-│   │   └── Navigation.tsx
-│   ├── sprint/
-│   │   ├── SprintCard.tsx           # 30 day cards (status badge, unlock pill)
-│   │   ├── SprintDashboard.tsx      # 6×5 grid, "No data yet" fallback
-│   │   ├── JourneyStatus.tsx        # Unlock reason pill
-│   │   └── Podium.tsx               # Leaderboard ranking (top 3)
-│   ├── learning-profile/
-│   │   ├── LearningProfile.tsx      # Analytics dashboard
-│   │   ├── BandDisplay.tsx          # 0–9 scale with pillars and dumbbell
-│   │   └── SkillChart.tsx           # Sub-skill breakdown
-│   ├── starting-point/
-│   │   ├── StartingPointTest.tsx    # Exam frame + route lock
-│   │   ├── SpeakingTest.tsx         # 18 questions, cue card, recorder
-│   │   ├── WritingTest.tsx          # Tasks 1 & 2, word counter
-│   │   └── ScoreDisplay.tsx         # Results + disclaimer (confidence: 0.25–0.35)
-│   ├── admin/
-│   │   ├── AttendanceTable.tsx      # 11-day rolling attendance
-│   │   ├── UnlockRequestList.tsx    # Pending approval workflow
-│   │   └── StaffSettings.tsx        # Theme + name override
-│   ├── profile/
-│   │   ├── ProfilePage.tsx          # Avatar picker + bio
-│   │   └── AvatarPicker.tsx         # 4-option SVG inline
-│   └── common/
-│       ├── ThemeToggle.tsx
-│       └── ErrorBoundary.tsx
-├── lib/
-│   ├── sprintProgress.ts            # Unlock engine (sequential + midnight throttle)
-│   ├── permissions.ts               # RBAC policy table (UI-only)
-│   ├── analysis.ts                  # Heuristic scorer (length/timing-based)
-│   ├── examStorage.ts               # debounced + sync localStorage write
-│   ├── examinerVoice.ts             # speechSynthesis API wrapper
-│   ├── audio.ts                     # Format detection, recorder setup
-│   ├── adaptiveSprint.ts            # Focus-tag calculation from weakest sub-skills
-│   └── pdf.ts                       # PDF text extraction (Flate decompression)
-├── state/
-│   ├── AppDataContext.tsx           # In-memory store (users, progress, requests)
-│   ├── AuthContext.tsx              # Auth stub (dev-only, no credentials)
-│   ├── ThemeContext.tsx             # Light/dark toggle + CSS var injection
-│   └── types.ts                     # Entity types
-├── data/
-│   ├── startingPointTest.ts         # 18 speaking Q + cue card + 2 writing tasks
-│   ├── demo.ts                      # 10 mock students, 1 staff, 1 admin
-│   ├── master_speaking_db.json      # 257 topics / 1,519 items (from PDF)
-│   ├── unified_skill_framework.json # 12 IELTS skills + unit mapping
-│   └── [other JSON stores]
+├── App.tsx                  All routes; nested guards
+├── main.tsx                 createRoot + provider stack
+│
+├── auth/AuthContext.tsx     Sign-in STUB. sessionStorage 'isws.preview-session'
+├── theme/ThemeContext.tsx   Light/dark. localStorage 'isws.theme'
+├── state/AppDataContext.tsx In-memory store — progress, requests, threads,
+│                             attendance, Starting Point session. Resets on reload.
+│
 ├── routes/
-│   └── index.tsx                    # 14 routes, nested with <Outlet />
-├── styles/
-│   ├── tokens.css                   # Design tokens (brand, status, text-safe inks)
-│   ├── globals.css                  # Reset, root vars
-│   ├── [component].css              # Per-component styles (no framework)
-│   └── layout.css                   # Grid + flexbox rules
-├── App.tsx                          # Route root + context providers
-└── main.tsx                         # React 18 createRoot
+│   ├── RequireAuth.tsx      Redirects to /login
+│   └── RequirePermission.tsx  Gate by permission (UI only)
+│
+├── components/
+│   ├── analytics/           BandDumbbell, BarChart, ComparisonPanel,
+│   │                        DiagnosticNote, InsightCard, ProgressBanner, charts.css
+│   ├── attendance/          AttendanceRoster
+│   ├── exam/                ExamShell, ResultsPanel, SpeakingMock, WritingMock
+│   ├── layout/              AppLayout, Sidebar, navigation.ts
+│   ├── leaderboard/         LeaderboardTable, Podium
+│   ├── profile/             AvatarGlyph, AvatarPicker, SprintStatusWidget
+│   ├── settings/            MicrophoneTester
+│   ├── sprint/              SprintGrid, SprintCard, LockedCard,
+│   │                        MilestoneCard, CountdownTimer
+│   ├── support/             MessageThread, UnlockRequestModal, UnlockRequestQueue
+│   ├── ui/                  AiScoreBadge, BrandMark, StatusBadge, Surface, ThemeToggle
+│   └── writing/             Task1ExamView  ← computer-delivered Task 1 UI
+│
+├── pages/
+│   ├── LoginPage, SprintPage, LeaderboardPage, LearningProfilePage,
+│   │   ProfilePage, SettingsPage, SupportPage
+│   ├── admin/               AdminHomePage, AttendancePage
+│   ├── exam/                StartingPointPage, SpeakingMockPage, WritingMockPage
+│   └── writing/             WritingTask1Page  ← owns Task 1 module state
+│
+├── lib/
+│   ├── sprintProgress.ts    Unlock engine — pure, derived, never stored
+│   ├── permissions.ts       RBAC policy table (+ "not a security boundary" header)
+│   ├── analysis.ts          The heuristic scorer + countWords
+│   ├── adaptiveSprint.ts    Weakest sub-skills → Day-1 focus tags
+│   ├── attendance.ts        Roster + rate maths
+│   ├── audio.ts             MediaRecorder format negotiation
+│   ├── examinerVoice.ts     speechSynthesis wrapper + guard timeout
+│   ├── examinerPrompts.ts   Examiner system prompts (text; nothing consumes them)
+│   ├── examStorage.ts       'isws.starting-point.v1'
+│   ├── task1Storage.ts      'isws.writing-task-1.v1'
+│   └── format.ts            Band/number formatting
+│
+├── data/
+│   ├── demo.ts              All mock cohort data
+│   ├── startingPointTest.ts The diagnostic paper
+│   └── writingTask1Data.ts  Academic Task 1 bank (1A/1B/1C) + attribution
+│
+├── types/                   account, analytics, attendance, exam, leaderboard,
+│                            rbac, settings, sprint, support, writingTask1
+└── styles/                  tokens.css, global.css
 ```
 
-### Key Files by Role
+### Routes
 
-| File | Purpose | Status |
-|------|---------|--------|
-| `lib/sprintProgress.ts` | Unlock logic (sequential, daily throttle, staff override) | ✅ Complete |
-| `lib/analysis.ts` | Heuristic scorer (5 bands/sub-skill) | ✅ Complete (length-based, not ML) |
-| `lib/permissions.ts` | RBAC policy (header: "CLIENT-SIDE ONLY") | ✅ Complete (UI stub) |
-| `data/startingPointTest.ts` | 18 speaking Q + writing tasks | ✅ Complete |
-| `components/sprint/SprintCard.tsx` | Unlock pill + status badge | ✅ Complete |
-| `state/AppDataContext.tsx` | In-memory user/progress store | ✅ Complete (resets on reload) |
-| `lib/examStorage.ts` | localStorage persistence | ✅ Complete (exam progress only) |
-| `components/starting-point/WritingTest.tsx` | Writing exam UI | ⚠️ No Task 1 data (0 records) |
-| `lib/adaptiveSprint.ts` | Adaptive focus tags | ✅ Complete (weakest 2–3 sub-skills) |
+| Path | Guard | Notes |
+|---|---|---|
+| `/login` | — | Any credentials work |
+| `/writing/task-1` | `sprint.view` | **Outside `AppLayout`** — full-viewport exam |
+| `/sprint` | `sprint.view` | |
+| `/sprint/starting-point` | `sprint.view` | Landing + results |
+| `/sprint/starting-point/speaking` | `sprint.view` | Exam mode |
+| `/sprint/starting-point/writing` | `sprint.view` | Exam mode |
+| `/leaderboard` | `leaderboard.view` | |
+| `/profile/learning` | `learning-profile.view` | |
+| `/support` | `support.*` / `unlock-request.review` | |
+| `/profile`, `/settings` | `profile.view`, `settings.view` | |
+| `/admin` | `cohort.monitor` etc. | |
+| `/admin/attendance` | `attendance.manage` | |
+| `/`, `*` | — | Redirect to the role's home |
 
 ---
 
 ## 4. Current Implementation Status
 
-### ✅ Fully Implemented
+### Working
 
-1. **Sprint Dashboard**
-   - 30 cards (Days 1–30) with sequential unlock logic
-   - Locked/unlocked/completed states + unlock reason pills
-   - Completion percentage per card
-   - Responsive grid (6 columns → 3 → 1 on mobile)
+| Area | Notes |
+|---|---|
+| Sprint unlock engine | Sequential + midnight throttle + staff grant. `SPRINT_DAYS = 30`, bookended by a Starting Point card and a milestone card. Pure, derived per render. |
+| Starting Point Test | Speaking (18 Q + cue card) and Writing (Task 1 + 2), locked exam shell, auto-save, 60:00 clock with auto-submit. |
+| **Writing Task 1 module** | CD-IELTS layout, 3 authentic questions, zoomable original figures, per-task drafts, display settings — all persisted. |
+| Learning Profile | Band dumbbells, comparison panel, diagnostic note, focus tags. |
+| Leaderboard / Attendance / Support / Settings / Profile | All functional against mock data. |
+| Theming | Light/dark across every surface; status inks contrast-validated. |
+| RBAC routing | Four roles, per-permission route gates, role-specific home paths. |
 
-2. **Unlock Engine** (`lib/sprintProgress.ts`)
-   - Sequential prerequisites (Day 2 requires Day 1 completion)
-   - Midnight throttle: one day per calendar day
-   - Staff override: `staffUnlocked` flag bypasses sequence
-   - Unlock-request workflow: student requests, staff approves
+### Stub or fake — do not mistake for real
 
-3. **Learning Profile Analytics**
-   - Band display (0–9 scale with pillars + dumbbell marker)
-   - Per-task breakdown (Speaking 1–3, Writing 1–2)
-   - Per-sub-skill progress (5 sub-skills per task)
-   - Adaptive focus tags (weakest 2–3 skills highlighted)
+| Thing | Reality |
+|---|---|
+| **Authentication** | Any username + any password + a role picker. `sessionStorage`. No accounts exist. |
+| **RBAC** | Client-side policy table. Trivially bypassed. Not a security boundary. |
+| **Scoring** | Heuristic. See §5 — it measures *length and timing*, not quality. |
+| **Cohort data** | `src/data/demo.ts`. In-memory, resets on reload. |
+| **Audio** | Captured to measure duration, then discarded. Never stored, never uploaded. |
+| **Examiner prompts** | `examinerPrompts.ts` holds text no code consumes — a placeholder for a model that isn't wired up. |
 
-4. **Leaderboard**
-   - Top 3 students + their overall band
-   - Podium rendering (1st/2nd/3rd positions)
-   - Ranking badge on sidebar
+### Not built
 
-5. **Starting Point Test**
-   - Exam-mode route lock (`/sprint/starting-point/{speaking,writing}`)
-   - 18 speaking questions with cue card
-   - 2 writing tasks (Task 1 chart image, Task 2 prompt)
-   - MediaRecorder + Web Speech API support
-   - Auto-save to localStorage with debounce + sync flush
+30-day curriculum content · adaptive content selection · any persistence beyond two
+localStorage keys · audio storage · notifications · export/reporting · **any test suite**
 
-6. **Heuristic Scoring** (`lib/analysis.ts`)
-   - **Speaking**: time-based (targets 25s/105s/40s for parts 1–3) + coverage ratio → fluency band; copies to lexical/grammar/pronunciation
-   - **Writing**: length-based (min 150 words Task 1, 250 Task 2) + simple error detection (5 regex patterns) → sub-skill bands
-   - **Overall**: weighted average (Task 2 ×2)
-   - **Confidence**: 0.25 (speaking), 0.35 (writing) — hardcoded, not learned
+### Content gaps
 
-7. **Theme System**
-   - Light/dark toggle
-   - CSS custom properties (`:root[data-theme='dark']` override)
-   - Brand palette + status inks validated for WCAG 3:1 contrast
-
-8. **RBAC UI**
-   - Role-based sidebar labels (student/staff/admin view different content)
-   - Permissions table in `lib/permissions.ts` (header: "CLIENT-SIDE POLICY ONLY")
-   - Staff unlock-request approval flow (email summary on `console`)
-
-9. **Admin Pages**
-   - Attendance tracking (11-day rolling window, 0–100% per student)
-   - Unlock-request queue + approval workflow
-   - Settings (theme, name override for staff)
-
-10. **Responsive Design**
-    - Mobile-first layout (sidebar collapses, cards stack)
-    - CSS Grid + Flexbox (no framework)
-    - Touch-friendly interactive elements
-
-### ⚠️ Partial / Stub Implementation
-
-| Feature | Status | Notes |
-|---------|--------|-------|
-| **Auth** | Stub | Dev-only; no real login, no credentials stored; mock user selector |
-| **Database** | None | All data in-memory + mock; resets on reload |
-| **External APIs** | None | No backend, no cloud sync, no real IELTS grading |
-| **Audio Storage** | Not implemented | Recorded audio is buffered in-memory but never saved/transmitted |
-| **Writing Task 1** | 0 records | Content database exists (`data/master_writing_db.json`) but zero Task 1 items yet |
-| **Speaking S11/S12** | Weak supply | 0 unit groups in default curriculum; 22 tagging gaps in master DB |
-| **PRONUNCIATION** | 0 units | Skill exists in framework but no content assigned |
-| **PARAPHRASING** | 0 units | Skill exists in framework but no content assigned |
-
-### ❌ Not Implemented
-
-- Real IELTS question content (stub data only)
-- ML-based scoring
-- Adaptive curriculum (skill dependencies, prerequisites)
-- Audio upload/transmission
-- User authentication (no backend)
-- Database persistence
-- Notifications / email
-- Analytics / telemetry
-- Export / reporting
+- **Writing Task 2** — one prompt in the diagnostic; no bank.
+- **Task 1 bank is 3 questions** (1A bar chart, 1B line graph, 1C process diagram).
+  `Task1Category` also declares `pie_chart`, `table` and `map` — no content for those yet.
+- Speaking/Writing skill-taxonomy work from earlier sessions lives in scratch files, **not in this repo**.
 
 ---
 
 ## 5. Data Flow & Logic
 
-### A. Authentication & State (Stub)
+### Provider stack
 
 ```
-main.tsx
-  └─ App.tsx
-      ├─ <AuthContext>           # Dev stub; user={ id, email, role }
-      ├─ <ThemeContext>          # Light/dark + CSS var injection
-      └─ <AppDataContext>        # In-memory store:
-          ├─ users[] (10 mock)
-          ├─ progress[] (Day status, completion %, bands)
-          ├─ unlockRequests[] (pending approvals)
-          └─ setters (approveUnlockRequest, updateProgress, etc.)
+ThemeProvider → AuthProvider → AppDataProvider → BrowserRouter → App
 ```
 
-No real authentication flow. User selection via dev UI. Roles: `'student'`, `'staff'`, `'admin'`.
+`AppDataContext` sits above the router so exam state survives navigation.
 
-### B. Sprint Unlock Logic
+### Unlock engine — `lib/sprintProgress.ts`
 
-```
-buildJourney() (sprintProgress.ts)
-  ├─ For each day 2–30:
-  │   ├─ Read: previous day's completedAt, staffUnlocked flag
-  │   ├─ Compute: isSameCalendarDay(completedAt, now)
-  │   ├─ Apply rules in order:
-  │   │   1. If COMPLETED → status = COMPLETED
-  │   │   2. Else if staffUnlocked → status = derived, unlockedBy = 'staff-grant'
-  │   │   3. Else if !previousCompletedAt → status = LOCKED, reason = 'not-started'
-  │   │   4. Else if !hasActivity && isSameCalendarDay → status = LOCKED, reason = 'daily-throttle'
-  │   │   5. Else → status = UNLOCKED
-  │   └─ Return: { status, unlockReason, unlocksAt, unlockedBy }
-  └─ NO DB WRITES — derived state only
-```
-
-Midnight throttle: completed Day 5 at 3 PM today → Day 6 locked until tomorrow 12:00 AM.
-
-### C. Exam Progress Persistence
+Card status is **always derived, never stored**:
 
 ```
-Starting Point Test Flow
-  ├─ componentDidMount → load from localStorage (key: isws.starting-point.v1)
-  ├─ User answers/records → update in-memory state
-  ├─ debounce(saveStartingPointState, 500ms) on every change
-  └─ On submit:
-      ├─ saveStartingPointState(state, { immediate: true }) ← sync write
-      └─ pagehide/beforeunload listener → flushStartingPointState()
+COMPLETED                                   → COMPLETED
+staff grant                                 → derived, unlockedBy: 'staff-grant'
+no previous completion                      → LOCKED  (sequential)
+previous completed today, no activity yet   → LOCKED  (daily-throttle),
+                                              unlocksAt = next midnight
+otherwise                                   → UNLOCKED
 ```
 
-**Only exam data persists; user/progress/unlockRequests reset on reload.**
+### Persistence — exactly two keys
 
-### D. Heuristic Scoring Pipeline
+| Key | Storage | Written by |
+|---|---|---|
+| `isws.starting-point.v1` | localStorage | `lib/examStorage.ts` |
+| `isws.writing-task-1.v1` | localStorage | `lib/task1Storage.ts` |
+| `isws.preview-session` | **session**Storage | `auth/AuthContext.tsx` |
+| `isws.theme` | localStorage | `theme/ThemeContext.tsx` |
 
-**Speaking** (part-wise timing):
+Both exam stores share one contract: debounced writes (400 ms), defensive reads that merge
+over a known-good default, an `immediate` flag for submit, and a `flush()` bound to
+`pagehide` / `beforeunload`.
+
+> **Load-bearing invariant.** The localStorage write happens *outside* the `setState`
+> updater. A React updater must be pure and React may decline to run one — submitting
+> navigates away in the same handler, and a save that rode inside the updater was silently
+> dropped with the unmounting component. `WritingTask1Page.update()` computes the next
+> state from a ref, persists, then calls `setState`. Do not "simplify" it back.
+>
+> The same rule bit the clocks: reporting time upward from inside a `setRemaining` updater
+> fired twice a second under StrictMode. Both clocks now tick in one effect and report in
+> another.
+
+### The scorer — `lib/analysis.ts`
+
+**Speaking.** Targets 25 s / 105 s / 40 s for Parts 1–3.
+
 ```
-SPEAKING_TARGETS = { part1: 25s, part2: 105s, part3: 40s }
-
-For each part:
-  ratio = actual_duration / target
-  fluencyBand = toHalfBand(4.5 + avg(ratios) * 2.2 * min(1, topicCoverage + 0.15))
-  
-  // Literal copies (not computed):
-  lexical_resource = fluencyBand
-  grammatical_range = fluencyBand
-  pronunciation = fluencyBand
-
-overall = avg(band1, band2, band3)
-confidence = 0.25  // Very low; length-based, not ML
-```
-
-**Writing** (length + error count):
-```
-Task 1 & 2:
-  lengthRatio = min(1.25, word_count / min_words)
-  task_achievement = 3.5 + lengthRatio * 2.8
-  lexical_resource = 4.5 + lengthRatio * 1.2
-  coherence = 4 + min(1.6, para_count * 0.5) + (avg_sent_len > 8 ? 0.6 : 0)
-  grammar = 6 - min(2, error_count * 0.4)
-  
-  band1_avg = avg(task_achievement, lexical_resource, coherence, grammar)
-
-overall = (band_task1 + band_task2 * 2) / 3
-confidence = 0.35  // Still low; heuristic
+fluency = toHalfBand(4.5 + avg(ratios) * 2.2 * min(1, coverage + 0.15))
+lexical_resource = grammatical_range = pronunciation = fluency   ← literal copies
+confidence = 0.25   (0.15 if nothing was recorded)
 ```
 
-Error detection (5 regex patterns):
-- Lowercase `i`
-- `there is` + plural noun
-- `people is`
-- Double space
-- Contractions (e.g., `don't`)
+**Writing.**
 
-**Adaptive Focus** (`adaptiveSprint.ts`):
 ```
-focusesFor(note)
-  ├─ Extract sub-skill bands (5 per task type)
-  ├─ Find 2–3 weakest (lowest band)
-  └─ Return focus tags (e.g., ['S5_FLUENCY', 'S7_PRONUNCIATION'])
+lengthRatio      = min(1.25, words / minWords)
+task_achievement = 3.5 + lengthRatio * 2.8
+lexical_resource = 4.5 + lengthRatio * 1.2
+coherence        = 4 + min(1.6, paragraphs * 0.5) + (avgSentence > 8 ? 0.6 : 0)
+grammar          = 6 - min(2, errors * 0.4)
+overall          = (avg(task1) + avg(task2) * 2) / 3
+confidence       = 0.35
 ```
+
+"Errors" are **five literal regexes**: lowercase `i`, `there is` + plural, `people is`,
+double space, contractions.
+
+**Measured behaviour:** the word "banana" repeated to 264 words scores **6.5**; a genuine
+113-word essay scores **6.0**. 30 s of real speech and 30 s of "aaa" both score **6.0**.
+This is a placeholder with a UI disclaimer (`components/ui/AiScoreBadge`), not a marker.
+
+### Writing Task 1 module
+
+```
+WritingTask1Page                    owns state, persists every change
+  └─ Task1ExamView                  pure presentation
+       ├─ status bar                20:00 guide clock (red under 5:00),
+       │                            candidate identity, text size, high contrast
+       ├─ 50/50 split               prompt + zoomable figure | plain textarea
+       └─ footer                    per-task tabs with word counts, submit
+```
+
+The clock is **advisory** — Task 1 is not separately timed in the real test, so zero turns
+the clock red and stops rather than seizing the paper.
+
+Figures render at natural size at 100% and are never upscaled past their own resolution
+(they are low-resolution scans; blowing them up only softens the axis labels). Zoom steps
+1× / 1.5× / 2× / 3× scroll inside a capped box, and reset when the question changes.
+
+`startingPointTest.ts` Task 1 is the *same* question (1A). It references the bank by
+`stimulusQuestionId` and composes its prompt from the bank, so wording and figure cannot
+drift apart. The old synthetic `TaskChart` — a redrawn chart with approximated values — has
+been deleted.
 
 ---
 
 ## 6. Key Challenges & Known Issues
 
-### Architecture & Design
+### Blocking anything real
 
-| Issue | Impact | Status | Notes |
-|-------|--------|--------|-------|
-| **Frontend-only, no backend** | Cannot persist real user data or grade accurately | Intentional design | Mentioned in README/UI disclaimers |
-| **Auth is a dev stub** | No real login, no credentials, no security | Intentional | `AuthContext` has hardcoded users |
-| **RBAC is client-side only** | UI can be bypassed; permissions not enforced server-side | Critical limitation | Header in `lib/permissions.ts` warns: "CLIENT-SIDE POLICY ONLY" |
-| **In-memory state resets on reload** | All progress lost except exam data | Intentional | Only `isws.starting-point.v1` persists |
-| **No adaptive curriculum** | 30-day plan is static (uses focus tags, not actual unit selection) | Deferred | `adaptiveSprint.ts` suggests focus but doesn't assign content |
+1. **No backend.** Auth, RBAC, progress, submissions and audio all need a server before
+   this can touch a real student.
+2. **The scorer is not a scorer.** It rewards length. Replacing it is the single highest-value
+   change, and `types/exam.ts` already models the full criterion contract to fill.
+3. **No tests at all.** No unit tests, no e2e, no CI. Every change is verified by hand.
 
-### Data Gaps
+### Traps for the next person
 
-| Skill | Items | Gap | Impact |
-|-------|-------|-----|--------|
-| **Writing Task 1** | 0 | No content collected yet | Writing exam shows placeholder "No Task 1 data" |
-| **Speaking S11** (Problem Solving) | 0 units in curriculum | 7 untagged Q in master DB | Students see day but no content |
-| **Speaking S12** (Prioritisation) | 0 units in curriculum | 15 untagged Q in master DB | Students see day but no content |
-| **PRONUNCIATION** | 0 units | Skill in framework but no content | Never shown on Learning Profile |
-| **PARAPHRASING** | 0 units | Skill in framework but no content | Never shown on Learning Profile |
+| Trap | Why |
+|---|---|
+| Persisting inside a `setState` updater | Silently dropped on unmount. See §5. |
+| Calling a parent's setter inside an updater | Double-fires under StrictMode. |
+| Reading state inside an updater to act on it | Bit `approveUnlockRequest` before; read *before* updating. |
+| Adding a `--color-*` outside `tokens.css` | Breaks dark mode. |
+| Assuming `arr[i]` is defined | `noUncheckedIndexedAccess` is on. |
+| Styling `Task1ExamView` with product tokens | Intentionally a different visual language. |
+| Treating brand fills as text colours | `#10B981` is 2.54:1 on white. Use `--color-*-text`. |
 
-### Scoring & Analysis
+### Environment
 
-| Issue | Cause | Impact | Known? |
-|-------|-------|--------|--------|
-| **Scoring is length-based, not comprehension-based** | 5 regex patterns for grammar; no parsing | 264 repetitions of "banana" = 6.5 band | ✅ Confirmed via test |
-| **Speaking lexical/grammar/pronunciation are literal copies of fluency band** | Not computed separately | Bands appear identical | ✅ By design (heuristic stub) |
-| **Confidence hardcoded to 0.25 (speaking), 0.35 (writing)** | No ML, no calibration | Disclaimer shows on results | ✅ Intentional |
-| **Jaccard similarity fails on boilerplate text** | No TF-IDF weighting | Duplicate detection false-positives | ✅ Documented in `master_speaking_db.json` comments |
+- Outbound HTTPS goes through an allowlisting proxy; most external domains return 403.
+  Vercel deploys and third-party content fetches fail here for that reason, not a code fault.
+- `vercel.json` is configured (Vite preset + SPA rewrite) but no deploy has succeeded.
+- Chromium is available for Playwright at `/opt/pw-browsers/chromium-1194/chrome-linux/chrome`.
+  Playwright is **not** a project dependency.
 
-### Environment & Deployment
+### Attribution
 
-| Issue | Root Cause | Workaround | Status |
-|-------|-----------|-----------|--------|
-| **Egress proxy blocks external domains** | Network policy in remote environment | Cannot fetch from writing9.com / vercel.com during session | ✅ Not a code bug |
-| **No `pdftoppm` (PDF → image)** | Not pre-installed in container | Extracted text via Flate stream decompression + CMap offset derivation | ✅ Implemented |
-| **Vercel deploy requires authentication** | API credentials not available in public session | Deploy step is manual; `vercel.json` configured correctly | ✅ Expected |
-
-### Testing & Validation
-
-| Gap | Recommendation | Priority |
-|-----|-----------------|----------|
-| **No e2e test suite** | Add Playwright tests for unlock flow, exam submission, localStorage persistence | High |
-| **No unit tests for `analysis.ts`** | Add test cases for edge cases (0-length text, min/max word counts) | Medium |
-| **No accessibility audit** | Run axe-core or manual WCAG 2.1 Level AA scan | Medium |
-| **No performance benchmark** | Measure bundle size, LCP, CLS (currently unoptimized) | Low |
-
-### Content Curation
-
-| Task | Status | Notes |
-|------|--------|-------|
-| **Collect 50 Writing Task 1 tasks** | Blocked | User instructed not to attempt writing9.com again (403 proxy blocks); requires manual collection or alternate source |
-| **Retag S11/S12 questions** | Open | 22 untagged questions in master DB; would improve curriculum coverage |
-| **Add PRONUNCIATION content** | Open | Requires sourcing or generating phonetics examples |
-| **Formalize Part 2 heading structure** | ✅ Complete | 69 headings (not cue cards) documented; structure locked |
+`public/tasks/writing/*.png` and the Task 1 prompts come from the official *IELTS Academic
+Writing Sample Tasks* (2023), pages 3–5, recorded in the `source` field of every record in
+`writingTask1Data.ts`. Redistribution terms have not been reviewed — treat as an open
+question before any public deploy.
 
 ---
 
-## 7. Recommendations for Next Steps
+## 7. Where to Start
 
-### High Priority (Blocking)
+**Highest value, in order**
 
-1. **Backend & Persistence** — Replace mock data with real database (SQL/NoSQL). Implement server-side auth & RBAC. Add API routes for progress, unlock approvals, attendance.
-2. **Real IELTS Content** — Replace stub questions with authentic IELTS materials (speaking Q, writing tasks, cue cards). Add images/audio where needed.
-3. **ML Scoring** — Replace heuristic `analysis.ts` with trained model or expert rubric. Calibrate confidence intervals.
-4. **Writing Task 1 Collection** — Complete the master database with 48+ authentic chart descriptions (requires legal source or manual creation).
+1. Replace the heuristic scorer with a real assessment path.
+2. Stand up a backend: real auth, server-enforced RBAC, durable progress.
+3. Add a test suite — the unlock engine and the two storage modules are pure and are the
+   natural first targets.
 
-### Medium Priority (Unblocking Features)
+**Self-contained and useful now**
 
-5. **Adaptive Curriculum** — Implement `adaptiveSprint.ts` fully: map focus tags → content units, enforce prerequisites, suggest review paths.
-6. **Audio Capture & Transmission** — Persist recorded speaking audio (secure upload, storage, playback for student review).
-7. **S11/S12 Tagging** — Run retag pass on 22 untagged questions; validate coverage against skill matrix.
-8. **Learner Profile Analytics** — Replace mock band data with real progress tracking; add charts over time.
+4. Extend the Task 1 bank to `pie_chart`, `table`, `map`.
+5. Build a Task 2 bank to match Task 1's shape.
+6. Persist and play back speaking audio.
+7. Wire `examinerPrompts.ts` to something, or delete it.
 
-### Low Priority (Polish)
+**Questions only the project owner can answer**
 
-9. **Test Suite** — Add Playwright e2e tests + Jest unit tests for core logic.
-10. **Performance** — Optimize bundle size (code-split routes), measure LCP/CLS, consider caching.
-11. **Accessibility** — Audit against WCAG 2.1 Level AA; fix any contrast or keyboard-nav issues.
-12. **Documentation** — API docs, deployment guide, contributing guidelines.
-
----
-
-## 8. Key Contacts / Questions for the Original Author
-
-If you're taking over this codebase, ask the original author:
-
-1. **What is the vision for real IELTS content?** (Is this for a commercial platform, educational experiment, or internal tool?)
-2. **Who is the target student?** (UK/US-based? International? Band 5–7 or 7–9?)
-3. **What is the revenue/deployment model?** (SaaS, self-hosted, embedded?)
-4. **Writing Task 1: any legal source approved?** (writing9.com was blocked; are there alternatives?)
-5. **Audio: should it be stored for review/analytics?** (Currently captured but discarded.)
-6. **Adaptive algorithm: any preferences?** (Spaced repetition? Mastery-based? Skill trees?)
+- Is this a commercial product, a teaching tool, or a prototype?
+- What is the licensing position on official IELTS material?
+- Should recorded audio be retained, and under what consent?
 
 ---
 
-## 9. Code Quality Notes
-
-### Strengths
-- **Strict TypeScript** with `noUncheckedIndexedAccess` catches many bugs at compile time.
-- **Derived-state architecture** avoids stale data; `buildJourney()` is pure.
-- **Debounced localStorage** prevents thrashing; sync flush on exit is solid.
-- **No external APIs in `src/`** keeps code predictable and testable.
-- **CSS custom properties** enable theme switching without duplication.
-
-### Weaknesses
-- **Heuristic scoring is brittle** — 5 regex patterns won't catch real grammar errors. Consider Helm or GPT-based rubric as upgrade path.
-- **In-memory state is not normalized** — duplication in `users[]` and `progress[]`; consider a single entity graph.
-- **No error boundaries on critical routes** — if exam state corrupts, user sees white screen.
-- **Attendance calculation uses a 11-day stride** — works but is not obviously correct; add a comment explaining the rolling window.
-- **`/admin` pages have no audit log** — staff overrides are logged to `console` only; production would need database+timestamps.
-
----
-
-**Document generated:** 2026-08-26  
-**Branch:** `claude/ielts-speakwrite-sprint-shell-tmh5c7`  
-**Status:** Ready for handoff
+**Branch:** `claude/ielts-speakwrite-sprint-shell-tmh5c7` · **Verified against the working
+tree**, not from memory.

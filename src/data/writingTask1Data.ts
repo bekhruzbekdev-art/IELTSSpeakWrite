@@ -17,7 +17,8 @@ import type { WritingTask1Question } from '../types/writingTask1';
  * `public/tasks/writing/`. They are the original figures, not redrawn.
  */
 
-const SUMMARISE =
+/** The instruction line every Academic Task 1 question carries, verbatim. */
+export const SUMMARISE_INSTRUCTION =
   'Summarise the information by selecting and reporting the main features, and make comparisons where relevant.';
 
 const SOURCE = 'IELTS Academic Writing Sample Tasks (2023), p.3–5';
@@ -28,7 +29,7 @@ function rubric(stimulus: string): string {
     '',
     stimulus,
     '',
-    SUMMARISE,
+    SUMMARISE_INSTRUCTION,
     '',
     'Write at least 150 words.',
   ].join('\n');
@@ -96,6 +97,17 @@ export const WRITING_TASK_1_QUESTIONS: WritingTask1Question[] = [
 
 export function findTask1Question(id: string): WritingTask1Question | undefined {
   return WRITING_TASK_1_QUESTIONS.find((question) => question.id === id);
+}
+
+/**
+ * The stimulus and its instruction line as one paragraph.
+ *
+ * The Starting Point Test presents Task 1 as a single block rather than the
+ * spaced-out CD rubric, so it composes the prompt this way instead of reusing
+ * `question.prompt` — same source text either way.
+ */
+export function task1PromptParagraph(question: WritingTask1Question): string {
+  return `${question.stimulus} ${SUMMARISE_INSTRUCTION}`;
 }
 
 /** Guide time for the whole Task 1 module, in milliseconds. */
