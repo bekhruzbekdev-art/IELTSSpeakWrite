@@ -1,4 +1,4 @@
-import { Contrast, Minus, Plus, ZoomIn, ZoomOut } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Contrast, Minus, Plus, ZoomIn, ZoomOut } from 'lucide-react';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { countWords } from '../../lib/analysis';
 import type { Task1FontSize } from '../../lib/task1Storage';
@@ -120,6 +120,7 @@ export function Task1ExamView({
 
   if (!question) return null;
 
+  const index = questions.findIndex((q) => q.id === question.id);
   const isLow = remaining <= LOW_TIME_MS;
   const editorId = `cd-answer-${question.id}`;
 
@@ -281,25 +282,56 @@ export function Task1ExamView({
 
       {/* ---------------------------------------------------------------- *
        * Footer navigation
+       *
+       * The real test has two parts and so has two buttons. A 53-question
+       * bank cannot use that shape — a strip of 53 tabs overflows the footer
+       * and cannot be reached — so it keeps the flat CD styling but navigates
+       * the way a long paper has to: step back and forward, or jump.
        * ---------------------------------------------------------------- */}
       <footer className="cd__foot">
-        <nav className="cd__tabs" aria-label="Tasks">
-          {questions.map((q) => {
-            const count = countWords(drafts[q.id] ?? '');
-            const active = q.id === question.id;
-            return (
-              <button
-                key={q.id}
-                type="button"
-                className={`cd__tab${active ? ' cd__tab--active' : ''}`}
-                aria-current={active ? 'page' : undefined}
-                onClick={() => onSelectQuestion(q.id)}
-              >
-                <span className="cd__tab-label">{q.label}</span>
-                <span className="cd__tab-count">{count}</span>
-              </button>
-            );
-          })}
+        <nav className="cd__nav" aria-label="Tasks">
+          <button
+            type="button"
+            className="cd__control cd__control--wide"
+            onClick={() => onSelectQuestion(questions[index - 1]?.id ?? question.id)}
+            disabled={index === 0}
+            aria-label="Previous task"
+          >
+            <ChevronLeft size={14} aria-hidden="true" />
+          </button>
+
+          <label className="visually-hidden" htmlFor="cd-jump">
+            Jump to task
+          </label>
+          <select
+            id="cd-jump"
+            className="cd__jump"
+            value={question.id}
+            onChange={(event) => onSelectQuestion(event.target.value)}
+          >
+            {questions.map((q, i) => (
+              <option key={q.id} value={q.id}>
+                {`${i + 1}. ${q.title}`}
+                {countWords(drafts[q.id] ?? '') > 0
+                  ? ` — ${countWords(drafts[q.id] ?? '')} words`
+                  : ''}
+              </option>
+            ))}
+          </select>
+
+          <button
+            type="button"
+            className="cd__control cd__control--wide"
+            onClick={() => onSelectQuestion(questions[index + 1]?.id ?? question.id)}
+            disabled={index === questions.length - 1}
+            aria-label="Next task"
+          >
+            <ChevronRight size={14} aria-hidden="true" />
+          </button>
+
+          <span className="cd__position">
+            Task {index + 1} of {questions.length}
+          </span>
         </nav>
 
         <button

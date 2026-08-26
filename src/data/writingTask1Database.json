@@ -1,0 +1,1541 @@
+{
+  "database": "IELTS SpeakWrite Sprint - Writing Task 1",
+  "generated": "2026-08-26T13:34:44.755535+00:00",
+  "totals": {
+    "existing_before_import": 3,
+    "imported_from_pdf": 50,
+    "task_1_total": 53,
+    "unique_prompts": 51,
+    "exact_duplicate_records": 2
+  },
+  "extraction_method": "Image-only PDF (0 text streams, 50 embedded JPEGs). Every page read visually; prompts transcribed verbatim including source typos.",
+  "distributions": {
+    "visual_type": {
+      "BAR_CHART": 14,
+      "TABLE": 9,
+      "LINE_GRAPH": 8,
+      "MAP": 6,
+      "PIE_CHART": 5,
+      "DIAGRAM": 4,
+      "MIXED_CHART": 3,
+      "PROCESS": 3,
+      "FLOW_CHART": 1
+    },
+    "difficulty": {
+      "MEDIUM": 32,
+      "HARD": 21
+    },
+    "domains": {
+      "ECONOMY": 9,
+      "ENVIRONMENT": 8,
+      "POPULATION": 8,
+      "WORK": 8,
+      "CITIES": 7,
+      "EDUCATION": 7,
+      "AGRICULTURE": 6,
+      "SCIENCE": 6,
+      "TECHNOLOGY": 5,
+      "HEALTH": 4,
+      "OTHER": 4,
+      "TRANSPORT": 4,
+      "ENERGY": 3,
+      "TOURISM": 3
+    },
+    "skills": {
+      "OVERVIEW_WRITING": 53,
+      "DATA_COMPARISON": 40,
+      "TREND_DESCRIPTION": 21,
+      "CHANGE_ANALYSIS": 18,
+      "MULTIPLE_DATA_SYNTHESIS": 16,
+      "DATA_SELECTION": 10,
+      "PROCESS_DESCRIPTION": 8,
+      "STAGE_DESCRIPTION": 8,
+      "SPATIAL_DESCRIPTION": 7
+    }
+  },
+  "duplicate_analysis": {
+    "exact_duplicates": [
+      {
+        "pair": [
+          "WT1_007",
+          "WT1_016"
+        ],
+        "source_pages": [
+          4,
+          13
+        ],
+        "basis": "pixel-identical page image (SHA-256 of decoded RGB)",
+        "topic": "bus company punctuality and complaints"
+      },
+      {
+        "pair": [
+          "WT1_046",
+          "WT1_049"
+        ],
+        "source_pages": [
+          43,
+          46
+        ],
+        "basis": "pixel-identical page image (SHA-256 of decoded RGB)",
+        "topic": "visits to a community website"
+      }
+    ],
+    "near_duplicates": [],
+    "same_topic_different_visual": [
+      {
+        "ids": [
+          "WT1_011",
+          "WT1_045"
+        ],
+        "source_pages": [
+          8,
+          42
+        ],
+        "note": "Both cover water use by sector and both include Egypt, Saudi Arabia and Canada. Page 8 is a pie+bar mixed chart for three countries; page 42 is a table for four countries (adds New Zealand). Different visuals and different data - retained separately."
+      },
+      {
+        "ids": [
+          "WT1_023",
+          "WT1_043"
+        ],
+        "source_pages": [
+          20,
+          39
+        ],
+        "note": "Both are education-site plans compared across two time points (school library; university sports centre). Distinct content."
+      }
+    ],
+    "method": "SHA-256 over decoded RGB pixel buffers for all 50 pages, plus manual prompt review."
+  },
+  "records": [
+    {
+      "id": "WT1_001",
+      "part": "WRITING_TASK_1",
+      "legacy_id": "task-1a",
+      "prompt": "The chart below shows the number of men and women in further education in Britain in three periods and whether they were studying full-time or part-time. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "BAR_CHART",
+      "source_page": 3,
+      "source_title": "Men and women in further education in Britain",
+      "source_image": "tasks/writing/task-1a.png",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON",
+        "CHANGE_ANALYSIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "EDUCATION",
+        "POPULATION"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Academic Writing Sample Tasks (2023), p.3-5",
+      "image_width": 425,
+      "image_height": 424
+    },
+    {
+      "id": "WT1_002",
+      "part": "WRITING_TASK_1",
+      "legacy_id": "task-1b",
+      "prompt": "The graph below shows radio and television audiences throughout the day in 1992. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "LINE_GRAPH",
+      "source_page": 4,
+      "source_title": "Radio and television audiences in UK, October - December 1992",
+      "source_image": "tasks/writing/task-1b.png",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "OTHER"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Academic Writing Sample Tasks (2023), p.3-5",
+      "image_width": 1011,
+      "image_height": 693
+    },
+    {
+      "id": "WT1_003",
+      "part": "WRITING_TASK_1",
+      "legacy_id": "task-1c",
+      "prompt": "The diagram below shows the process by which bricks are manufactured for the building industry. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "PROCESS",
+      "source_page": 5,
+      "source_title": "Brick Manufacturing",
+      "source_image": "tasks/writing/task-1c.png",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "PROCESS_DESCRIPTION",
+        "STAGE_DESCRIPTION"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "ECONOMY",
+        "SCIENCE"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Academic Writing Sample Tasks (2023), p.3-5",
+      "image_width": 1096,
+      "image_height": 1000
+    },
+    {
+      "id": "WT1_004",
+      "part": "WRITING_TASK_1",
+      "prompt": "The table below shows the information about medical care in three European countries between 1980 and 2000. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "TABLE",
+      "source_page": 1,
+      "source_title": null,
+      "source_image": "tasks/writing/bank/wt1_004.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "DATA_SELECTION",
+        "CHANGE_ANALYSIS",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "HEALTH",
+        "ECONOMY"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Three separate metrics (physicians, hospital beds, average stay) across 3 countries and 3 years.",
+      "image_width": 1280,
+      "image_height": 853
+    },
+    {
+      "id": "WT1_005",
+      "part": "WRITING_TASK_1",
+      "prompt": "The chart below gives the number of people employed in five types of work in a certain region in Australia in 2001 and 2008.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+      "visual_type": "BAR_CHART",
+      "source_page": 2,
+      "source_title": "Number of people employed in five types of work",
+      "source_image": "tasks/writing/bank/wt1_005.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "CHANGE_ANALYSIS"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "WORK"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 853
+    },
+    {
+      "id": "WT1_006",
+      "part": "WRITING_TASK_1",
+      "prompt": "The floor plans show a typical American and a Japanese office.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "MAP",
+      "source_page": 3,
+      "source_title": "Typical Japanese Office / Typical American Office",
+      "source_image": "tasks/writing/bank/wt1_006.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "SPATIAL_DESCRIPTION",
+        "DATA_COMPARISON"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "WORK",
+        "CITIES"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Floor plans, not a geographic map; MAP is the closest listed type.",
+      "image_width": 1280,
+      "image_height": 853
+    },
+    {
+      "id": "WT1_007",
+      "part": "WRITING_TASK_1",
+      "prompt": "The charts below show the performance of a bus company in terms of punctuality. Both actual and target (what actually happened compared to what the company was trying to achieve), and the number of complaints from passengers.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "BAR_CHART",
+      "source_page": 4,
+      "source_title": "Performance (1999-2003)",
+      "source_image": "tasks/writing/bank/wt1_007.jpg",
+      "duplicate_status": "EXACT_DUPLICATE",
+      "related_task_ids": [
+        "WT1_016"
+      ],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "TRANSPORT"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Two stacked bar charts requiring synthesis: punctuality vs complaints.",
+      "image_width": 1152,
+      "image_height": 1280
+    },
+    {
+      "id": "WT1_008",
+      "part": "WRITING_TASK_1",
+      "prompt": "The table below presents weekly food consumption per person in a European country in 1992, 2002, and 2012.",
+      "visual_type": "TABLE",
+      "source_page": 5,
+      "source_title": "Food / 1992 / 2002 / 2012",
+      "source_image": "tasks/writing/bank/wt1_008.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "AGRICULTURE",
+        "HEALTH"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Source page carries no 'Summarise the information...' instruction line.",
+      "image_width": 1280,
+      "image_height": 853
+    },
+    {
+      "id": "WT1_009",
+      "part": "WRITING_TASK_1",
+      "prompt": "The tables below show the distribution of students at UK universities by mode of study and gender.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+      "visual_type": "TABLE",
+      "source_page": 6,
+      "source_title": "Male Postgraduate Students / Female Postgraduate Students",
+      "source_image": "tasks/writing/bank/wt1_009.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "EDUCATION"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 897
+    },
+    {
+      "id": "WT1_010",
+      "part": "WRITING_TASK_1",
+      "prompt": "The chart below shows the percentage of a drug company's total sales, by region, from 2002 to 2006.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+      "visual_type": "BAR_CHART",
+      "source_page": 7,
+      "source_title": "The percentage of drug company's total sale, per region, 2002-2006",
+      "source_image": "tasks/writing/bank/wt1_010.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "ECONOMY",
+        "HEALTH"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "100% stacked bar chart.",
+      "image_width": 1280,
+      "image_height": 1075
+    },
+    {
+      "id": "WT1_011",
+      "part": "WRITING_TASK_1",
+      "prompt": "The charts below show the distribution of the world's water and the use of water in three countries.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant. Write at least 150 words.",
+      "visual_type": "MIXED_CHART",
+      "source_page": 8,
+      "source_title": "Distribution of the World's Water / The Use of Water (%)",
+      "source_image": "tasks/writing/bank/wt1_011.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "DATA_SELECTION",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "ENVIRONMENT"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Two pie charts plus a grouped bar chart.",
+      "image_width": 1125,
+      "image_height": 1280
+    },
+    {
+      "id": "WT1_012",
+      "part": "WRITING_TASK_1",
+      "prompt": "The graph below shows the production of three forest industry products in a European country, namely timber, pulp, and paper, from 1980 to 2000.\n\nSummarise the information by selecting and reporting the main features, and make comparison where relevant.",
+      "visual_type": "LINE_GRAPH",
+      "source_page": 9,
+      "source_title": "Forest industry production, 1980-2000",
+      "source_image": "tasks/writing/bank/wt1_012.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "AGRICULTURE",
+        "ECONOMY"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Source reads 'make comparison where relevant' (singular). The word 'timber' is highlighted in the original.",
+      "image_width": 1280,
+      "image_height": 954
+    },
+    {
+      "id": "WT1_013",
+      "part": "WRITING_TASK_1",
+      "prompt": "The following diagram shows how greenhouse gases trap energy from the Sun.\nWrite a report for a university lecturer describing the information shown in the diagram.\n\nSummarise the information by selecting and reporting the main features and make comparisons where relevant.",
+      "visual_type": "DIAGRAM",
+      "source_page": 10,
+      "source_title": null,
+      "source_image": "tasks/writing/bank/wt1_013.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "PROCESS_DESCRIPTION",
+        "STAGE_DESCRIPTION"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "ENVIRONMENT",
+        "SCIENCE"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 1024
+    },
+    {
+      "id": "WT1_014",
+      "part": "WRITING_TASK_1",
+      "prompt": "The line graph below shows the number of international conferences in three cities between 1965 and 2010.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "LINE_GRAPH",
+      "source_page": 11,
+      "source_title": "The number of international conferences in three cities",
+      "source_image": "tasks/writing/bank/wt1_014.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "TOURISM",
+        "CITIES"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 1072
+    },
+    {
+      "id": "WT1_015",
+      "part": "WRITING_TASK_1",
+      "prompt": "The diagram below shows how the Australian Bureau of Meteorology collects up-to-the-minute information on the weather in order to produce reliable forecasts.\n\nWrite a report for a university lecturer describing the information shown below.",
+      "visual_type": "FLOW_CHART",
+      "source_page": 12,
+      "source_title": null,
+      "source_image": "tasks/writing/bank/wt1_015.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "PROCESS_DESCRIPTION",
+        "STAGE_DESCRIPTION"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "SCIENCE",
+        "TECHNOLOGY"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Information-flow diagram rather than a manufacturing process.",
+      "image_width": 1280,
+      "image_height": 1024
+    },
+    {
+      "id": "WT1_016",
+      "part": "WRITING_TASK_1",
+      "prompt": "The charts below show the performance of a bus company in terms of punctuality. Both actual and target (what actually happened compared to what the company was trying to achieve), and the number of complaints from passengers.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "BAR_CHART",
+      "source_page": 13,
+      "source_title": "Performance (1999-2003)",
+      "source_image": "tasks/writing/bank/wt1_016.jpg",
+      "duplicate_status": "EXACT_DUPLICATE",
+      "related_task_ids": [
+        "WT1_007"
+      ],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "TRANSPORT"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1152,
+      "image_height": 1280
+    },
+    {
+      "id": "WT1_017",
+      "part": "WRITING_TASK_1",
+      "prompt": "The diagram shows a structure that is used to generate electricity from wave power.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "DIAGRAM",
+      "source_page": 14,
+      "source_title": null,
+      "source_image": "tasks/writing/bank/wt1_017.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "PROCESS_DESCRIPTION",
+        "STAGE_DESCRIPTION"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "ENERGY",
+        "SCIENCE"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 960
+    },
+    {
+      "id": "WT1_018",
+      "part": "WRITING_TASK_1",
+      "prompt": "The charts below show the percentage of students at an adult education center taking various courses offered in 1985 and this year.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "PIE_CHART",
+      "source_page": 15,
+      "source_title": "Percentage of students taking various courses in 1985 / this year",
+      "source_image": "tasks/writing/bank/wt1_018.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "CHANGE_ANALYSIS"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "EDUCATION"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 921,
+      "image_height": 1280
+    },
+    {
+      "id": "WT1_019",
+      "part": "WRITING_TASK_1",
+      "prompt": "The diagrams below show the changes that took place in a town called Bridgetown between 1700 and 2000.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "MAP",
+      "source_page": 16,
+      "source_title": "Bridgetown 1700 / Bridgetown 2000",
+      "source_image": "tasks/writing/bank/wt1_019.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "SPATIAL_DESCRIPTION",
+        "CHANGE_ANALYSIS"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "CITIES"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 1024
+    },
+    {
+      "id": "WT1_020",
+      "part": "WRITING_TASK_1",
+      "prompt": "The graph below shows different sources of air pollutants in the UK from 1990 to 2005.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "LINE_GRAPH",
+      "source_page": 17,
+      "source_title": "Sources of air pollutants in the UK from 1990 to 2005",
+      "source_image": "tasks/writing/bank/wt1_020.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "ENVIRONMENT"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 1024
+    },
+    {
+      "id": "WT1_021",
+      "part": "WRITING_TASK_1",
+      "prompt": "The charts below show the proportion of people's total spending on different commodities and services in a particular European country in 1998 and 2008.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "BAR_CHART",
+      "source_page": 18,
+      "source_title": "1998 / 2008",
+      "source_image": "tasks/writing/bank/wt1_021.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "CHANGE_ANALYSIS"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "ECONOMY"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1206,
+      "image_height": 1280
+    },
+    {
+      "id": "WT1_022",
+      "part": "WRITING_TASK_1",
+      "prompt": "The charts show information about the percentage of men and women aged 60-64 who were employed in four countries in 1970 and 2000.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "BAR_CHART",
+      "source_page": 19,
+      "source_title": "1970 / 2000",
+      "source_image": "tasks/writing/bank/wt1_022.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "CHANGE_ANALYSIS",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "WORK",
+        "POPULATION"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Four countries x two genders x two years.",
+      "image_width": 1280,
+      "image_height": 1024
+    },
+    {
+      "id": "WT1_023",
+      "part": "WRITING_TASK_1",
+      "prompt": "The plans show a school library 5 years ago and the same library now.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "MAP",
+      "source_page": 20,
+      "source_title": "5 years ago / Now",
+      "source_image": "tasks/writing/bank/wt1_023.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "SPATIAL_DESCRIPTION",
+        "CHANGE_ANALYSIS"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "EDUCATION"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1187,
+      "image_height": 1280
+    },
+    {
+      "id": "WT1_024",
+      "part": "WRITING_TASK_1",
+      "prompt": "The chart below gives information about library borrowing in UK public libraries during a 10-year period from 1995 to 2005.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "BAR_CHART",
+      "source_page": 21,
+      "source_title": "Library borrowing in UK public libraries (in millions)",
+      "source_image": "tasks/writing/bank/wt1_024.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "EDUCATION"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Stacked bar chart.",
+      "image_width": 1280,
+      "image_height": 1104
+    },
+    {
+      "id": "WT1_025",
+      "part": "WRITING_TASK_1",
+      "prompt": "The charts illustrate the number of people who were affected by 4 types of noise pollution in day and night in cities and rural areas in 2007.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "BAR_CHART",
+      "source_page": 22,
+      "source_title": "Noise affecting people in cities / in rural areas (millions)",
+      "source_image": "tasks/writing/bank/wt1_025.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "ENVIRONMENT",
+        "CITIES"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 1024
+    },
+    {
+      "id": "WT1_026",
+      "part": "WRITING_TASK_1",
+      "prompt": "The tables below show responses to a questionnaire given by two groups of people (club members and the general public) who shared their opinions about a new theatre.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "TABLE",
+      "source_page": 23,
+      "source_title": "Production quality / Information about the plays / Facilities in the theatre",
+      "source_image": "tasks/writing/bank/wt1_026.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "DATA_SELECTION",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "OTHER"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Three separate response tables.",
+      "image_width": 1280,
+      "image_height": 1074
+    },
+    {
+      "id": "WT1_027",
+      "part": "WRITING_TASK_1",
+      "prompt": "The charts below show the percentage of time used for different activities in the office in the US in 1980 and 2000.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "PIE_CHART",
+      "source_page": 24,
+      "source_title": "1980 / 2000",
+      "source_image": "tasks/writing/bank/wt1_027.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "CHANGE_ANALYSIS"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "WORK",
+        "TECHNOLOGY"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 987,
+      "image_height": 1280
+    },
+    {
+      "id": "WT1_028",
+      "part": "WRITING_TASK_1",
+      "prompt": "The charts below sbow the responses to two questions in a 2009 survey about car-buying habits in a European country.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "BAR_CHART",
+      "source_page": 25,
+      "source_title": "Survey results - Car buying habits, 2009",
+      "source_image": "tasks/writing/bank/wt1_028.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "TRANSPORT",
+        "ECONOMY"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Source contains the typo 'sbow' for 'show'; preserved verbatim.",
+      "image_width": 1124,
+      "image_height": 1280
+    },
+    {
+      "id": "WT1_029",
+      "part": "WRITING_TASK_1",
+      "prompt": "The two charts show population trends in Southern Pacific countries from 1950, with projections for 2040.\n\nThe first chart compares urban and rural populations, while the second provides a breakdown by age group.",
+      "visual_type": "LINE_GRAPH",
+      "source_page": 26,
+      "source_title": "Urban and Rural Population Trends / Trends in Age Structure",
+      "source_image": "tasks/writing/bank/wt1_029.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "POPULATION",
+        "CITIES"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Source page carries no 'Summarise the information...' instruction line.",
+      "image_width": 1280,
+      "image_height": 1046
+    },
+    {
+      "id": "WT1_030",
+      "part": "WRITING_TASK_1",
+      "prompt": "The chart below shows the average earnings of people in various areas of work in one country in 2000 and 2010.\nThe table shows the average salary for all sectors in the same years.",
+      "visual_type": "MIXED_CHART",
+      "source_page": 27,
+      "source_title": "Average annual salary per full-time employee, by sector / Average salary for all sectors",
+      "source_image": "tasks/writing/bank/wt1_030.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "CHANGE_ANALYSIS",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "WORK",
+        "ECONOMY"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Horizontal bar chart plus a summary table. No 'Summarise the information...' line on the page.",
+      "image_width": 1280,
+      "image_height": 909
+    },
+    {
+      "id": "WT1_031",
+      "part": "WRITING_TASK_1",
+      "prompt": "The three pie charts show the percentage of total energy consumption from five different sources in 1985, 1995 and 2005.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "PIE_CHART",
+      "source_page": 28,
+      "source_title": "1985 / 1995 / 2005",
+      "source_image": "tasks/writing/bank/wt1_031.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON",
+        "CHANGE_ANALYSIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "ENERGY"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 1091
+    },
+    {
+      "id": "WT1_032",
+      "part": "WRITING_TASK_1",
+      "prompt": "The chart below shows the number of four different species of fish between 1982 and 2007.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "LINE_GRAPH",
+      "source_page": 29,
+      "source_title": "Kinds of fish worldwide",
+      "source_image": "tasks/writing/bank/wt1_032.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "ENVIRONMENT",
+        "AGRICULTURE"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Prompt says 'chart'; the visual is a line graph.",
+      "image_width": 1280,
+      "image_height": 1024
+    },
+    {
+      "id": "WT1_033",
+      "part": "WRITING_TASK_1",
+      "prompt": "The graph below shows the sales of 5 types of items in four different seasons in a US department store in 2011.\n\nSummarise the information by selecting and reporting the main features and make comparisons where relevant.",
+      "visual_type": "BAR_CHART",
+      "source_page": 30,
+      "source_title": "Department store sales (in US dollars)",
+      "source_image": "tasks/writing/bank/wt1_033.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "DATA_SELECTION"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "ECONOMY"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Five item types across four seasons.",
+      "image_width": 1280,
+      "image_height": 1024
+    },
+    {
+      "id": "WT1_034",
+      "part": "WRITING_TASK_1",
+      "prompt": "The graphs below show the viewership of different TV programs among three different age groups.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "PIE_CHART",
+      "source_page": 31,
+      "source_title": "10-15 years old / 16-20 years old / 21-25 years old",
+      "source_image": "tasks/writing/bank/wt1_034.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "DATA_SELECTION",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "OTHER",
+        "POPULATION"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 853
+    },
+    {
+      "id": "WT1_035",
+      "part": "WRITING_TASK_1",
+      "prompt": "The diagram below shows the way in which sand dunes are formed.\n\nSummarize the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "PROCESS",
+      "source_page": 32,
+      "source_title": null,
+      "source_image": "tasks/writing/bank/wt1_035.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "PROCESS_DESCRIPTION",
+        "STAGE_DESCRIPTION"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "ENVIRONMENT",
+        "SCIENCE"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Source uses US spelling 'Summarize'. Footnote in image: '*Sand dune: sand gradually formed in deserts / on coast.'",
+      "image_width": 1280,
+      "image_height": 1005
+    },
+    {
+      "id": "WT1_036",
+      "part": "WRITING_TASK_1",
+      "prompt": "The table shows the positions of women in government and management in 2000 in five countries.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "TABLE",
+      "source_page": 33,
+      "source_title": "The positions of women in government and management in 2000 in five countries",
+      "source_image": "tasks/writing/bank/wt1_036.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "DATA_SELECTION"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "WORK",
+        "POPULATION"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Footnote in image defines 'Parliament'.",
+      "image_width": 1280,
+      "image_height": 1005
+    },
+    {
+      "id": "WT1_037",
+      "part": "WRITING_TASK_1",
+      "prompt": "The pie chart below illustrates the average commuting time of UK workers in 2009, while the bar chart compares the methods of travelling to work in London and the rest of the UK in the same year.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "MIXED_CHART",
+      "source_page": 34,
+      "source_title": "Average commuting time of UK workers, 2009 / Methods of travel to work in London and the rest of the UK, 2009",
+      "source_image": "tasks/writing/bank/wt1_037.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "TRANSPORT",
+        "CITIES"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 1021
+    },
+    {
+      "id": "WT1_038",
+      "part": "WRITING_TASK_1",
+      "prompt": "The table below gives information about marriages in Australia from 1960 to 2000.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "TABLE",
+      "source_page": 35,
+      "source_title": "Number of marriages and age of bride and bridegroom",
+      "source_image": "tasks/writing/bank/wt1_038.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON",
+        "CHANGE_ANALYSIS"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "POPULATION"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "The image carries a '*Parliament' footnote that is unrelated to this task - an artifact of the source compilation.",
+      "image_width": 1280,
+      "image_height": 1007
+    },
+    {
+      "id": "WT1_039",
+      "part": "WRITING_TASK_1",
+      "prompt": "The graph below shows the percentage of workers from five different European countries that were absent for six days or more due to illness from 1991 to 2001.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "LINE_GRAPH",
+      "source_page": 36,
+      "source_title": "Percentage of workers with Illness Absence (six days or more)",
+      "source_image": "tasks/writing/bank/wt1_039.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON",
+        "DATA_SELECTION"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "HEALTH",
+        "WORK"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Five series across eleven years.",
+      "image_width": 1280,
+      "image_height": 1024
+    },
+    {
+      "id": "WT1_040",
+      "part": "WRITING_TASK_1",
+      "prompt": "The plans below show a small theater in 2010, and the same theater in 2012.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "MAP",
+      "source_page": 37,
+      "source_title": "Theatre, 2010 / Theatre, 2012",
+      "source_image": "tasks/writing/bank/wt1_040.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "SPATIAL_DESCRIPTION",
+        "CHANGE_ANALYSIS"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "OTHER"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 1024
+    },
+    {
+      "id": "WT1_041",
+      "part": "WRITING_TASK_1",
+      "prompt": "The diagram below shows how solar panels can be used to provide electricity for domestic use.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "DIAGRAM",
+      "source_page": 38,
+      "source_title": null,
+      "source_image": "tasks/writing/bank/wt1_041.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "PROCESS_DESCRIPTION",
+        "STAGE_DESCRIPTION"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "ENERGY",
+        "TECHNOLOGY"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Five numbered components in the image.",
+      "image_width": 1280,
+      "image_height": 1024
+    },
+    {
+      "id": "WT1_042",
+      "part": "WRITING_TASK_1",
+      "prompt": "The diagram shows the map of a University Sports Centre in 2007 and at present.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "MAP",
+      "source_page": 39,
+      "source_title": "Map of university sports centre in 2007 and present day",
+      "source_image": "tasks/writing/bank/wt1_042.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "SPATIAL_DESCRIPTION",
+        "CHANGE_ANALYSIS"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "EDUCATION"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 1060
+    },
+    {
+      "id": "WT1_043",
+      "part": "WRITING_TASK_1",
+      "prompt": "The given charts describe responses of undergraduate and postgraduate students to a questionnaire about a university library.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "PIE_CHART",
+      "source_page": 40,
+      "source_title": "Range of books / Non printed material (e.g. video, CD/DVD)",
+      "source_image": "tasks/writing/bank/wt1_043.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "EDUCATION"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Four pie charts. The image misspells 'Posgraduate'.",
+      "image_width": 1280,
+      "image_height": 1024
+    },
+    {
+      "id": "WT1_044",
+      "part": "WRITING_TASK_1",
+      "prompt": "The graph below gives information about sugar production and consumption in India from 2001 to 2011.\n\nSummarize the information by selecting and reporting the main features and make comparisons where relevant.",
+      "visual_type": "LINE_GRAPH",
+      "source_page": 41,
+      "source_title": "Sugar production and consumption from 2001-2011",
+      "source_image": "tasks/writing/bank/wt1_044.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "AGRICULTURE",
+        "ECONOMY"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Source uses US spelling 'Summarize'.",
+      "image_width": 1280,
+      "image_height": 1018
+    },
+    {
+      "id": "WT1_045",
+      "part": "WRITING_TASK_1",
+      "prompt": "The table below gives information about the amount of water used in three different sectors in Egypt, Saudi Arabia, New Zealand, and Canada.\n\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "TABLE",
+      "source_page": 42,
+      "source_title": "The use of water by four different countries (%)",
+      "source_image": "tasks/writing/bank/wt1_045.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "DATA_SELECTION"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "ENVIRONMENT",
+        "AGRICULTURE"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1199,
+      "image_height": 1280
+    },
+    {
+      "id": "WT1_046",
+      "part": "WRITING_TASK_1",
+      "prompt": "The bar chart shows the number of visits to a community website in the first and second years of use.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "BAR_CHART",
+      "source_page": 43,
+      "source_title": "Number of visits to a community website: First and second years of use",
+      "source_image": "tasks/writing/bank/wt1_046.jpg",
+      "duplicate_status": "EXACT_DUPLICATE",
+      "related_task_ids": [
+        "WT1_049"
+      ],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON",
+        "CHANGE_ANALYSIS"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "TECHNOLOGY"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 963
+    },
+    {
+      "id": "WT1_047",
+      "part": "WRITING_TASK_1",
+      "prompt": "The table below shows the total population and the proportions of males and females aged 15 and 75 in the UK from 1911 to 2011.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "TABLE",
+      "source_page": 44,
+      "source_title": "1911 / 1961 / 2011",
+      "source_image": "tasks/writing/bank/wt1_047.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON",
+        "DATA_SELECTION",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "POPULATION"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 853
+    },
+    {
+      "id": "WT1_048",
+      "part": "WRITING_TASK_1",
+      "prompt": "The chart below shows the number of jobs in the tourism-related industry in one UK city between 1989 and 2009.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "BAR_CHART",
+      "source_page": 45,
+      "source_title": "Number of jobs",
+      "source_image": "tasks/writing/bank/wt1_048.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "TOURISM",
+        "WORK"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 961
+    },
+    {
+      "id": "WT1_049",
+      "part": "WRITING_TASK_1",
+      "prompt": "The bar chart shows the number of visits to a community website in the first and second years of use.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "BAR_CHART",
+      "source_page": 46,
+      "source_title": "Number of visits to a community website: First and second years of use",
+      "source_image": "tasks/writing/bank/wt1_049.jpg",
+      "duplicate_status": "EXACT_DUPLICATE",
+      "related_task_ids": [
+        "WT1_046"
+      ],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "TREND_DESCRIPTION",
+        "DATA_COMPARISON",
+        "CHANGE_ANALYSIS"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "TECHNOLOGY"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 1280,
+      "image_height": 963
+    },
+    {
+      "id": "WT1_050",
+      "part": "WRITING_TASK_1",
+      "prompt": "The diagram below gives information about stages of the process of producing olive oil.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "PROCESS",
+      "source_page": 47,
+      "source_title": null,
+      "source_image": "tasks/writing/bank/wt1_050.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "PROCESS_DESCRIPTION",
+        "STAGE_DESCRIPTION"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "AGRICULTURE"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Seven numbered stages in the image.",
+      "image_width": 1280,
+      "image_height": 997
+    },
+    {
+      "id": "WT1_051",
+      "part": "WRITING_TASK_1",
+      "prompt": "The diagram below gives the information about the Hawaiian island chain in the centre of the Pacific Ocean.\n\nWrite a report for a university lecturer describing the information shown.",
+      "visual_type": "DIAGRAM",
+      "source_page": 48,
+      "source_title": "The major islands",
+      "source_image": "tasks/writing/bank/wt1_051.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "PROCESS_DESCRIPTION",
+        "SPATIAL_DESCRIPTION",
+        "STAGE_DESCRIPTION"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "SCIENCE",
+        "ENVIRONMENT"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Cross-section diagram plus an inset locator map.",
+      "image_width": 1280,
+      "image_height": 1024
+    },
+    {
+      "id": "WT1_052",
+      "part": "WRITING_TASK_1",
+      "prompt": "The maps below show a beachfront area in Australia in 1950 and today.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "MAP",
+      "source_page": 49,
+      "source_title": "Beachfront area, 1950 / Beachfront area, today",
+      "source_image": "tasks/writing/bank/wt1_052.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "SPATIAL_DESCRIPTION",
+        "CHANGE_ANALYSIS"
+      ],
+      "difficulty": "MEDIUM",
+      "domains": [
+        "TOURISM",
+        "CITIES"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "image_width": 960,
+      "image_height": 1280
+    },
+    {
+      "id": "WT1_053",
+      "part": "WRITING_TASK_1",
+      "prompt": "The table below gives information about population in Australia and Malaysia in 1980 and 2002.\nSummarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      "visual_type": "TABLE",
+      "source_page": 50,
+      "source_title": "Australia / Malaysia, 1980 and 2002",
+      "source_image": "tasks/writing/bank/wt1_053.jpg",
+      "duplicate_status": "UNIQUE",
+      "related_task_ids": [],
+      "skills": [
+        "OVERVIEW_WRITING",
+        "DATA_COMPARISON",
+        "DATA_SELECTION",
+        "CHANGE_ANALYSIS",
+        "MULTIPLE_DATA_SYNTHESIS"
+      ],
+      "difficulty": "HARD",
+      "domains": [
+        "POPULATION"
+      ],
+      "image_status": "EXTRACTED",
+      "source": "IELTS Writing Task 1 compilation (ef1af619-ieltswritingtask1s.pdf), 57pp, image-only; watermarked @cdi_report",
+      "classification_note": "Six demographic metrics across two countries and two years.",
+      "image_width": 1280,
+      "image_height": 1024
+    }
+  ],
+  "source_quality_flags": {
+    "alternative_rubric": {
+      "ids": [
+        "WT1_013",
+        "WT1_015",
+        "WT1_051"
+      ],
+      "source_pages": [
+        10,
+        12,
+        48
+      ],
+      "note": "Uses 'Write a report for a university lecturer describing the information shown' instead of / alongside the standard Summarise line. This is a legitimate older IELTS rubric variant."
+    },
+    "no_instruction_line": {
+      "ids": [
+        "WT1_008",
+        "WT1_029",
+        "WT1_030"
+      ],
+      "source_pages": [
+        5,
+        26,
+        27
+      ],
+      "note": "Page carries only the stimulus sentence - no 'Summarise the information...' and no 'Write a report...' line. Preserved as-is; the instruction is missing in the source, not dropped in extraction."
+    },
+    "source_typos_preserved": [
+      {
+        "id": "WT1_028",
+        "page": 25,
+        "detail": "'sbow' for 'show'"
+      },
+      {
+        "id": "WT1_012",
+        "page": 9,
+        "detail": "'make comparison where relevant' (singular)"
+      },
+      {
+        "id": "WT1_035",
+        "page": 32,
+        "detail": "US spelling 'Summarize'"
+      },
+      {
+        "id": "WT1_044",
+        "page": 41,
+        "detail": "US spelling 'Summarize'"
+      },
+      {
+        "id": "WT1_043",
+        "page": 40,
+        "detail": "image misspells 'Posgraduate'"
+      }
+    ],
+    "irrelevant_footnote": {
+      "id": "WT1_038",
+      "page": 35,
+      "note": "Marriages-in-Australia table carries a '*Parliament' footnote copied from the preceding task - an artifact of the source compilation."
+    }
+  },
+  "provenance": {
+    "file": "ef1af619-ieltswritingtask1s.pdf",
+    "pages_in_pdf": 57,
+    "embedded_images": 50,
+    "text_streams": 0,
+    "note": "Image-only PDF. All content obtained by visual analysis of the 50 embedded page images; no OCR text existed to rely on.",
+    "watermark": "@cdi_report / @cdireport (Telegram channel) appears on every page",
+    "attribution_caution": "Third-party compilation, not an official Cambridge/British Council/IDP publication. Individual tasks appear to derive from published IELTS practice material. Licensing not reviewed."
+  }
+}

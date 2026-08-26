@@ -292,51 +292,45 @@
   align-items: center;
   justify-content: space-between;
   gap: var(--space-4);
+  min-width: 0;
   padding: var(--space-2) var(--space-4);
   border-top: 1px solid var(--cd-line);
   background: var(--cd-bar);
 }
 
-.cd__tabs {
+.cd__nav {
   display: flex;
   align-items: center;
   gap: var(--space-2);
-  overflow-x: auto;
+  min-width: 0;
 }
 
-.cd__tab {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
+.cd__control--wide {
+  width: 34px;
+}
+
+/* The jump list is the only way to reach task 40 of 53, so it gets the room. */
+.cd__jump {
+  flex: 1;
+  min-width: 0;
+  max-width: 34rem;
+  height: 30px;
+  padding: 0 var(--space-2);
   background: var(--cd-field);
   color: var(--cd-ink);
   border: 1px solid var(--cd-line);
   border-radius: 2px;
+  font-family: inherit;
   font-size: 0.8125rem;
   font-weight: var(--weight-semibold);
-  white-space: nowrap;
-  cursor: pointer;
 }
 
-.cd__tab:hover:not(.cd__tab--active) {
-  border-color: var(--cd-accent);
-}
-
-.cd__tab--active {
-  background: var(--cd-accent);
-  color: var(--cd-accent-ink);
-  border-color: var(--cd-accent);
-}
-
-.cd__tab-count {
-  min-width: 1.75rem;
-  padding: 1px 4px;
-  border: 1px solid currentColor;
-  border-radius: 2px;
-  font-size: 0.6875rem;
+.cd__position {
+  flex: none;
+  font-size: 0.75rem;
   font-variant-numeric: tabular-nums;
-  text-align: center;
+  color: var(--cd-ink-muted);
+  white-space: nowrap;
 }
 
 .cd__submit {

@@ -2,7 +2,7 @@ import type { CueCard, SpeakingQuestion, WritingTask } from '../types/exam';
 import { findTask1Question, task1PromptParagraph } from './writingTask1Data';
 
 /** The Starting Point Test's Task 1 is sample task 1A from the official paper. */
-const TASK_1A = findTask1Question('task-1a');
+const TASK_1A = findTask1Question('WT1_001');
 
 /**
  * Starting Point Test content.
@@ -64,7 +64,7 @@ export const WRITING_TASKS: WritingTask[] = [
     // Sourced from the official question bank so the wording and the figure
     // cannot drift apart.
     prompt: TASK_1A ? task1PromptParagraph(TASK_1A) : '',
-    stimulusQuestionId: 'task-1a',
+    stimulusQuestionId: 'WT1_001',
   },
   {
     id: 'task-2',
