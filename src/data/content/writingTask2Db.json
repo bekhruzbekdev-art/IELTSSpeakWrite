@@ -1,0 +1,1706 @@
+{
+ "database": "IELTS SpeakWrite - Writing Task 2",
+ "count": 48,
+ "id_range": [
+  "WT2_001",
+  "WT2_048"
+ ],
+ "source": "supplied verbatim by the user",
+ "taxonomies": {
+  "question_type": [
+   "OPINION",
+   "DISCUSSION",
+   "ADVANTAGES_DISADVANTAGES",
+   "PROBLEM_SOLUTION",
+   "CAUSES_MEASURES",
+   "TWO_PART_QUESTION",
+   "MIXED",
+   "OTHER"
+  ],
+  "thinking_skills": [
+   "ARGUMENT_CONSTRUCTION",
+   "BALANCED_EVALUATION",
+   "CAUSAL_REASONING",
+   "PROBLEM_ANALYSIS",
+   "SOLUTION_DESIGN",
+   "COMPARISON",
+   "CONCESSION_REFUTATION",
+   "EXEMPLIFICATION",
+   "HYPOTHESISING",
+   "PRIORITISATION",
+   "DEFINITION_FRAMING",
+   "STANCE_MAINTENANCE"
+  ],
+  "thinking_skills_note": "You did not supply a Task 2 skill vocabulary, so I defined this one. Open to change.",
+  "ielts_criteria": [
+   "TASK_ACHIEVEMENT",
+   "COHERENCE_COHESION",
+   "LEXICAL_RESOURCE",
+   "GRAMMATICAL_RANGE_ACCURACY"
+  ]
+ },
+ "records": [
+  {
+   "task_id": "WT2_001",
+   "part": "TASK_2",
+   "prompt": "In some countries, the government pays for health care. In others, the individual must pay for their own health care. Discuss the advantages and disadvantages of each system.",
+   "question_type": "ADVANTAGES_DISADVANTAGES",
+   "topic_domain": "HEALTH",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "COMPARISON",
+    "ARGUMENT_CONSTRUCTION",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "COHERENCE_COHESION"
+   ],
+   "keywords": [
+    "healthcare",
+    "government funding",
+    "private healthcare",
+    "cost",
+    "access"
+   ],
+   "related_task_ids": [
+    "WT2_022"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Advantages and Disadvantages",
+   "source_index_in_section": 1
+  },
+  {
+   "task_id": "WT2_002",
+   "part": "TASK_2",
+   "prompt": "In some places, teenagers are encouraged to get part-time jobs while they are still in school. Do the advantages of teenagers working outweigh the disadvantages?",
+   "question_type": "ADVANTAGES_DISADVANTAGES",
+   "topic_domain": "WORK",
+   "difficulty": "EASY",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "ARGUMENT_CONSTRUCTION",
+    "EXEMPLIFICATION",
+    "PRIORITISATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "teenagers",
+    "part-time work",
+    "school",
+    "responsibility",
+    "study balance"
+   ],
+   "related_task_ids": [
+    "WT2_034",
+    "WT2_026"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Advantages and Disadvantages",
+   "source_index_in_section": 2
+  },
+  {
+   "task_id": "WT2_003",
+   "part": "TASK_2",
+   "prompt": "Today it is common for many business meetings and business training to take place online. Do the advantages of this new development outweigh the disadvantages?",
+   "question_type": "ADVANTAGES_DISADVANTAGES",
+   "topic_domain": "TECHNOLOGY",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "COMPARISON",
+    "ARGUMENT_CONSTRUCTION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "LEXICAL_RESOURCE"
+   ],
+   "keywords": [
+    "online meetings",
+    "remote work",
+    "business training",
+    "technology",
+    "productivity"
+   ],
+   "related_task_ids": [
+    "WT2_032",
+    "WT2_048"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Advantages and Disadvantages",
+   "source_index_in_section": 3
+  },
+  {
+   "task_id": "WT2_004",
+   "part": "TASK_2",
+   "prompt": "In many countries around the world, life expectancy is increasing. Discuss the advantages and disadvantages of this trend and give your own opinion.",
+   "question_type": "ADVANTAGES_DISADVANTAGES",
+   "topic_domain": "POPULATION",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "CAUSAL_REASONING",
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "life expectancy",
+    "ageing population",
+    "healthcare",
+    "pensions",
+    "demographics"
+   ],
+   "related_task_ids": [
+    "WT2_001"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Advantages and Disadvantages",
+   "source_index_in_section": 4
+  },
+  {
+   "task_id": "WT2_005",
+   "part": "TASK_2",
+   "prompt": "In many countries, women are allowed to take maternity leave from their jobs during the first months after the birth of their babies. Do the advantages outweigh the disadvantages?",
+   "question_type": "ADVANTAGES_DISADVANTAGES",
+   "topic_domain": "WORK",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "ARGUMENT_CONSTRUCTION",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "maternity leave",
+    "employment",
+    "parenting",
+    "workplace policy",
+    "women"
+   ],
+   "related_task_ids": [
+    "WT2_015"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Advantages and Disadvantages",
+   "source_index_in_section": 5
+  },
+  {
+   "task_id": "WT2_006",
+   "part": "TASK_2",
+   "prompt": "It is becoming more and more difficult to escape the influence of media. What are the advantages and disadvantages of living in a media-rich society?",
+   "question_type": "ADVANTAGES_DISADVANTAGES",
+   "topic_domain": "SOCIETY",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "ARGUMENT_CONSTRUCTION",
+    "EXEMPLIFICATION",
+    "DEFINITION_FRAMING"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "LEXICAL_RESOURCE"
+   ],
+   "keywords": [
+    "media",
+    "influence",
+    "information",
+    "advertising",
+    "society"
+   ],
+   "related_task_ids": [
+    "WT2_037",
+    "WT2_039",
+    "WT2_028"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Advantages and Disadvantages",
+   "source_index_in_section": 6
+  },
+  {
+   "task_id": "WT2_007",
+   "part": "TASK_2",
+   "prompt": "These days, more and more people are going to other countries for a significant period of time, either to find a job or to study. What are the advantages and disadvantages of this trend?",
+   "question_type": "ADVANTAGES_DISADVANTAGES",
+   "topic_domain": "SOCIETY",
+   "difficulty": "EASY",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "COMPARISON",
+    "ARGUMENT_CONSTRUCTION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "migration",
+    "studying abroad",
+    "working abroad",
+    "culture",
+    "opportunity"
+   ],
+   "related_task_ids": [
+    "WT2_013",
+    "WT2_027"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Advantages and Disadvantages",
+   "source_index_in_section": 7
+  },
+  {
+   "task_id": "WT2_008",
+   "part": "TASK_2",
+   "prompt": "Famous people sometimes give their opinions on public topics. Is this a good thing? Explain to what extent you agree or disagree.",
+   "question_type": "OPINION",
+   "topic_domain": "SOCIETY",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE",
+    "EXEMPLIFICATION",
+    "CONCESSION_REFUTATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "celebrities",
+    "public opinion",
+    "influence",
+    "platform",
+    "responsibility"
+   ],
+   "related_task_ids": [
+    "WT2_028",
+    "WT2_039"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 1
+  },
+  {
+   "task_id": "WT2_009",
+   "part": "TASK_2",
+   "prompt": "In many parts of the world, people now often throw things away when they are broken and buy new ones, whereas in the past broken things were repaired and used again. Why do you think this is the case? What problems may it lead to?",
+   "question_type": "TWO_PART_QUESTION",
+   "topic_domain": "ENVIRONMENT",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "CAUSAL_REASONING",
+    "PROBLEM_ANALYSIS",
+    "ARGUMENT_CONSTRUCTION",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "COHERENCE_COHESION"
+   ],
+   "keywords": [
+    "consumerism",
+    "throwaway culture",
+    "repair",
+    "waste",
+    "sustainability"
+   ],
+   "related_task_ids": [
+    "WT2_012",
+    "WT2_046"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed by you under 'Opinion Topics' but the task is causes + problems",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 2
+  },
+  {
+   "task_id": "WT2_010",
+   "part": "TASK_2",
+   "prompt": "It is believed that people who read for pleasure develop their imagination more and acquire better language skills compared to people who prefer watching television. To what extent do you agree or disagree?",
+   "question_type": "OPINION",
+   "topic_domain": "EDUCATION",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "COMPARISON",
+    "STANCE_MAINTENANCE",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "reading",
+    "imagination",
+    "language skills",
+    "television",
+    "literacy"
+   ],
+   "related_task_ids": [
+    "WT2_029",
+    "WT2_037"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 3
+  },
+  {
+   "task_id": "WT2_011",
+   "part": "TASK_2",
+   "prompt": "Millions of dollars are spent on space research every year. Some people argue that this money should be allocated to improving living standards on Earth. To what extent do you agree or disagree?",
+   "question_type": "OPINION",
+   "topic_domain": "SCIENCE",
+   "difficulty": "HARD",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "PRIORITISATION",
+    "CONCESSION_REFUTATION",
+    "STANCE_MAINTENANCE"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "LEXICAL_RESOURCE"
+   ],
+   "keywords": [
+    "space research",
+    "funding",
+    "living standards",
+    "priorities",
+    "government spending"
+   ],
+   "related_task_ids": [
+    "WT2_043"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 4
+  },
+  {
+   "task_id": "WT2_012",
+   "part": "TASK_2",
+   "prompt": "More and more people want to own famous brands such as cars, clothes, or other items. Is this positive or negative?",
+   "question_type": "OPINION",
+   "topic_domain": "SOCIETY",
+   "difficulty": "EASY",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "brands",
+    "consumerism",
+    "status",
+    "advertising",
+    "materialism"
+   ],
+   "related_task_ids": [
+    "WT2_009",
+    "WT2_046"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 5
+  },
+  {
+   "task_id": "WT2_013",
+   "part": "TASK_2",
+   "prompt": "The best way to understand other cultures is to work for a multinational organisation. To what extent do you agree or disagree?",
+   "question_type": "OPINION",
+   "topic_domain": "CULTURE",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "CONCESSION_REFUTATION",
+    "STANCE_MAINTENANCE",
+    "COMPARISON"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "culture",
+    "multinational",
+    "workplace",
+    "understanding",
+    "travel"
+   ],
+   "related_task_ids": [
+    "WT2_007",
+    "WT2_025"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 6
+  },
+  {
+   "task_id": "WT2_014",
+   "part": "TASK_2",
+   "prompt": "The best way to travel is in a group led by a tour guide. To what extent do you agree or disagree?",
+   "question_type": "OPINION",
+   "topic_domain": "TOURISM",
+   "difficulty": "EASY",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "COMPARISON",
+    "STANCE_MAINTENANCE",
+    "CONCESSION_REFUTATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "travel",
+    "tour guide",
+    "independent travel",
+    "group tours",
+    "experience"
+   ],
+   "related_task_ids": [
+    "WT2_027",
+    "WT2_007"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 7
+  },
+  {
+   "task_id": "WT2_015",
+   "part": "TASK_2",
+   "prompt": "Today, the majority of children are raised by their grandparents since their parents are busy working. To what extent do you think it affects the whole family?",
+   "question_type": "OPINION",
+   "topic_domain": "SOCIETY",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "CAUSAL_REASONING",
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "grandparents",
+    "childcare",
+    "working parents",
+    "family",
+    "upbringing"
+   ],
+   "related_task_ids": [
+    "WT2_044",
+    "WT2_020",
+    "WT2_005"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "hybrid: an opinion question about EFFECTS ('to what extent do you think it affects')",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 8
+  },
+  {
+   "task_id": "WT2_016",
+   "part": "TASK_2",
+   "prompt": "Some people think that climate change has a negative impact on business, while others think it provides more business opportunities. Discuss both views and give your opinion.",
+   "question_type": "DISCUSSION",
+   "topic_domain": "ECONOMY",
+   "difficulty": "HARD",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "ARGUMENT_CONSTRUCTION",
+    "COMPARISON",
+    "HYPOTHESISING"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "LEXICAL_RESOURCE"
+   ],
+   "keywords": [
+    "climate change",
+    "business",
+    "opportunity",
+    "risk",
+    "economy"
+   ],
+   "related_task_ids": [
+    "WT2_047",
+    "WT2_043"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed under 'Opinion Topics'; the instruction is 'Discuss both views'",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 9
+  },
+  {
+   "task_id": "WT2_017",
+   "part": "TASK_2",
+   "prompt": "The most effective way to solve the current traffic and pollution problems in cities is to encourage people to move from the suburbs or countryside into the city center. To what extent do you agree or disagree?",
+   "question_type": "OPINION",
+   "topic_domain": "CITIES",
+   "difficulty": "HARD",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "PROBLEM_ANALYSIS",
+    "SOLUTION_DESIGN",
+    "CONCESSION_REFUTATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "COHERENCE_COHESION"
+   ],
+   "keywords": [
+    "traffic",
+    "pollution",
+    "urban planning",
+    "suburbs",
+    "city centre"
+   ],
+   "related_task_ids": [
+    "WT2_036"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 10
+  },
+  {
+   "task_id": "WT2_018",
+   "part": "TASK_2",
+   "prompt": "Some people say that art (paintings, music, poetry, etc.) can be made by everyone, whereas others believe that it can only be made by those with special ability. Discuss both views and give your opinion.",
+   "question_type": "DISCUSSION",
+   "topic_domain": "CULTURE",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "ARGUMENT_CONSTRUCTION",
+    "DEFINITION_FRAMING",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "art",
+    "talent",
+    "creativity",
+    "ability",
+    "music"
+   ],
+   "related_task_ids": [
+    "WT2_030"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed under 'Opinion Topics'; the instruction is 'Discuss both views'",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 11
+  },
+  {
+   "task_id": "WT2_019",
+   "part": "TASK_2",
+   "prompt": "Some people believe that developments in the field of artificial intelligence will have a positive impact on our lives in the near future. To what extent do you agree or disagree?",
+   "question_type": "OPINION",
+   "topic_domain": "TECHNOLOGY",
+   "difficulty": "HARD",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "HYPOTHESISING",
+    "STANCE_MAINTENANCE",
+    "CONCESSION_REFUTATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "LEXICAL_RESOURCE"
+   ],
+   "keywords": [
+    "artificial intelligence",
+    "technology",
+    "future",
+    "impact",
+    "automation"
+   ],
+   "related_task_ids": [
+    "WT2_029",
+    "WT2_003"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 12
+  },
+  {
+   "task_id": "WT2_020",
+   "part": "TASK_2",
+   "prompt": "Some people believe that children should do organized activities in their free time, while others believe that children should be free to do what they want to do. Which viewpoint do you agree with?",
+   "question_type": "DISCUSSION",
+   "topic_domain": "SOCIETY",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "ARGUMENT_CONSTRUCTION",
+    "COMPARISON",
+    "STANCE_MAINTENANCE"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "children",
+    "free time",
+    "organized activities",
+    "play",
+    "development"
+   ],
+   "related_task_ids": [
+    "WT2_044",
+    "WT2_015",
+    "WT2_042"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed under 'Opinion Topics'; the instruction is 'Which viewpoint do you agree with?'",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 13
+  },
+  {
+   "task_id": "WT2_021",
+   "part": "TASK_2",
+   "prompt": "Some people think that it is effective for students to study in a group at school, while others think it is better to study alone. Discuss both views and give your opinion.",
+   "question_type": "DISCUSSION",
+   "topic_domain": "EDUCATION",
+   "difficulty": "EASY",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "COMPARISON",
+    "ARGUMENT_CONSTRUCTION",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "group study",
+    "independent study",
+    "students",
+    "learning",
+    "school"
+   ],
+   "related_task_ids": [
+    "WT2_040",
+    "WT2_032"
+   ],
+   "duplicate_status": "CANONICAL of the group-vs-individual-learning pair",
+   "classification_note": "listed under 'Opinion Topics'; the instruction is 'Discuss both views'",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 14
+  },
+  {
+   "task_id": "WT2_022",
+   "part": "TASK_2",
+   "prompt": "Smoking should be banned in public places because it not only harms the smokers, but also those who are nearby. To what extent do you agree or disagree?",
+   "question_type": "OPINION",
+   "topic_domain": "HEALTH",
+   "difficulty": "EASY",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE",
+    "CAUSAL_REASONING",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "smoking",
+    "public places",
+    "ban",
+    "passive smoking",
+    "health"
+   ],
+   "related_task_ids": [
+    "WT2_001"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 15
+  },
+  {
+   "task_id": "WT2_023",
+   "part": "TASK_2",
+   "prompt": "Many people think that happiness relies upon the individual, while others think it is affected by other factors. Discuss both views and state your opinion.",
+   "question_type": "DISCUSSION",
+   "topic_domain": "SOCIETY",
+   "difficulty": "HARD",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "DEFINITION_FRAMING",
+    "ARGUMENT_CONSTRUCTION",
+    "CAUSAL_REASONING"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "LEXICAL_RESOURCE"
+   ],
+   "keywords": [
+    "happiness",
+    "individual",
+    "circumstances",
+    "wellbeing",
+    "factors"
+   ],
+   "related_task_ids": [
+    "WT2_012"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed under 'Opinion Topics'; the instruction is 'Discuss both views'",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 16
+  },
+  {
+   "task_id": "WT2_024",
+   "part": "TASK_2",
+   "prompt": "Some people believe that unpaid community service should be a compulsory part of high school programmes. To what extent do you agree or disagree?",
+   "question_type": "OPINION",
+   "topic_domain": "EDUCATION",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE",
+    "CONCESSION_REFUTATION",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "community service",
+    "compulsory",
+    "high school",
+    "volunteering",
+    "students"
+   ],
+   "related_task_ids": [
+    "WT2_041",
+    "WT2_002"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 17
+  },
+  {
+   "task_id": "WT2_025",
+   "part": "TASK_2",
+   "prompt": "Due to globalization, many countries lose their traditions and national values. Some people think it is the responsibility of governments to protect these values. Do you agree or disagree?",
+   "question_type": "OPINION",
+   "topic_domain": "CULTURE",
+   "difficulty": "HARD",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE",
+    "CAUSAL_REASONING",
+    "CONCESSION_REFUTATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "LEXICAL_RESOURCE"
+   ],
+   "keywords": [
+    "globalisation",
+    "traditions",
+    "national values",
+    "government",
+    "culture"
+   ],
+   "related_task_ids": [
+    "WT2_013",
+    "WT2_027"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 18
+  },
+  {
+   "task_id": "WT2_026",
+   "part": "TASK_2",
+   "prompt": "Some people believe that education is important to get jobs, while others believe it is experience and skills. Discuss both views and give your opinion.",
+   "question_type": "DISCUSSION",
+   "topic_domain": "WORK",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "COMPARISON",
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "education",
+    "experience",
+    "skills",
+    "employment",
+    "qualifications"
+   ],
+   "related_task_ids": [
+    "WT2_038",
+    "WT2_034",
+    "WT2_002"
+   ],
+   "duplicate_status": "CANONICAL of the education-vs-experience pair",
+   "classification_note": "listed under 'Opinion Topics'; the instruction is 'Discuss both views'",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 19
+  },
+  {
+   "task_id": "WT2_027",
+   "part": "TASK_2",
+   "prompt": "The tourist industry has grown enormously over the last fifty years and there are few places which are unaffected by it. However, tourism rarely benefits the countries which tourists visit. To what extent do you agree or disagree?",
+   "question_type": "OPINION",
+   "topic_domain": "TOURISM",
+   "difficulty": "HARD",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "CONCESSION_REFUTATION",
+    "STANCE_MAINTENANCE",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "GRAMMATICAL_RANGE_ACCURACY"
+   ],
+   "keywords": [
+    "tourism",
+    "benefits",
+    "local economy",
+    "industry",
+    "development"
+   ],
+   "related_task_ids": [
+    "WT2_014",
+    "WT2_007"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 20
+  },
+  {
+   "task_id": "WT2_028",
+   "part": "TASK_2",
+   "prompt": "Some people think that social networking sites have a huge negative impact on both individuals and society. To what extent do you agree or disagree?",
+   "question_type": "OPINION",
+   "topic_domain": "TECHNOLOGY",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE",
+    "CONCESSION_REFUTATION",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "social media",
+    "individuals",
+    "society",
+    "negative impact",
+    "networking"
+   ],
+   "related_task_ids": [
+    "WT2_048",
+    "WT2_008",
+    "WT2_006"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 21
+  },
+  {
+   "task_id": "WT2_029",
+   "part": "TASK_2",
+   "prompt": "Some people say that e-books and modern technology will totally replace traditional newspapers and magazines. To what extent do you agree or disagree?",
+   "question_type": "OPINION",
+   "topic_domain": "TECHNOLOGY",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "HYPOTHESISING",
+    "STANCE_MAINTENANCE",
+    "CONCESSION_REFUTATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "GRAMMATICAL_RANGE_ACCURACY"
+   ],
+   "keywords": [
+    "e-books",
+    "technology",
+    "newspapers",
+    "magazines",
+    "print media"
+   ],
+   "related_task_ids": [
+    "WT2_037",
+    "WT2_010"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 22
+  },
+  {
+   "task_id": "WT2_030",
+   "part": "TASK_2",
+   "prompt": "Scientists recommend making it mandatory for children to learn how to play a musical instrument. To what extent do you agree or disagree?",
+   "question_type": "OPINION",
+   "topic_domain": "EDUCATION",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE",
+    "CONCESSION_REFUTATION",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "musical instrument",
+    "children",
+    "mandatory",
+    "education",
+    "music"
+   ],
+   "related_task_ids": [
+    "WT2_018",
+    "WT2_024"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 23
+  },
+  {
+   "task_id": "WT2_031",
+   "part": "TASK_2",
+   "prompt": "Some people believe zoos are good places for people to learn about animals. Other people believe animals belong in nature and it is wrong to keep them in zoos. What do you think?",
+   "question_type": "DISCUSSION",
+   "topic_domain": "ENVIRONMENT",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "zoos",
+    "animals",
+    "nature",
+    "conservation",
+    "captivity"
+   ],
+   "related_task_ids": [
+    "WT2_047"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed under 'Opinion Topics'; the instruction is 'What do you think?' after two stated views",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 24
+  },
+  {
+   "task_id": "WT2_032",
+   "part": "TASK_2",
+   "prompt": "Some people believe that online education is as effective as traditional classroom learning, while others think it is less effective. Discuss both views and give your own opinion.",
+   "question_type": "DISCUSSION",
+   "topic_domain": "EDUCATION",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "COMPARISON",
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "online education",
+    "classroom",
+    "effectiveness",
+    "learning",
+    "technology"
+   ],
+   "related_task_ids": [
+    "WT2_003",
+    "WT2_021",
+    "WT2_040"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed under 'Opinion Topics'; the instruction is 'Discuss both views'",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 25
+  },
+  {
+   "task_id": "WT2_033",
+   "part": "TASK_2",
+   "prompt": "Some people believe that electronic calculators should not be allowed in school until after the pupils have mastered mental arithmetic. Others believe that calculators save pupils time, especially with complicated calculations. Discuss both views and give your opinion.",
+   "question_type": "DISCUSSION",
+   "topic_domain": "EDUCATION",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "COMPARISON",
+    "ARGUMENT_CONSTRUCTION",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "calculators",
+    "mental arithmetic",
+    "school",
+    "pupils",
+    "mathematics"
+   ],
+   "related_task_ids": [
+    "WT2_035",
+    "WT2_021"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed under 'Opinion Topics'; the instruction is 'Discuss both views'",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 26
+  },
+  {
+   "task_id": "WT2_034",
+   "part": "TASK_2",
+   "prompt": "Do you think that money is an important factor when choosing a job? What other factors should be considered?",
+   "question_type": "TWO_PART_QUESTION",
+   "topic_domain": "WORK",
+   "difficulty": "EASY",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "PRIORITISATION",
+    "EXEMPLIFICATION",
+    "STANCE_MAINTENANCE"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "COHERENCE_COHESION"
+   ],
+   "keywords": [
+    "job choice",
+    "salary",
+    "motivation",
+    "career",
+    "factors"
+   ],
+   "related_task_ids": [
+    "WT2_026",
+    "WT2_038",
+    "WT2_002"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed under 'Opinion Topics'; the task has two distinct questions",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 27
+  },
+  {
+   "task_id": "WT2_035",
+   "part": "TASK_2",
+   "prompt": "Some people think that children should begin learning a foreign language at primary school, while others believe it is better to start at secondary school. Discuss both views and give your opinion.",
+   "question_type": "DISCUSSION",
+   "topic_domain": "EDUCATION",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "COMPARISON",
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "foreign language",
+    "primary school",
+    "secondary school",
+    "children",
+    "learning"
+   ],
+   "related_task_ids": [
+    "WT2_033",
+    "WT2_032"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed under 'Opinion Topics'; the instruction is 'Discuss both views'",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 28
+  },
+  {
+   "task_id": "WT2_036",
+   "part": "TASK_2",
+   "prompt": "More and more city workers are deciding to live in the country and travel into work every day. The result is increased traffic congestion and damage to the environment. What measures do you think could be taken to encourage people not to travel such long distances into work?",
+   "question_type": "PROBLEM_SOLUTION",
+   "topic_domain": "TRANSPORT",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "PROBLEM_ANALYSIS",
+    "SOLUTION_DESIGN",
+    "CAUSAL_REASONING",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "COHERENCE_COHESION"
+   ],
+   "keywords": [
+    "commuting",
+    "traffic congestion",
+    "environment",
+    "measures",
+    "city workers"
+   ],
+   "related_task_ids": [
+    "WT2_017"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed under 'Opinion Topics'; the task asks only for measures",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 29
+  },
+  {
+   "task_id": "WT2_037",
+   "part": "TASK_2",
+   "prompt": "Some people think that newspapers are the best way to get news. However, others believe that other media are better sources of news. Discuss both views and give your opinion.",
+   "question_type": "DISCUSSION",
+   "topic_domain": "SOCIETY",
+   "difficulty": "EASY",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "COMPARISON",
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "newspapers",
+    "news",
+    "media",
+    "sources",
+    "information"
+   ],
+   "related_task_ids": [
+    "WT2_029",
+    "WT2_039",
+    "WT2_006"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed under 'Opinion Topics'; the instruction is 'Discuss both views'",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 30
+  },
+  {
+   "task_id": "WT2_038",
+   "part": "TASK_2",
+   "prompt": "Completing university education is thought by some to be the best way to get a good job. On the other hand, other people think that getting experience and developing soft skills is more important. Discuss both sides and give your opinion.",
+   "question_type": "DISCUSSION",
+   "topic_domain": "WORK",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "COMPARISON",
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "university",
+    "soft skills",
+    "experience",
+    "employment",
+    "graduates"
+   ],
+   "related_task_ids": [
+    "WT2_026",
+    "WT2_034"
+   ],
+   "duplicate_status": "NEAR-DUPLICATE of WT2_026 (education vs experience for employment)",
+   "classification_note": "listed under 'Opinion Topics'; the instruction is 'Discuss both sides'",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 31
+  },
+  {
+   "task_id": "WT2_039",
+   "part": "TASK_2",
+   "prompt": "Today, newspapers and televisions are giving detailed descriptions of crimes. Some people believe such a practice will cause bad consequences and thus media should be restricted. To what extent do you agree or disagree?",
+   "question_type": "OPINION",
+   "topic_domain": "SOCIETY",
+   "difficulty": "HARD",
+   "thinking_skills": [
+    "ARGUMENT_CONSTRUCTION",
+    "CAUSAL_REASONING",
+    "STANCE_MAINTENANCE",
+    "CONCESSION_REFUTATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "LEXICAL_RESOURCE"
+   ],
+   "keywords": [
+    "crime reporting",
+    "media",
+    "restriction",
+    "consequences",
+    "journalism"
+   ],
+   "related_task_ids": [
+    "WT2_006",
+    "WT2_037",
+    "WT2_008"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 32
+  },
+  {
+   "task_id": "WT2_040",
+   "part": "TASK_2",
+   "prompt": "For some people, learning in a group is the most effective way, while others prefer one-to-one instruction. Discuss both views and give your opinion.",
+   "question_type": "DISCUSSION",
+   "topic_domain": "EDUCATION",
+   "difficulty": "EASY",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "COMPARISON",
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "group learning",
+    "one-to-one",
+    "instruction",
+    "teaching",
+    "students"
+   ],
+   "related_task_ids": [
+    "WT2_021",
+    "WT2_032"
+   ],
+   "duplicate_status": "NEAR-DUPLICATE of WT2_021 (group vs individual learning)",
+   "classification_note": "listed under 'Opinion Topics'; the instruction is 'Discuss both views'",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 33
+  },
+  {
+   "task_id": "WT2_041",
+   "part": "TASK_2",
+   "prompt": "Some people think that schools should give prizes for academic success. Others argue that it is more important for schools to give prizes for other achievements (for example, sports, music, and behaviour). Discuss both views and give your opinion.",
+   "question_type": "DISCUSSION",
+   "topic_domain": "EDUCATION",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "COMPARISON",
+    "ARGUMENT_CONSTRUCTION",
+    "PRIORITISATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "prizes",
+    "academic success",
+    "sports",
+    "behaviour",
+    "rewards"
+   ],
+   "related_task_ids": [
+    "WT2_024",
+    "WT2_030"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed under 'Opinion Topics'; the instruction is 'Discuss both views'",
+   "source": "user-supplied",
+   "source_section": "Opinion Topics",
+   "source_index_in_section": 34
+  },
+  {
+   "task_id": "WT2_042",
+   "part": "TASK_2",
+   "prompt": "Children are facing more pressures nowadays from academic, social, and commercial perspectives. What are the causes of these pressures and what measures should be taken to reduce them?",
+   "question_type": "CAUSES_MEASURES",
+   "topic_domain": "SOCIETY",
+   "difficulty": "HARD",
+   "thinking_skills": [
+    "CAUSAL_REASONING",
+    "PROBLEM_ANALYSIS",
+    "SOLUTION_DESIGN",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "COHERENCE_COHESION"
+   ],
+   "keywords": [
+    "children",
+    "pressure",
+    "academic",
+    "commercial",
+    "measures"
+   ],
+   "related_task_ids": [
+    "WT2_020",
+    "WT2_044",
+    "WT2_041"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Problem and Solution / Causes and Measures",
+   "source_index_in_section": 1
+  },
+  {
+   "task_id": "WT2_043",
+   "part": "TASK_2",
+   "prompt": "The demand for food is increasing worldwide. Why has it happened? What measures could the international community take to improve the situation?",
+   "question_type": "CAUSES_MEASURES",
+   "topic_domain": "POPULATION",
+   "difficulty": "HARD",
+   "thinking_skills": [
+    "CAUSAL_REASONING",
+    "PROBLEM_ANALYSIS",
+    "SOLUTION_DESIGN",
+    "HYPOTHESISING"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "COHERENCE_COHESION",
+    "LEXICAL_RESOURCE"
+   ],
+   "keywords": [
+    "food demand",
+    "population",
+    "international community",
+    "agriculture",
+    "measures"
+   ],
+   "related_task_ids": [
+    "WT2_016",
+    "WT2_047",
+    "WT2_011"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Problem and Solution / Causes and Measures",
+   "source_index_in_section": 2
+  },
+  {
+   "task_id": "WT2_044",
+   "part": "TASK_2",
+   "prompt": "Some people believe that children should spend all of their free time with their families. Others believe that this is unnecessary or even negative. Discuss the possible arguments for both sides, and say which side you personally support.",
+   "question_type": "DISCUSSION",
+   "topic_domain": "SOCIETY",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE",
+    "CONCESSION_REFUTATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "children",
+    "free time",
+    "family",
+    "independence",
+    "socialising"
+   ],
+   "related_task_ids": [
+    "WT2_020",
+    "WT2_015",
+    "WT2_042"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Discussion Topics",
+   "source_index_in_section": 1
+  },
+  {
+   "task_id": "WT2_045",
+   "part": "TASK_2",
+   "prompt": "In nearly all science courses at university, there are significantly more male students than female students. What are the reasons for this? What can be done to balance out the numbers?",
+   "question_type": "CAUSES_MEASURES",
+   "topic_domain": "EDUCATION",
+   "difficulty": "HARD",
+   "thinking_skills": [
+    "CAUSAL_REASONING",
+    "PROBLEM_ANALYSIS",
+    "SOLUTION_DESIGN",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "COHERENCE_COHESION"
+   ],
+   "keywords": [
+    "science courses",
+    "gender",
+    "university",
+    "male students",
+    "female students"
+   ],
+   "related_task_ids": [
+    "WT2_011",
+    "WT2_038"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed by you under 'Discussion Topics' but the task is reasons + measures",
+   "source": "user-supplied",
+   "source_section": "Discussion Topics",
+   "source_index_in_section": 2
+  },
+  {
+   "task_id": "WT2_046",
+   "part": "TASK_2",
+   "prompt": "In many countries, shops open for longer hours daily every week. What are the negative or positive effects of this on the shoppers and local community?",
+   "question_type": "ADVANTAGES_DISADVANTAGES",
+   "topic_domain": "ECONOMY",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "CAUSAL_REASONING",
+    "ARGUMENT_CONSTRUCTION",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT"
+   ],
+   "keywords": [
+    "shop opening hours",
+    "shoppers",
+    "local community",
+    "retail",
+    "convenience"
+   ],
+   "related_task_ids": [
+    "WT2_012",
+    "WT2_009"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed by you under 'Discussion Topics' but the task asks for positive/negative effects",
+   "source": "user-supplied",
+   "source_section": "Discussion Topics",
+   "source_index_in_section": 3
+  },
+  {
+   "task_id": "WT2_047",
+   "part": "TASK_2",
+   "prompt": "Some people think they have a right to use as much freshwater as they want. Others believe governments should tightly control the use of fresh water as it is a limited resource. Discuss both views and give your opinion.",
+   "question_type": "DISCUSSION",
+   "topic_domain": "ENVIRONMENT",
+   "difficulty": "HARD",
+   "thinking_skills": [
+    "BALANCED_EVALUATION",
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE",
+    "CONCESSION_REFUTATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "LEXICAL_RESOURCE"
+   ],
+   "keywords": [
+    "freshwater",
+    "limited resource",
+    "government control",
+    "rights",
+    "conservation"
+   ],
+   "related_task_ids": [
+    "WT2_031",
+    "WT2_016",
+    "WT2_043"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "",
+   "source": "user-supplied",
+   "source_section": "Discussion Topics",
+   "source_index_in_section": 4
+  },
+  {
+   "task_id": "WT2_048",
+   "part": "TASK_2",
+   "prompt": "People nowadays prefer to interact online (e.g., do shopping, chat with friends) rather than talking to other people face to face. What are the reasons for this? Is this a positive or negative development?",
+   "question_type": "TWO_PART_QUESTION",
+   "topic_domain": "TECHNOLOGY",
+   "difficulty": "MEDIUM",
+   "thinking_skills": [
+    "CAUSAL_REASONING",
+    "ARGUMENT_CONSTRUCTION",
+    "STANCE_MAINTENANCE",
+    "EXEMPLIFICATION"
+   ],
+   "ielts_criteria": [
+    "TASK_ACHIEVEMENT",
+    "COHERENCE_COHESION"
+   ],
+   "keywords": [
+    "online interaction",
+    "face to face",
+    "shopping",
+    "social contact",
+    "communication"
+   ],
+   "related_task_ids": [
+    "WT2_028",
+    "WT2_003",
+    "WT2_032"
+   ],
+   "duplicate_status": "UNIQUE",
+   "classification_note": "listed by you under 'Discussion Topics' but the task is reasons + positive/negative",
+   "source": "user-supplied",
+   "source_section": "Discussion Topics",
+   "source_index_in_section": 5
+  }
+ ],
+ "verification": {
+  "imported": 48,
+  "verbatim_preserved": true,
+  "nothing_invented_or_removed": true,
+  "by_question_type": {
+   "ADVANTAGES_DISADVANTAGES": 8,
+   "OPINION": 17,
+   "TWO_PART_QUESTION": 3,
+   "DISCUSSION": 16,
+   "PROBLEM_SOLUTION": 1,
+   "CAUSES_MEASURES": 3
+  },
+  "by_topic_domain": {
+   "HEALTH": 2,
+   "WORK": 5,
+   "TECHNOLOGY": 5,
+   "POPULATION": 2,
+   "SOCIETY": 11,
+   "ENVIRONMENT": 3,
+   "EDUCATION": 10,
+   "SCIENCE": 1,
+   "CULTURE": 3,
+   "TOURISM": 2,
+   "ECONOMY": 2,
+   "CITIES": 1,
+   "TRANSPORT": 1
+  },
+  "by_difficulty": {
+   "MEDIUM": 27,
+   "EASY": 9,
+   "HARD": 12
+  },
+  "by_thinking_skill": {
+   "BALANCED_EVALUATION": 24,
+   "COMPARISON": 17,
+   "ARGUMENT_CONSTRUCTION": 44,
+   "EXEMPLIFICATION": 24,
+   "PRIORITISATION": 4,
+   "CAUSAL_REASONING": 13,
+   "STANCE_MAINTENANCE": 29,
+   "DEFINITION_FRAMING": 3,
+   "CONCESSION_REFUTATION": 15,
+   "PROBLEM_ANALYSIS": 6,
+   "HYPOTHESISING": 4,
+   "SOLUTION_DESIGN": 5
+  },
+  "by_ielts_criterion": {
+   "TASK_ACHIEVEMENT": 48,
+   "COHERENCE_COHESION": 9,
+   "LEXICAL_RESOURCE": 10,
+   "GRAMMATICAL_RANGE_ACCURACY": 2
+  },
+  "exact_duplicates": 0,
+  "near_duplicates": 2,
+  "canonical_anchors": 2,
+  "section_type_mismatches": 20
+ }
+}

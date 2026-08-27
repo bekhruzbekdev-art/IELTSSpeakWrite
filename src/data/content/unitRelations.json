@@ -1,0 +1,118 @@
+{
+ "description": "Unit-level relations used by the scheduler. EXACT pairs have one member excluded from coverage; NEAR pairs both count toward coverage but must be spaced by min_separation_days.",
+ "unit_relations_count": 4,
+ "non_coverage_units": [
+  "WT1_016",
+  "WT1_049"
+ ],
+ "unit_relations": [
+  {
+   "unit_a": "WT1_007",
+   "unit_b": "WT1_016",
+   "relation": "EXACT",
+   "min_separation_days": 0,
+   "excluded_from_coverage": "WT1_016",
+   "note": "Pixel-identical page scan (SHA-256 of decoded RGB)."
+  },
+  {
+   "unit_a": "WT1_046",
+   "unit_b": "WT1_049",
+   "relation": "EXACT",
+   "min_separation_days": 0,
+   "excluded_from_coverage": "WT1_049",
+   "note": "Pixel-identical page scan (SHA-256 of decoded RGB)."
+  },
+  {
+   "unit_a": "WT2_026",
+   "unit_b": "WT2_038",
+   "relation": "NEAR",
+   "min_separation_days": 7,
+   "excluded_from_coverage": null,
+   "note": "NEAR-DUPLICATE of WT2_026 (education vs experience for employment)"
+  },
+  {
+   "unit_a": "WT2_021",
+   "unit_b": "WT2_040",
+   "relation": "NEAR",
+   "min_separation_days": 7,
+   "excluded_from_coverage": null,
+   "note": "NEAR-DUPLICATE of WT2_021 (group vs individual learning)"
+  }
+ ],
+ "intra_unit_question_duplicates": {
+  "description": "Near-identical QUESTIONS inside a single speaking topic. These are NOT unit relations and do not affect coverage or scheduling; recorded so a question-picker can avoid serving both.",
+  "count": 10,
+  "pairs": [
+   {
+    "topic_id": "P3_032",
+    "question_a": "P3_032_Q04",
+    "question_b": "P3_032_Q08",
+    "similarity": 1.0,
+    "topic": "Influence"
+   },
+   {
+    "topic_id": "P3_066",
+    "question_a": "P3_066_Q01",
+    "question_b": "P3_066_Q08",
+    "similarity": 1.0,
+    "topic": "TV"
+   },
+   {
+    "topic_id": "P3_064",
+    "question_a": "P3_064_Q02",
+    "question_b": "P3_064_Q05",
+    "similarity": 0.83,
+    "topic": "Transport"
+   },
+   {
+    "topic_id": "P3_016",
+    "question_a": "P3_016_Q04",
+    "question_b": "P3_050_Q04",
+    "similarity": 0.75,
+    "topic": "Education"
+   },
+   {
+    "topic_id": "P3_055",
+    "question_a": "P3_055_Q02",
+    "question_b": "P3_055_Q08",
+    "similarity": 0.75,
+    "topic": "Sports"
+   },
+   {
+    "topic_id": "P3_015",
+    "question_a": "P3_015_Q01",
+    "question_b": "P3_024_Q01",
+    "similarity": 0.71,
+    "topic": "Eating habits"
+   },
+   {
+    "topic_id": "P3_015",
+    "question_a": "P3_015_Q05",
+    "question_b": "P3_015_Q08",
+    "similarity": 0.71,
+    "topic": "Eating habits"
+   },
+   {
+    "topic_id": "P3_032",
+    "question_a": "P3_032_Q02",
+    "question_b": "P3_032_Q07",
+    "similarity": 0.71,
+    "topic": "Influence"
+   },
+   {
+    "topic_id": "P3_064",
+    "question_a": "P3_064_Q04",
+    "question_b": "P3_064_Q07",
+    "similarity": 0.71,
+    "topic": "Transport"
+   },
+   {
+    "topic_id": "P3_032",
+    "question_a": "P3_032_Q03",
+    "question_b": "P3_032_Q05",
+    "similarity": 0.67,
+    "topic": "Influence"
+   }
+  ]
+ }
+}

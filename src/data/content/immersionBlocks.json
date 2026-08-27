@@ -1,0 +1,99 @@
+{
+ "description": "The 9 immersion blocks. Themes map into blocks via theme_to_block. Days sum to 24 across the 8 scheduled blocks; NARRATIVE floats.",
+ "theme_to_block": {
+  "EDUCATION": "EDUCATION",
+  "WORK": "WORK_ECONOMY",
+  "ECONOMY": "WORK_ECONOMY",
+  "TECHNOLOGY": "TECH_SCIENCE",
+  "SCIENCE": "TECH_SCIENCE",
+  "ENVIRONMENT": "ENVIRONMENT",
+  "AGRICULTURE": "ENVIRONMENT",
+  "ENERGY": "ENVIRONMENT",
+  "CITIES": "CITIES_TRANSPORT",
+  "TRANSPORT": "CITIES_TRANSPORT",
+  "TOURISM": "CULTURE_MEDIA",
+  "CULTURE": "CULTURE_MEDIA",
+  "MEDIA": "CULTURE_MEDIA",
+  "HEALTH": "HEALTH_SPORT",
+  "SOCIETY": "SOCIETY",
+  "POPULATION": "SOCIETY",
+  "OTHER": "SOCIETY",
+  "PERSONAL_LIFE": "NARRATIVE"
+ },
+ "total_units": 356,
+ "scheduled_days": 24,
+ "blocks": [
+  {
+   "block_id": "CITIES_TRANSPORT",
+   "display_name": "Cities & Transport",
+   "scheduled_days": 2,
+   "sequence_index": 1,
+   "is_floating": false,
+   "unit_count": 25
+  },
+  {
+   "block_id": "TECH_SCIENCE",
+   "display_name": "Tech & Science",
+   "scheduled_days": 2,
+   "sequence_index": 2,
+   "is_floating": false,
+   "unit_count": 29
+  },
+  {
+   "block_id": "HEALTH_SPORT",
+   "display_name": "Health & Sport",
+   "scheduled_days": 1,
+   "sequence_index": 3,
+   "is_floating": false,
+   "unit_count": 15
+  },
+  {
+   "block_id": "EDUCATION",
+   "display_name": "Education",
+   "scheduled_days": 4,
+   "sequence_index": 4,
+   "is_floating": false,
+   "unit_count": 47
+  },
+  {
+   "block_id": "ENVIRONMENT",
+   "display_name": "Environment",
+   "scheduled_days": 3,
+   "sequence_index": 5,
+   "is_floating": false,
+   "unit_count": 34
+  },
+  {
+   "block_id": "CULTURE_MEDIA",
+   "display_name": "Culture & Media",
+   "scheduled_days": 3,
+   "sequence_index": 6,
+   "is_floating": false,
+   "unit_count": 58
+  },
+  {
+   "block_id": "WORK_ECONOMY",
+   "display_name": "Work & Economy",
+   "scheduled_days": 4,
+   "sequence_index": 7,
+   "is_floating": false,
+   "unit_count": 61
+  },
+  {
+   "block_id": "SOCIETY",
+   "display_name": "Society",
+   "scheduled_days": 5,
+   "sequence_index": 8,
+   "is_floating": false,
+   "unit_count": 70
+  },
+  {
+   "block_id": "NARRATIVE",
+   "display_name": "Personal Life (floating)",
+   "scheduled_days": 0,
+   "sequence_index": 9,
+   "is_floating": true,
+   "unit_count": 17
+  }
+ ]
+}

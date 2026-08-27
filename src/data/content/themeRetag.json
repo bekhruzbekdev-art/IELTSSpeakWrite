@@ -1,0 +1,240 @@
+{
+ "description": "The 39 speaking units that carried theme UNCLASSIFIED, and the theme each was reassigned to. Applied in themeAxis.json; kept here for provenance and review.",
+ "count": 39,
+ "records": [
+  {
+   "unit_id": "P1_010",
+   "from": "UNCLASSIFIED",
+   "to": "CULTURE",
+   "evidence": "colours, preference, mood"
+  },
+  {
+   "unit_id": "P1_012",
+   "from": "UNCLASSIFIED",
+   "to": "TOURISM",
+   "evidence": "country, region, famous for"
+  },
+  {
+   "unit_id": "P1_013",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "daily routine, schedule, habits"
+  },
+  {
+   "unit_id": "P1_015",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "dreams, ambition, meaning"
+  },
+  {
+   "unit_id": "P1_019",
+   "from": "UNCLASSIFIED",
+   "to": "ECONOMY",
+   "evidence": "flowers as gifts, occasions"
+  },
+  {
+   "unit_id": "P1_026",
+   "from": "UNCLASSIFIED",
+   "to": "MEDIA",
+   "evidence": "humour/comedy programmes, jokes"
+  },
+  {
+   "unit_id": "P1_032",
+   "from": "UNCLASSIFIED",
+   "to": "MEDIA",
+   "evidence": "cinema, films, actors"
+  },
+  {
+   "unit_id": "P1_045",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "punctuality, appointments"
+  },
+  {
+   "unit_id": "P1_048",
+   "from": "UNCLASSIFIED",
+   "to": "MEDIA",
+   "evidence": "TV programmes, shows"
+  },
+  {
+   "unit_id": "P2_002",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "challenging thing done"
+  },
+  {
+   "unit_id": "P2_006",
+   "from": "UNCLASSIFIED",
+   "to": "SOCIETY",
+   "evidence": "an interesting person, character"
+  },
+  {
+   "unit_id": "P2_010",
+   "from": "UNCLASSIFIED",
+   "to": "SOCIETY",
+   "evidence": "person who grows plants, hobby"
+  },
+  {
+   "unit_id": "P2_016",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "apology, conflict"
+  },
+  {
+   "unit_id": "P2_023",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "positive change, turning point"
+  },
+  {
+   "unit_id": "P2_024",
+   "from": "UNCLASSIFIED",
+   "to": "ECONOMY",
+   "evidence": "favourite clothing, style"
+  },
+  {
+   "unit_id": "P2_028",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "favourite part of the day"
+  },
+  {
+   "unit_id": "P2_029",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "important decision"
+  },
+  {
+   "unit_id": "P2_034",
+   "from": "UNCLASSIFIED",
+   "to": "MEDIA",
+   "evidence": "TV show, popularity"
+  },
+  {
+   "unit_id": "P2_038",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "exciting experience"
+  },
+  {
+   "unit_id": "P2_050",
+   "from": "UNCLASSIFIED",
+   "to": "ECONOMY",
+   "evidence": "a present you gave"
+  },
+  {
+   "unit_id": "P2_056",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "childhood leisure activity"
+  },
+  {
+   "unit_id": "P2_070",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "being late, consequence"
+  },
+  {
+   "unit_id": "P2_071",
+   "from": "UNCLASSIFIED",
+   "to": "ECONOMY",
+   "evidence": "household appliance, usefulness"
+  },
+  {
+   "unit_id": "P2_072",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "forgetting something important"
+  },
+  {
+   "unit_id": "P2_081",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "good news received"
+  },
+  {
+   "unit_id": "P2_082",
+   "from": "UNCLASSIFIED",
+   "to": "MEDIA",
+   "evidence": "person often in the news, fame"
+  },
+  {
+   "unit_id": "P2_090",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "plan after the IELTS test"
+  },
+  {
+   "unit_id": "P2_091",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "goal or ambition"
+  },
+  {
+   "unit_id": "P2_107",
+   "from": "UNCLASSIFIED",
+   "to": "HEALTH",
+   "evidence": "sport, equipment, skills"
+  },
+  {
+   "unit_id": "P2_109",
+   "from": "UNCLASSIFIED",
+   "to": "HEALTH",
+   "evidence": "untried sport, intention"
+  },
+  {
+   "unit_id": "P2_110",
+   "from": "UNCLASSIFIED",
+   "to": "HEALTH",
+   "evidence": "sporting event attended"
+  },
+  {
+   "unit_id": "P2_114",
+   "from": "UNCLASSIFIED",
+   "to": "ECONOMY",
+   "evidence": "an important possession, value"
+  },
+  {
+   "unit_id": "P2_128",
+   "from": "UNCLASSIFIED",
+   "to": "MEDIA",
+   "evidence": "TV programme, viewing habit"
+  },
+  {
+   "unit_id": "P3_004",
+   "from": "UNCLASSIFIED",
+   "to": "ENVIRONMENT",
+   "evidence": "animals, endangered, extinction"
+  },
+  {
+   "unit_id": "P3_020",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "rewards, resolutions, goals"
+  },
+  {
+   "unit_id": "P3_021",
+   "from": "UNCLASSIFIED",
+   "to": "PERSONAL_LIFE",
+   "evidence": "exciting activities, risk"
+  },
+  {
+   "unit_id": "P3_036",
+   "from": "UNCLASSIFIED",
+   "to": "MEDIA",
+   "evidence": "leisure: films, documentaries, generations"
+  },
+  {
+   "unit_id": "P3_043",
+   "from": "UNCLASSIFIED",
+   "to": "SOCIETY",
+   "evidence": "parenting, discipline, roles"
+  },
+  {
+   "unit_id": "P3_055",
+   "from": "UNCLASSIFIED",
+   "to": "HEALTH",
+   "evidence": "sports benefits, Olympics, athletes"
+  }
+ ]
+}

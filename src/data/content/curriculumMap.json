@@ -1,0 +1,1852 @@
+{
+ "description": "V1 30-day curriculum. Every coverage unit appears on exactly one day; the last lands on day 25.",
+ "days": 30,
+ "themed_days": 24,
+ "coverage_units": 356,
+ "coverage_closes_day": 25,
+ "map": [
+  {
+   "day": 1,
+   "stage": 1,
+   "theme": "Diagnostic",
+   "units": {},
+   "n": 0,
+   "hrs": 4.0,
+   "rev": {},
+   "checks": [
+    "Baseline band recorded for all 4 criteria per paper",
+    "Error census complete",
+    "Story-bank + error-log templates created"
+   ],
+   "outputs": [
+    "Full Speaking test recorded",
+    "Task 1 + Task 2 timed"
+   ],
+   "voc": 0,
+   "col": 0,
+   "deep": 0
+  },
+  {
+   "day": 2,
+   "stage": 1,
+   "theme": "Cities & Transport",
+   "block": "CITIES_TRANSPORT",
+   "bd": [
+    1,
+    2
+   ],
+   "units": {
+    "P1": [
+     "P1_001",
+     "P1_024",
+     "P1_027"
+    ],
+    "P2": [
+     "P2_020",
+     "P2_062",
+     "P2_097",
+     "P2_116",
+     "P2_118"
+    ],
+    "P3": [
+     "P3_009",
+     "P3_064"
+    ],
+    "WT1": [
+     "WT1_007",
+     "WT1_028"
+    ],
+    "WT2": [
+     "WT2_017"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [
+     "P2_020"
+    ],
+    "P3": [],
+    "WT1": [
+     "WT1_007",
+     "WT1_028"
+    ],
+    "WT2": [
+     "WT2_017"
+    ]
+   },
+   "n": 13,
+   "hrs": 8.9,
+   "rev": {},
+   "checks": [
+    "All 13 units marked complete",
+    "10 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "10 speaking recordings",
+    "2 Task 1 response(s)",
+    "1 Task 2 essay(s)",
+    "25 new items + 10 collocations banked"
+   ],
+   "voc": 25,
+   "col": 10,
+   "narr": [],
+   "deepn": 4
+  },
+  {
+   "day": 3,
+   "stage": 1,
+   "theme": "Cities & Transport",
+   "block": "CITIES_TRANSPORT",
+   "bd": [
+    2,
+    2
+   ],
+   "units": {
+    "P1": [
+     "P1_005",
+     "P1_025",
+     "P1_040",
+     "P1_013"
+    ],
+    "P2": [
+     "P2_061",
+     "P2_093",
+     "P2_103",
+     "P2_117",
+     "P2_119"
+    ],
+    "P3": [
+     "P3_031"
+    ],
+    "WT1": [
+     "WT1_019",
+     "WT1_037"
+    ],
+    "WT2": [
+     "WT2_036"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [
+     "P2_061"
+    ],
+    "P3": [],
+    "WT1": [
+     "WT1_019",
+     "WT1_037"
+    ],
+    "WT2": [
+     "WT2_036"
+    ]
+   },
+   "n": 13,
+   "hrs": 8.9,
+   "rev": {
+    "D-1": "Day 2 · cold recall of collocations, no notes"
+   },
+   "checks": [
+    "All 13 units marked complete",
+    "10 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested",
+    "BLOCK CLOSES — Cities & Transport at 100%; revisit scheduled D+7"
+   ],
+   "outputs": [
+    "10 speaking recordings",
+    "2 Task 1 response(s)",
+    "1 Task 2 essay(s)",
+    "25 new items + 10 collocations banked"
+   ],
+   "voc": 25,
+   "col": 10,
+   "narr": [
+    "P1_013"
+   ],
+   "deepn": 4
+  },
+  {
+   "day": 4,
+   "stage": 1,
+   "theme": "Tech & Science",
+   "block": "TECH_SCIENCE",
+   "bd": [
+    1,
+    2
+   ],
+   "units": {
+    "P1": [
+     "P1_002",
+     "P1_028",
+     "P1_031",
+     "P1_015"
+    ],
+    "P2": [
+     "P2_030",
+     "P2_065",
+     "P2_095"
+    ],
+    "P3": [
+     "P3_008",
+     "P3_029",
+     "P3_035",
+     "P3_059"
+    ],
+    "WT1": [
+     "WT1_015",
+     "WT1_051"
+    ],
+    "WT2": [
+     "WT2_003",
+     "WT2_019",
+     "WT2_029"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [
+     "P2_030"
+    ],
+    "P3": [],
+    "WT1": [],
+    "WT2": [
+     "WT2_003"
+    ]
+   },
+   "n": 16,
+   "hrs": 8.9,
+   "rev": {
+    "D-1": "Day 3 · cold recall of collocations, no notes"
+   },
+   "checks": [
+    "All 16 units marked complete",
+    "10 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "11 speaking recordings",
+    "2 Task 1 response(s)",
+    "3 Task 2 essay(s)",
+    "25 new items + 10 collocations banked"
+   ],
+   "voc": 25,
+   "col": 10,
+   "narr": [
+    "P1_015"
+   ],
+   "deepn": 2
+  },
+  {
+   "day": 5,
+   "stage": 2,
+   "theme": "Tech & Science",
+   "block": "TECH_SCIENCE",
+   "bd": [
+    2,
+    2
+   ],
+   "units": {
+    "P1": [
+     "P1_011",
+     "P1_029",
+     "P1_037"
+    ],
+    "P2": [
+     "P2_031",
+     "P2_074",
+     "P2_113"
+    ],
+    "P3": [
+     "P3_017",
+     "P3_033",
+     "P3_042",
+     "P3_060"
+    ],
+    "WT1": [
+     "WT1_046"
+    ],
+    "WT2": [
+     "WT2_011",
+     "WT2_028",
+     "WT2_048"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [],
+    "WT1": [
+     "WT1_046"
+    ],
+    "WT2": [
+     "WT2_011"
+    ]
+   },
+   "n": 14,
+   "hrs": 8.9,
+   "rev": {
+    "D-1": "Day 4 · cold recall of collocations, no notes",
+    "D-3": "Day 2 · regenerate one writing task from prompt alone, timed"
+   },
+   "checks": [
+    "All 14 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested",
+    "BLOCK CLOSES — Tech & Science at 100%; revisit scheduled D+7"
+   ],
+   "outputs": [
+    "10 speaking recordings",
+    "1 Task 1 response(s)",
+    "3 Task 2 essay(s)",
+    "28 new items + 12 collocations banked"
+   ],
+   "voc": 28,
+   "col": 12,
+   "narr": [],
+   "deepn": 2
+  },
+  {
+   "day": 6,
+   "stage": 2,
+   "theme": "Health & Sport",
+   "block": "HEALTH_SPORT",
+   "bd": [
+    1,
+    1
+   ],
+   "units": {
+    "P1": [
+     "P1_017",
+     "P1_042",
+     "P1_045"
+    ],
+    "P2": [
+     "P2_037",
+     "P2_051",
+     "P2_052",
+     "P2_107",
+     "P2_109",
+     "P2_110"
+    ],
+    "P3": [
+     "P3_015",
+     "P3_027",
+     "P3_055"
+    ],
+    "WT1": [
+     "WT1_004",
+     "WT1_039"
+    ],
+    "WT2": [
+     "WT2_001",
+     "WT2_022"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [
+     "P3_015"
+    ],
+    "WT1": [],
+    "WT2": [
+     "WT2_001"
+    ]
+   },
+   "n": 16,
+   "hrs": 8.8,
+   "rev": {
+    "D-1": "Day 5 · cold recall of collocations, no notes",
+    "D-3": "Day 3 · regenerate one writing task from prompt alone, timed"
+   },
+   "checks": [
+    "All 16 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested",
+    "BLOCK CLOSES — Health & Sport at 100%; revisit scheduled D+7"
+   ],
+   "outputs": [
+    "12 speaking recordings",
+    "2 Task 1 response(s)",
+    "2 Task 2 essay(s)",
+    "28 new items + 12 collocations banked"
+   ],
+   "voc": 28,
+   "col": 12,
+   "narr": [
+    "P1_045"
+   ],
+   "deepn": 2
+  },
+  {
+   "day": 7,
+   "stage": 2,
+   "theme": "Education",
+   "block": "EDUCATION",
+   "bd": [
+    1,
+    4
+   ],
+   "units": {
+    "P1": [
+     "P1_014",
+     "P1_043"
+    ],
+    "P2": [
+     "P2_007",
+     "P2_032",
+     "P2_068",
+     "P2_100",
+     "P2_112",
+     "P2_002"
+    ],
+    "P3": [
+     "P3_002",
+     "P3_050"
+    ],
+    "WT1": [
+     "WT1_001",
+     "WT1_024"
+    ],
+    "WT2": [
+     "WT2_010",
+     "WT2_032",
+     "WT2_041"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [
+     "P3_002"
+    ],
+    "WT1": [],
+    "WT2": [
+     "WT2_010"
+    ]
+   },
+   "n": 15,
+   "hrs": 8.9,
+   "rev": {
+    "D-1": "Day 6 · cold recall of collocations, no notes",
+    "D-3": "Day 4 · regenerate one writing task from prompt alone, timed"
+   },
+   "checks": [
+    "All 15 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "10 speaking recordings",
+    "2 Task 1 response(s)",
+    "3 Task 2 essay(s)",
+    "28 new items + 12 collocations banked"
+   ],
+   "voc": 28,
+   "col": 12,
+   "narr": [
+    "P2_002"
+   ],
+   "deepn": 2
+  },
+  {
+   "day": 8,
+   "stage": 2,
+   "theme": "Education",
+   "block": "EDUCATION",
+   "bd": [
+    2,
+    4
+   ],
+   "units": {
+    "P1": [
+     "P1_023",
+     "P1_052"
+    ],
+    "P2": [
+     "P2_008",
+     "P2_047",
+     "P2_078",
+     "P2_101"
+    ],
+    "P3": [
+     "P3_005",
+     "P3_057"
+    ],
+    "WT1": [
+     "WT1_009",
+     "WT1_042"
+    ],
+    "WT2": [
+     "WT2_021",
+     "WT2_033",
+     "WT2_045"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [],
+    "WT1": [
+     "WT1_009"
+    ],
+    "WT2": [
+     "WT2_021"
+    ]
+   },
+   "n": 13,
+   "hrs": 8.8,
+   "rev": {
+    "D-1": "Day 7 · cold recall of collocations, no notes",
+    "D-3": "Day 5 · regenerate one writing task from prompt alone, timed"
+   },
+   "checks": [
+    "All 13 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "8 speaking recordings",
+    "2 Task 1 response(s)",
+    "3 Task 2 essay(s)",
+    "28 new items + 12 collocations banked"
+   ],
+   "voc": 28,
+   "col": 12,
+   "narr": [],
+   "deepn": 2
+  },
+  {
+   "day": 9,
+   "stage": 2,
+   "theme": "Education",
+   "block": "EDUCATION",
+   "bd": [
+    3,
+    4
+   ],
+   "units": {
+    "P1": [
+     "P1_030"
+    ],
+    "P2": [
+     "P2_013",
+     "P2_066",
+     "P2_098",
+     "P2_102",
+     "P2_016"
+    ],
+    "P3": [
+     "P3_016",
+     "P3_058"
+    ],
+    "WT1": [
+     "WT1_018",
+     "WT1_043"
+    ],
+    "WT2": [
+     "WT2_024",
+     "WT2_035"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [],
+    "WT1": [],
+    "WT2": [
+     "WT2_024",
+     "WT2_035"
+    ]
+   },
+   "n": 12,
+   "hrs": 8.9,
+   "rev": {
+    "D-1": "Day 8 · cold recall of collocations, no notes",
+    "D-3": "Day 6 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 2 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 12 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "8 speaking recordings",
+    "2 Task 1 response(s)",
+    "2 Task 2 essay(s)",
+    "28 new items + 12 collocations banked"
+   ],
+   "voc": 28,
+   "col": 12,
+   "narr": [
+    "P2_016"
+   ],
+   "deepn": 2
+  },
+  {
+   "day": 10,
+   "stage": 2,
+   "theme": "Education",
+   "block": "EDUCATION",
+   "bd": [
+    4,
+    4
+   ],
+   "units": {
+    "P1": [
+     "P1_035"
+    ],
+    "P2": [
+     "P2_025",
+     "P2_067",
+     "P2_099",
+     "P2_106",
+     "P2_023"
+    ],
+    "P3": [
+     "P3_039"
+    ],
+    "WT1": [
+     "WT1_023"
+    ],
+    "WT2": [
+     "WT2_030",
+     "WT2_040"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [],
+    "WT1": [
+     "WT1_023"
+    ],
+    "WT2": [
+     "WT2_030",
+     "WT2_040"
+    ]
+   },
+   "n": 10,
+   "hrs": 8.9,
+   "rev": {
+    "D-1": "Day 9 · cold recall of collocations, no notes",
+    "D-3": "Day 7 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 3 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 10 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested",
+    "BLOCK CLOSES — Education at 100%; revisit scheduled D+7"
+   ],
+   "outputs": [
+    "7 speaking recordings",
+    "1 Task 1 response(s)",
+    "2 Task 2 essay(s)",
+    "28 new items + 12 collocations banked"
+   ],
+   "voc": 28,
+   "col": 12,
+   "narr": [
+    "P2_023"
+   ],
+   "deepn": 3
+  },
+  {
+   "day": 11,
+   "stage": 3,
+   "theme": "Environment",
+   "block": "ENVIRONMENT",
+   "bd": [
+    1,
+    3
+   ],
+   "units": {
+    "P1": [
+     "P1_004",
+     "P1_044"
+    ],
+    "P2": [
+     "P2_014",
+     "P2_069",
+     "P2_130",
+     "P2_028"
+    ],
+    "P3": [
+     "P3_004",
+     "P3_068"
+    ],
+    "WT1": [
+     "WT1_008",
+     "WT1_013",
+     "WT1_025",
+     "WT1_035",
+     "WT1_045"
+    ],
+    "WT2": [
+     "WT2_009"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [],
+    "WT1": [
+     "WT1_008"
+    ],
+    "WT2": [
+     "WT2_009"
+    ]
+   },
+   "n": 14,
+   "hrs": 8.9,
+   "rev": {
+    "D-1": "Day 10 · cold recall of collocations, no notes",
+    "D-3": "Day 8 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 4 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 14 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "8 speaking recordings",
+    "5 Task 1 response(s)",
+    "1 Task 2 essay(s)",
+    "30 new items + 12 collocations banked"
+   ],
+   "voc": 30,
+   "col": 12,
+   "narr": [
+    "P2_028"
+   ],
+   "deepn": 2
+  },
+  {
+   "day": 12,
+   "stage": 3,
+   "theme": "Environment",
+   "block": "ENVIRONMENT",
+   "bd": [
+    2,
+    3
+   ],
+   "units": {
+    "P1": [
+     "P1_038",
+     "P1_047"
+    ],
+    "P2": [
+     "P2_036",
+     "P2_125"
+    ],
+    "P3": [
+     "P3_019"
+    ],
+    "WT1": [
+     "WT1_011",
+     "WT1_017",
+     "WT1_031",
+     "WT1_041",
+     "WT1_050"
+    ],
+    "WT2": [
+     "WT2_031"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [
+     "P3_019"
+    ],
+    "WT1": [
+     "WT1_011"
+    ],
+    "WT2": [
+     "WT2_031"
+    ]
+   },
+   "n": 11,
+   "hrs": 8.8,
+   "rev": {
+    "D-1": "Day 11 · cold recall of collocations, no notes",
+    "D-3": "Day 9 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 5 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 11 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "5 speaking recordings",
+    "5 Task 1 response(s)",
+    "1 Task 2 essay(s)",
+    "30 new items + 12 collocations banked"
+   ],
+   "voc": 30,
+   "col": 12,
+   "narr": [],
+   "deepn": 3
+  },
+  {
+   "day": 13,
+   "stage": 3,
+   "theme": "Environment",
+   "block": "ENVIRONMENT",
+   "bd": [
+    3,
+    3
+   ],
+   "units": {
+    "P1": [
+     "P1_041",
+     "P1_050"
+    ],
+    "P2": [
+     "P2_049",
+     "P2_129",
+     "P2_029"
+    ],
+    "P3": [
+     "P3_067"
+    ],
+    "WT1": [
+     "WT1_012",
+     "WT1_020",
+     "WT1_032",
+     "WT1_044"
+    ],
+    "WT2": [
+     "WT2_047"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [],
+    "WT1": [
+     "WT1_012",
+     "WT1_020"
+    ],
+    "WT2": [
+     "WT2_047"
+    ]
+   },
+   "n": 11,
+   "hrs": 8.8,
+   "rev": {
+    "D-1": "Day 12 · cold recall of collocations, no notes",
+    "D-3": "Day 10 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 6 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 11 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested",
+    "BLOCK CLOSES — Environment at 100%; revisit scheduled D+7"
+   ],
+   "outputs": [
+    "6 speaking recordings",
+    "4 Task 1 response(s)",
+    "1 Task 2 essay(s)",
+    "30 new items + 12 collocations banked"
+   ],
+   "voc": 30,
+   "col": 12,
+   "narr": [
+    "P2_029"
+   ],
+   "deepn": 3
+  },
+  {
+   "day": 14,
+   "stage": 3,
+   "theme": "Culture & Media",
+   "block": "CULTURE_MEDIA",
+   "bd": [
+    1,
+    3
+   ],
+   "units": {
+    "P1": [
+     "P1_003",
+     "P1_009",
+     "P1_021",
+     "P1_033"
+    ],
+    "P2": [
+     "P2_011",
+     "P2_017",
+     "P2_026",
+     "P2_035",
+     "P2_055",
+     "P2_060",
+     "P2_084",
+     "P2_094",
+     "P2_122",
+     "P2_126",
+     "P2_038"
+    ],
+    "P3": [
+     "P3_006",
+     "P3_023",
+     "P3_041"
+    ],
+    "WT1": [
+     "WT1_014"
+    ],
+    "WT2": [
+     "WT2_013",
+     "WT2_025"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [],
+    "WT1": [],
+    "WT2": [
+     "WT2_013"
+    ]
+   },
+   "n": 21,
+   "hrs": 8.8,
+   "rev": {
+    "D-1": "Day 13 · cold recall of collocations, no notes",
+    "D-3": "Day 11 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 7 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 21 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "18 speaking recordings",
+    "1 Task 1 response(s)",
+    "2 Task 2 essay(s)",
+    "30 new items + 12 collocations banked"
+   ],
+   "voc": 30,
+   "col": 12,
+   "narr": [
+    "P2_038"
+   ],
+   "deepn": 1
+  },
+  {
+   "day": 15,
+   "stage": 3,
+   "theme": "Culture & Media",
+   "block": "CULTURE_MEDIA",
+   "bd": [
+    2,
+    3
+   ],
+   "units": {
+    "P1": [
+     "P1_006",
+     "P1_010",
+     "P1_026",
+     "P1_034"
+    ],
+    "P2": [
+     "P2_012",
+     "P2_018",
+     "P2_033",
+     "P2_043",
+     "P2_058",
+     "P2_079",
+     "P2_086",
+     "P2_096",
+     "P2_123",
+     "P2_128"
+    ],
+    "P3": [
+     "P3_010",
+     "P3_030",
+     "P3_048"
+    ],
+    "WT1": [
+     "WT1_048"
+    ],
+    "WT2": [
+     "WT2_014",
+     "WT2_027"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [
+     "P2_012"
+    ],
+    "P3": [],
+    "WT1": [],
+    "WT2": [
+     "WT2_014"
+    ]
+   },
+   "n": 20,
+   "hrs": 8.9,
+   "rev": {
+    "D-1": "Day 14 · cold recall of collocations, no notes",
+    "D-3": "Day 12 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 8 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 20 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "17 speaking recordings",
+    "1 Task 1 response(s)",
+    "2 Task 2 essay(s)",
+    "30 new items + 12 collocations banked"
+   ],
+   "voc": 30,
+   "col": 12,
+   "narr": [],
+   "deepn": 2
+  },
+  {
+   "day": 16,
+   "stage": 3,
+   "theme": "Culture & Media",
+   "block": "CULTURE_MEDIA",
+   "bd": [
+    3,
+    3
+   ],
+   "units": {
+    "P1": [
+     "P1_007",
+     "P1_012",
+     "P1_032",
+     "P1_048"
+    ],
+    "P2": [
+     "P2_015",
+     "P2_019",
+     "P2_034",
+     "P2_045",
+     "P2_059",
+     "P2_082",
+     "P2_087",
+     "P2_121",
+     "P2_124",
+     "P2_056"
+    ],
+    "P3": [
+     "P3_018",
+     "P3_036",
+     "P3_065"
+    ],
+    "WT1": [
+     "WT1_052"
+    ],
+    "WT2": [
+     "WT2_018"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [],
+    "WT1": [
+     "WT1_052"
+    ],
+    "WT2": [
+     "WT2_018"
+    ]
+   },
+   "n": 19,
+   "hrs": 8.9,
+   "rev": {
+    "D-1": "Day 15 · cold recall of collocations, no notes",
+    "D-3": "Day 13 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 9 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 19 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested",
+    "BLOCK CLOSES — Culture & Media at 100%; revisit scheduled D+7"
+   ],
+   "outputs": [
+    "17 speaking recordings",
+    "1 Task 1 response(s)",
+    "1 Task 2 essay(s)",
+    "30 new items + 12 collocations banked"
+   ],
+   "voc": 30,
+   "col": 12,
+   "narr": [
+    "P2_056"
+   ],
+   "deepn": 2
+  },
+  {
+   "day": 17,
+   "stage": 4,
+   "theme": "Work & Economy",
+   "block": "WORK_ECONOMY",
+   "bd": [
+    1,
+    4
+   ],
+   "units": {
+    "P1": [
+     "P1_016",
+     "P1_051"
+    ],
+    "P2": [
+     "P2_001",
+     "P2_027",
+     "P2_057",
+     "P2_077",
+     "P2_111",
+     "P2_131",
+     "P2_135",
+     "P2_070"
+    ],
+    "P3": [
+     "P3_007",
+     "P3_034",
+     "P3_047",
+     "P3_069"
+    ],
+    "WT1": [
+     "WT1_003",
+     "WT1_021",
+     "WT1_033"
+    ],
+    "WT2": [
+     "WT2_002",
+     "WT2_034"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [],
+    "WT1": [],
+    "WT2": [
+     "WT2_002"
+    ]
+   },
+   "n": 19,
+   "hrs": 8.9,
+   "rev": {
+    "D-1": "Day 16 · cold recall of collocations, no notes",
+    "D-3": "Day 14 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 10 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 19 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "14 speaking recordings",
+    "3 Task 1 response(s)",
+    "2 Task 2 essay(s)",
+    "30 new items + 12 collocations banked"
+   ],
+   "voc": 30,
+   "col": 12,
+   "narr": [
+    "P2_070"
+   ],
+   "deepn": 1
+  },
+  {
+   "day": 18,
+   "stage": 4,
+   "theme": "Work & Economy",
+   "block": "WORK_ECONOMY",
+   "bd": [
+    2,
+    4
+   ],
+   "units": {
+    "P1": [
+     "P1_019"
+    ],
+    "P2": [
+     "P2_021",
+     "P2_044",
+     "P2_071",
+     "P2_085",
+     "P2_114",
+     "P2_132",
+     "P2_136",
+     "P2_072"
+    ],
+    "P3": [
+     "P3_011",
+     "P3_037",
+     "P3_052"
+    ],
+    "WT1": [
+     "WT1_005",
+     "WT1_022",
+     "WT1_036"
+    ],
+    "WT2": [
+     "WT2_005",
+     "WT2_038"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [
+     "P3_011"
+    ],
+    "WT1": [],
+    "WT2": [
+     "WT2_005"
+    ]
+   },
+   "n": 17,
+   "hrs": 8.9,
+   "rev": {
+    "D-1": "Day 17 · cold recall of collocations, no notes",
+    "D-3": "Day 15 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 11 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 17 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "12 speaking recordings",
+    "3 Task 1 response(s)",
+    "2 Task 2 essay(s)",
+    "30 new items + 12 collocations banked"
+   ],
+   "voc": 30,
+   "col": 12,
+   "narr": [
+    "P2_072"
+   ],
+   "deepn": 2
+  },
+  {
+   "day": 19,
+   "stage": 4,
+   "theme": "Work & Economy",
+   "block": "WORK_ECONOMY",
+   "bd": [
+    3,
+    4
+   ],
+   "units": {
+    "P1": [
+     "P1_046"
+    ],
+    "P2": [
+     "P2_022",
+     "P2_048",
+     "P2_075",
+     "P2_089",
+     "P2_115",
+     "P2_133"
+    ],
+    "P3": [
+     "P3_012",
+     "P3_040",
+     "P3_056"
+    ],
+    "WT1": [
+     "WT1_006",
+     "WT1_027"
+    ],
+    "WT2": [
+     "WT2_016",
+     "WT2_046"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [
+     "P3_012"
+    ],
+    "WT1": [
+     "WT1_006"
+    ],
+    "WT2": [
+     "WT2_016"
+    ]
+   },
+   "n": 14,
+   "hrs": 8.9,
+   "rev": {
+    "D-1": "Day 18 · cold recall of collocations, no notes",
+    "D-3": "Day 16 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 12 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 14 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "10 speaking recordings",
+    "2 Task 1 response(s)",
+    "2 Task 2 essay(s)",
+    "30 new items + 12 collocations banked"
+   ],
+   "voc": 30,
+   "col": 12,
+   "narr": [],
+   "deepn": 3
+  },
+  {
+   "day": 20,
+   "stage": 4,
+   "theme": "Work & Economy",
+   "block": "WORK_ECONOMY",
+   "bd": [
+    4,
+    4
+   ],
+   "units": {
+    "P1": [
+     "P1_049"
+    ],
+    "P2": [
+     "P2_024",
+     "P2_050",
+     "P2_076",
+     "P2_104",
+     "P2_127",
+     "P2_134",
+     "P2_081"
+    ],
+    "P3": [
+     "P3_026",
+     "P3_046",
+     "P3_063"
+    ],
+    "WT1": [
+     "WT1_010",
+     "WT1_030"
+    ],
+    "WT2": [
+     "WT2_026"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [],
+    "WT1": [
+     "WT1_010",
+     "WT1_030"
+    ],
+    "WT2": [
+     "WT2_026"
+    ]
+   },
+   "n": 14,
+   "hrs": 8.8,
+   "rev": {
+    "D-1": "Day 19 · cold recall of collocations, no notes",
+    "D-3": "Day 17 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 13 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 14 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested",
+    "BLOCK CLOSES — Work & Economy at 100%; revisit scheduled D+7"
+   ],
+   "outputs": [
+    "11 speaking recordings",
+    "2 Task 1 response(s)",
+    "1 Task 2 essay(s)",
+    "30 new items + 12 collocations banked"
+   ],
+   "voc": 30,
+   "col": 12,
+   "narr": [
+    "P2_081"
+   ],
+   "deepn": 3
+  },
+  {
+   "day": 21,
+   "stage": 4,
+   "theme": "Society",
+   "block": "SOCIETY",
+   "bd": [
+    1,
+    5
+   ],
+   "units": {
+    "P1": [
+     "P1_008",
+     "P1_039"
+    ],
+    "P2": [
+     "P2_003",
+     "P2_010",
+     "P2_046",
+     "P2_073",
+     "P2_105",
+     "P2_090"
+    ],
+    "P3": [
+     "P3_001",
+     "P3_024",
+     "P3_043",
+     "P3_053"
+    ],
+    "WT1": [
+     "WT1_002",
+     "WT1_040"
+    ],
+    "WT2": [
+     "WT2_004",
+     "WT2_015",
+     "WT2_042"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [
+     "P2_003"
+    ],
+    "P3": [],
+    "WT1": [],
+    "WT2": [
+     "WT2_004"
+    ]
+   },
+   "n": 17,
+   "hrs": 8.9,
+   "rev": {
+    "D-1": "Day 20 · cold recall of collocations, no notes",
+    "D-3": "Day 18 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 14 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 17 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "12 speaking recordings",
+    "2 Task 1 response(s)",
+    "3 Task 2 essay(s)",
+    "30 new items + 12 collocations banked"
+   ],
+   "voc": 30,
+   "col": 12,
+   "narr": [
+    "P2_090"
+   ],
+   "deepn": 2
+  },
+  {
+   "day": 22,
+   "stage": 5,
+   "theme": "Society",
+   "block": "SOCIETY",
+   "bd": [
+    2,
+    5
+   ],
+   "units": {
+    "P1": [
+     "P1_018"
+    ],
+    "P2": [
+     "P2_004",
+     "P2_039",
+     "P2_053",
+     "P2_080",
+     "P2_108"
+    ],
+    "P3": [
+     "P3_003",
+     "P3_025",
+     "P3_044",
+     "P3_054"
+    ],
+    "WT1": [
+     "WT1_026",
+     "WT1_047"
+    ],
+    "WT2": [
+     "WT2_006",
+     "WT2_020",
+     "WT2_043"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [],
+    "WT1": [],
+    "WT2": [
+     "WT2_006"
+    ]
+   },
+   "n": 15,
+   "hrs": 8.9,
+   "rev": {
+    "D-1": "Day 21 · cold recall of collocations, no notes",
+    "D-3": "Day 19 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 15 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 15 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "10 speaking recordings",
+    "2 Task 1 response(s)",
+    "3 Task 2 essay(s)",
+    "30 new items + 12 collocations banked"
+   ],
+   "voc": 30,
+   "col": 12,
+   "narr": [],
+   "deepn": 1
+  },
+  {
+   "day": 23,
+   "stage": 5,
+   "theme": "Society",
+   "block": "SOCIETY",
+   "bd": [
+    3,
+    5
+   ],
+   "units": {
+    "P1": [
+     "P1_020"
+    ],
+    "P2": [
+     "P2_005",
+     "P2_040",
+     "P2_054",
+     "P2_083",
+     "P2_120",
+     "P2_091"
+    ],
+    "P3": [
+     "P3_013",
+     "P3_028",
+     "P3_045",
+     "P3_061"
+    ],
+    "WT1": [
+     "WT1_029",
+     "WT1_053"
+    ],
+    "WT2": [
+     "WT2_007",
+     "WT2_023",
+     "WT2_044"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [
+     "P3_013"
+    ],
+    "WT1": [
+     "WT1_029"
+    ],
+    "WT2": []
+   },
+   "n": 16,
+   "hrs": 8.9,
+   "rev": {
+    "D-1": "Day 22 · cold recall of collocations, no notes",
+    "D-3": "Day 20 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 16 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 16 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "11 speaking recordings",
+    "2 Task 1 response(s)",
+    "3 Task 2 essay(s)",
+    "30 new items + 12 collocations banked"
+   ],
+   "voc": 30,
+   "col": 12,
+   "narr": [
+    "P2_091"
+   ],
+   "deepn": 2
+  },
+  {
+   "day": 24,
+   "stage": 5,
+   "theme": "Society",
+   "block": "SOCIETY",
+   "bd": [
+    4,
+    5
+   ],
+   "units": {
+    "P1": [
+     "P1_022"
+    ],
+    "P2": [
+     "P2_006",
+     "P2_041",
+     "P2_063",
+     "P2_088"
+    ],
+    "P3": [
+     "P3_014",
+     "P3_032",
+     "P3_049",
+     "P3_062",
+     "P3_020"
+    ],
+    "WT1": [
+     "WT1_034"
+    ],
+    "WT2": [
+     "WT2_008",
+     "WT2_037"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [],
+    "WT1": [
+     "WT1_034"
+    ],
+    "WT2": [
+     "WT2_008"
+    ]
+   },
+   "n": 13,
+   "hrs": 8.8,
+   "rev": {
+    "D-1": "Day 23 · cold recall of collocations, no notes",
+    "D-3": "Day 21 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 17 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 13 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested"
+   ],
+   "outputs": [
+    "10 speaking recordings",
+    "1 Task 1 response(s)",
+    "2 Task 2 essay(s)",
+    "30 new items + 12 collocations banked"
+   ],
+   "voc": 30,
+   "col": 12,
+   "narr": [
+    "P3_020"
+   ],
+   "deepn": 2
+  },
+  {
+   "day": 25,
+   "stage": 5,
+   "theme": "Society",
+   "block": "SOCIETY",
+   "bd": [
+    5,
+    5
+   ],
+   "units": {
+    "P1": [
+     "P1_036"
+    ],
+    "P2": [
+     "P2_009",
+     "P2_042",
+     "P2_064",
+     "P2_092"
+    ],
+    "P3": [
+     "P3_022",
+     "P3_038",
+     "P3_051",
+     "P3_066",
+     "P3_021"
+    ],
+    "WT1": [
+     "WT1_038"
+    ],
+    "WT2": [
+     "WT2_012",
+     "WT2_039"
+    ]
+   },
+   "deep": {
+    "P1": [],
+    "P2": [],
+    "P3": [],
+    "WT1": [
+     "WT1_038"
+    ],
+    "WT2": [
+     "WT2_012"
+    ]
+   },
+   "n": 13,
+   "hrs": 8.8,
+   "rev": {
+    "D-1": "Day 24 · cold recall of collocations, no notes",
+    "D-3": "Day 22 · regenerate one writing task from prompt alone, timed",
+    "D-7": "Day 18 · transfer: use its lexis on today's theme"
+   },
+   "checks": [
+    "All 13 units marked complete",
+    "12 collocations produced unprompted in output",
+    "Error log updated; 2 earlier errors retested",
+    "BLOCK CLOSES — Society at 100%; revisit scheduled D+7"
+   ],
+   "outputs": [
+    "10 speaking recordings",
+    "1 Task 1 response(s)",
+    "2 Task 2 essay(s)",
+    "30 new items + 12 collocations banked"
+   ],
+   "voc": 30,
+   "col": 12,
+   "narr": [
+    "P3_021"
+   ],
+   "deepn": 2
+  },
+  {
+   "day": 26,
+   "stage": 6,
+   "theme": "Full mock A",
+   "units": {},
+   "n": 0,
+   "hrs": 7.0,
+   "rev": {
+    "all": "Spaced review across all 8 closed blocks"
+   },
+   "checks": [
+    "Marked criterion-by-criterion",
+    "Two largest gaps identified"
+   ],
+   "outputs": [
+    "Complete Speaking test, recorded",
+    "Complete Writing test, 60 min"
+   ],
+   "voc": 0,
+   "col": 0,
+   "deep": 0
+  },
+  {
+   "day": 27,
+   "stage": 6,
+   "theme": "Repair",
+   "units": {},
+   "n": 0,
+   "hrs": 7.0,
+   "rev": {
+    "all": "Spaced review across all 8 closed blocks"
+   },
+   "checks": [
+    "Old vs new compared side by side",
+    "Missing collocations forced into rewrite"
+   ],
+   "outputs": [
+    "Task 2 rewritten with feedback",
+    "2 weakest Part 2 answers re-recorded"
+   ],
+   "voc": 0,
+   "col": 0,
+   "deep": 0
+  },
+  {
+   "day": 28,
+   "stage": 6,
+   "theme": "Full mock B",
+   "units": {},
+   "n": 0,
+   "hrs": 7.0,
+   "rev": {
+    "all": "Spaced review across all 8 closed blocks"
+   },
+   "checks": [
+    "Per-criterion delta vs Mock A",
+    "Honest exam-day estimate produced"
+   ],
+   "outputs": [
+    "Complete Speaking test, unseen themes",
+    "Complete Writing test, unseen prompts"
+   ],
+   "voc": 0,
+   "col": 0,
+   "deep": 0
+  },
+  {
+   "day": 29,
+   "stage": 6,
+   "theme": "Targeted drill",
+   "units": {},
+   "n": 0,
+   "hrs": 7.0,
+   "rev": {
+    "all": "Spaced review across all 8 closed blocks"
+   },
+   "checks": [
+    "All 20 story-bank entries rehearsed",
+    "Error log at ≤5 active items"
+   ],
+   "outputs": [
+    "Weakest speaking sub-skill drilled",
+    "Weakest writing criterion drilled"
+   ],
+   "voc": 0,
+   "col": 0,
+   "deep": 0
+  },
+  {
+   "day": 30,
+   "stage": 6,
+   "theme": "Exit & taper",
+   "units": {},
+   "n": 0,
+   "hrs": 5.0,
+   "rev": {
+    "all": "Spaced review across all 8 closed blocks"
+   },
+   "checks": [
+    "Exit report issued",
+    "Post-programme plan handed over"
+   ],
+   "outputs": [
+    "One light Part 2",
+    "One Task 1 overview only"
+   ],
+   "voc": 0,
+   "col": 0,
+   "deep": 0
+  }
+ ]
+}
